@@ -16,7 +16,7 @@ header{
     display: flex;
     justify-content:flex-end;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
 }
 header .menu-bar a{
     position: relative;

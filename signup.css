@@ -16,7 +16,7 @@ header{
     display: flex;
     justify-content:flex-end;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
 }
 header .menu-bar a{
     position: relative;
@@ -55,11 +55,11 @@ header .menu-bar #contact-us:hover{
     color: black;
     background-color: white;
 }
-header .menu-bar a:nth-child(3){
+header .menu-bar a:nth-child(4){
     color: white;
 }
 
-/* LOGIN BOX */
+/* SIGN UP BOX */
 .box{
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -71,10 +71,7 @@ header .menu-bar a:nth-child(3){
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top:20px;
-    padding-bottom:20px;
-    padding-left:10px;
-    padding-right:10px;
+    padding: 20px 10px 20px 10px;
     margin: auto;
     margin-top: 90px;
 	max-width:450px;
@@ -84,20 +81,15 @@ header .menu-bar a:nth-child(3){
     color: #3348a4;
     text-align: center;
 }
-.container{
+.box .container{
 	width:90%;
-	max-width:500px;
+	max-width:600px;
 }
-.Uname,.email,h1{
+.box .container div:not(.shopadd),h1{
 	margin-bottom:50px;
 	position:relative;
 }
-.password{
-	position: relative;
-	margin-bottom: 40px;
-}
-
-input[type=text],input[type=email],input[type=password]{
+.box .container input[type=text],input[type=email],input[type=password]{
     width:100%;
 	font-size:17px;
 	background: transparent;
@@ -106,7 +98,7 @@ input[type=text],input[type=email],input[type=password]{
 	color: rgb(77, 77, 77);
 	border-bottom: 2px solid rgb(77, 77, 77);
 }
-label{
+.box .container label:not(.shadd){
 	height:100%;
 	position:absolute;
 	pointer-events: none;
@@ -116,20 +108,47 @@ label{
 	transition: all 0.3s;
 	font-size:20px;
 }
-input:focus~label{
+.box .container .shopadd label{
+    font-size: 20px;
+}
+.box .container input:focus~label{
 	top:-20px;
 	color:#5775fc;
 	font-size:18px;
 }
-input:valid~label{
+.box .container input:valid~label{
 	top:-20px;
 	font-size:18px;
 }
-button{
+.box .container .line{
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    display: block;
+    border: transparent;
+    border-bottom: 2px solid #5775fc;
+    transition: 0.1s;
+}
+.box .container input:focus~ .line,input:valid~ .line{
+    width: 100%;
+}
+.box .container textarea{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.box .container .password .eye{
+    position: absolute;
+    max-width:fit-content;
+    left:350px;
+}
+.box .container .password .eye #eye1,#eye3{
+    display: none;
+}
+.box .container .submit button{
+    text-transform: uppercase;
     margin-left: 130px;
-    margin-bottom: 25px;
 	padding:9px;
-	font-size:22px;
+	font-size:20px;
 	outline:none;
 	border:2px solid white;
 	border-radius: 30px;
@@ -137,49 +156,25 @@ button{
 	cursor:pointer;
     transition: all 0.4s;
 }
-button a{
-    text-decoration: none;
-}
-button:hover a{
-    color: white;
-}
-button:hover{
+.box .container .submit button:hover{
   background-color: black;
   color: white;
 }
-a{
-	color: black;
+.box .container .submit button a{
+    color: black;
+    text-decoration: none;
 }
-p{
+.box .container .submit button:hover a{
+    color: white;
+}
+.box .container .page p{
+    margin-bottom: 20px;
     text-align: center;
-	color: black;
+    color: black;
 }
-.submit{
-	padding-bottom:15px;
+.box .container .page a{
+    color: black;
 }
 span{
 	font-size: 20px;
-}
-.eye{
-  position: absolute;
-  max-width:fit-content;
-  left:350px;
-}
-#eye1{
-  display: none;
-}
-form{
-	color: black;
-}
-.line{
-  position: absolute;
-  bottom: 0;
-  width: 0%;
-  display: block;
-  border: transparent;
-  border-bottom: 2px solid #5775fc;
-  transition: 0.1s;
-}
-input:focus~ .line,input:valid~ .line{
-  width: 100%;
 }

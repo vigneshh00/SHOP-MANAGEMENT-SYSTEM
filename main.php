@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <script src="script5.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
