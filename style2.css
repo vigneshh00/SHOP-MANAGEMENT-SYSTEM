@@ -137,6 +137,12 @@ button{
 	cursor:pointer;
     transition: all 0.4s;
 }
+button a{
+    text-decoration: none;
+}
+button:hover a{
+    color: white;
+}
 button:hover{
   background-color: black;
   color: white;
