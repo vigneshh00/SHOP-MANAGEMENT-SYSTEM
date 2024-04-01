@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
+        <div class="menu-bar">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign up</a>
+                <a href="contact.html" id="contact-us">Contact Us</a>   
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="box">
+            <div class="container">
+                    <form action="" method="" autocomplete="off">
+                        <h1>LOGIN</h1>
+                        <div class="Uname">
+                            <input type="text" name="username"required>
+                            <label for="username">Username</label>
+                            <span class="line"></span>
+                        </div>
+                        <div class="email">
+                            <input type="text" name="email"required>
+                            <label for="email">Email</label>
+                            <span class="line"></span>
+                        </div>
+                        <div class="password">
+                            <input type="password" name="password" id="myInput1"required>
+                            <label for="password">Password</label>
+                            <span class="line"></span>
+                            <span class="eye" onclick="myshow()">
+                                <i class="fa fa-eye" id="eye1"></i>
+                                <i class="fa fa-eye-slash" id="eye2"></i>
+                            </span>
+                        </div>
+                        <div class="submit">
+                            <button>Login</button>
+                        </div>
+                    </form>
+                    <div class="page">
+                        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                    </div>
+            </div>
+        </div>
+    </main>
+<script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* HEADER SECTION */
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 50px;
+}
+header .menu-bar a{
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.663);
+    margin: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s;
+}
+header .menu-bar a:not(#contact-us)::after{
+    display: block;
+    margin:auto;
+    margin-top: 10px;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    height: 2px;
+    width: 0%;
+    transition: all 0.3s;
+}
+header .menu-bar a:not(#contact-us):hover{
+    color: white;
+}
+header .menu-bar a:not(#contact-us):hover::after{
+    width: 100%;
+}
+header .menu-bar #contact-us{
+    border: 2px solid rgba(255, 255, 255, 0.663);
+    border-radius: 40px;
+    padding: 13px;
+    font-size: 20px;
+} 
+header .menu-bar #contact-us:hover{
+    border: 2px solid white;
+    color: black;
+    background-color: white;
+}
+header .menu-bar a:nth-child(1){
+    color: white;
+}
