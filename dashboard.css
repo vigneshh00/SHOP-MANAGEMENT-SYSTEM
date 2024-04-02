@@ -1,0 +1,14 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    margin: 50px 40px 60px 40px;
+}
