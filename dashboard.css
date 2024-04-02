@@ -66,17 +66,12 @@ header {
     padding: 20px;
 }
 
-
 .buttonSection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 200px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     padding: 100px;
-    padding-left: 10px;
-}
-
-.navbuttons {
-    border: none;
 }
 
 .buttons {
@@ -85,6 +80,7 @@ header {
     padding: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
@@ -92,7 +88,6 @@ header {
     width: 350px;
     height: 150px;
     font-size: 30px;
-    padding-top: 50px;
 }
 
 .buttons:hover {
@@ -100,8 +95,11 @@ header {
     color: whitesmoke;
     transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
 
+.navbuttons {
+    border: none;
 }
 
 /* Footer styles */
