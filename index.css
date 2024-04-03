@@ -9,52 +9,89 @@ html{
     scroll-behavior: smooth;
 }
 
-/* HEADER SECTION */
-header{
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    padding: 30px;
+body{
+    background-color: white;
 }
-header .menu-bar a{
+.container{
+    background-color: lightgray;
+    color: black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.container .side-bar{
+    position:fixed;
+    height:100%;
+    width: 0px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.container .side-bar a{
     position: relative;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.663);
     margin: 15px;
     font-size: 20px;
+    padding: 25px;
     text-transform: uppercase;
-    display: inline-block;
+    display: block;
+    text-align: center;
     transition: all 0.3s;
 }
-header .menu-bar a:not(#contact-us)::after{
+.container .side-bar a:not(#contact-us)::after{
     display: block;
     margin:auto;
     margin-top: 10px;
     content: "";
-    background-color: rgb(255, 255, 255);
+    background-color:orange;
     height: 2px;
     width: 0%;
     transition: all 0.3s;
 }
-header .menu-bar a:not(#contact-us):hover{
-    color: white;
+.container .side-bar a:not(#contact-us):hover{
+    color: orange;
 }
-header .menu-bar a:not(#contact-us):hover::after{
+.container .side-bar a:not(#contact-us):hover::after{
     width: 100%;
 }
-header .menu-bar #contact-us{
+.container .side-bar #contact-us{
     border: 2px solid rgba(255, 255, 255, 0.663);
     border-radius: 40px;
     padding: 13px;
     font-size: 20px;
 } 
-header .menu-bar #contact-us:hover{
-    border: 2px solid white;
-    color: black;
-    background-color: white;
+.container .side-bar #contact-us:hover{
+    border: 2px solid orange;
+    color: orange;
+    background-color: black;
 }
-header .menu-bar a:nth-child(1){
+.container .side-bar a:nth-child(1){
     color: white;
+}
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+  #arrow{
+    height: 50px;
+    width:50px;
+    position: fixed;
+    top: 300px;/* Position at half the height of the screen */
+    left: 0; /* Position at the left of the screen */
+    z-index: 2;
+    transition: left 0.3s ease;
+
+  }
+.container .name{
+    font-family: "Merriweather",serif;
+    font-weight: 700;
+    font-style: italic;
+    text-align: left;
+    
 }
