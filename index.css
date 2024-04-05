@@ -13,11 +13,12 @@ body{
     background-color: white;
 }
 .container{
-    background-color: lightgray;
-    color: black;
-    height: 50px;
+    background-color: #1B1B1B;
+    color: white;
+    height: 80px;
     display: flex;
     align-items: center;
+    
 }
 .container .side-bar{
     position:fixed;
@@ -26,7 +27,7 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: #1B1B1B;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -48,13 +49,13 @@ body{
     margin:auto;
     margin-top: 10px;
     content: "";
-    background-color:orange;
+    background-color:#F78702;
     height: 2px;
     width: 0%;
     transition: all 0.3s;
 }
 .container .side-bar a:not(#contact-us):hover{
-    color: orange;
+    color: #F78702;
 }
 .container .side-bar a:not(#contact-us):hover::after{
     width: 100%;
@@ -66,8 +67,8 @@ body{
     font-size: 20px;
 } 
 .container .side-bar #contact-us:hover{
-    border: 2px solid orange;
-    color: orange;
+    border: 2px solid #F78702;
+    color: #F78702;
     background-color: black;
 }
 .container .side-bar a:nth-child(1){
@@ -78,17 +79,10 @@ body{
     .sidebar a {font-size: 18px;}
   }
 
-  #arrow{
-    height: 50px;
-    width:50px;
-    position: fixed;
-    top: 300px;/* Position at half the height of the screen */
-    left: 0; /* Position at the left of the screen */
-    z-index: 2;
-    transition: left 0.3s ease;
-
-  }
+ 
 .container .name{
+    position: relative;
+    left:50px;
     font-family: "Merriweather",serif;
     font-weight: 700;
     font-style: italic;
@@ -101,20 +95,113 @@ body{
    top:325px;
    right: 100px;
     width:4px;
-    height:100px;
+    height:50px;
     margin-left: 0px;
     border-radius: 2px;
     z-index:110;
     
-    margin-right: 10px;
-    background-color: black;
+    margin-right: 7px;
+    background-color: #1B1B1B;
     transition: margin-right 0.3 ease;
 }
 .side-line-container{
     display: flex;
     position: relative;
-    left:0px;
+    left:-35px;
     padding:0px;
     margin-left: 0px;
     transition: 0.5s;
+}
+.home-load{
+    display: block;
+    background-image: url('Untitled design.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+.shop-management{
+    position: relative;
+    left:45px;
+    top:30px;
+    font-family: "Merriweather",serif;
+}
+.byline{
+    position: relative;
+    top: 60px;
+    left:45px;
+
+    font-family: "Merriweather",serif;
+}
+.getstarted{
+    display: flex;
+    height:430px;
+    background-color:#1B1B1B ;
+    width:330px;
+    border-radius: 6px;
+    position:relative;
+    justify-content: center;
+    text-align: center;
+    bottom:5px;
+    right:150px;
+    float:right;
+    padding:0 20px;
+    flex-direction: column;
+
+
+}
+.getstarted h2{
+    font-family: "Merriweather",serif;
+    position: relative;
+    top:-60px;
+    font-size: 40px;
+    font-weight: bold;
+
+    color:white;
+    
+    
+
+    margin:0;
+    padding:0;
+}
+.getstarted h4{
+    position: relative;
+    top:-35px;
+    font-family:sans-serif;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+
+    margin:0;
+    padding:0;
+
+}
+.getstarted a{
+    color: white;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 15px;
+    margin:30px;
+    font-size: larger;
+    text-decoration: none;
+}
+.getstarted a:hover{
+    border: 2px solid #F78702;
+    color: #F78702;
+    transition: all 0.3s;
+    background-color: black;
+    
+}
+.getstarted .signup{
+    position: relative;
+    top:-35px;
+}
+.getstarted .already{
+    position: relative;
+    top:-20px;
+}
+.getstarted .login{
+    position: relative;
+    top:20px;
 }
