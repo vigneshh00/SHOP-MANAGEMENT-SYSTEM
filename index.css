@@ -95,3 +95,26 @@ body{
     text-align: left;
     
 }
+.side-line{
+    display: inline-block;
+    position: relative;
+   top:325px;
+   right: 100px;
+    width:4px;
+    height:100px;
+    margin-left: 0px;
+    border-radius: 2px;
+    z-index:110;
+    
+    margin-right: 10px;
+    background-color: black;
+    transition: margin-right 0.3 ease;
+}
+.side-line-container{
+    display: flex;
+    position: relative;
+    left:0px;
+    padding:0px;
+    margin-left: 0px;
+    transition: 0.5s;
+}
