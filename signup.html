@@ -9,13 +9,15 @@
 
 </head>
 <body>
+
+
     <header>
         <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
         <div class="menu-bar">
             <nav>
                 <a href="index.html">Home</a>
                 <a href="#about">About</a>
-                <a href="login.html">Login</a>
+                <a href="login.php">Login</a>
                 <a href="signup.html">Sign up</a>
                 <a href="contact.html" id="contact-us">Contact Us</a>   
             </nav>
@@ -25,45 +27,45 @@
     <main>
         <div class="box">
             <div class="container">
-                <form action="action.php" method="post" autocomplete="off">
+                <form action="login.php" method="post" autocomplete="off">
                     <h1>SIGN UP</h1>
                     <div class="fname">
-                        <input type="text" name="firstname"required>
+                        <input type="text" name="fname" id="firstname" required>
                         <label for="firstname">First name</label>
                         <span class="line"></span>
                     </div>
                     <div class="lname">
-                        <input type="text" name="lastname"required>
+                        <input type="text" name="lname" id="lastname" required>
                         <label for="lastname">Last name</label>
                         <span class="line"></span>
                     </div>
                     <div class="phno">
-                        <input type="text" name="phone_number"required>
+                        <input type="text" name="phno" id="phone_number" required>
                         <label for="phone_number">Phone Number</label>
                         <span class="line"></span>
                     </div>
                     <div class="shopname">
-                        <input type="text" name="shopname"required>
+                        <input type="text" name="shopname" id="shopname" required>
                         <label for="shopname">Shop name</label>
                         <span class="line"></span>
                     </div>
                     <div class="shopadd">
                         <label for="shop_address" class="shadd">Shop Address</label>
-                        <textarea name="shop_address" id="shop_address" cols="55" rows="10"></textarea>
+                        <textarea name="shopadd" id="shop_address" cols="55" rows="10"></textarea>
                     </div>
                     <div class="name">
-                        <input type="text" name="username"required>
+                        <input type="text" name="uname" id="username" required>
                         <label for="username">Username</label>
                         <span class="line"></span>
                     </div>
                     <div class="email">
-                        <input type="text" name="email"required>
+                        <input type="text" name="email" id="email" required>
                         <label for="email">Email</label>
                         <span class="line"></span>
                     </div>
                     <div class="password">
-                        <input type="password" name="password" id="pass"required>
-                        <label for="password">Password</label>
+                        <input type="password" name="password" id="pass" required>
+                        <label for="pass">Password</label>
                         <span class="line"></span>
                         <span class="eye" onclick="myshow1()">
                             <i class="fa fa-eye" id="eye1"></i>
@@ -71,7 +73,7 @@
                         </span>
                     </div>
                     <div class="password">
-                        <input type="password" name="confirm_password" id="cn_pass"required>
+                        <input type="password" name="cm_pass" id="confirm_password" required>
                         <label for="confirm_password">Confirm Password</label>
                         <span class="line"></span>
                         <span class="eye" onclick="myshow2()">
@@ -89,6 +91,8 @@
             </div>
         </div>
     </main>
+
+    
     <script src="signup.js"></script>
 </body>
 </html>

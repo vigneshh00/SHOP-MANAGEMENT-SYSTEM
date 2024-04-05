@@ -14,7 +14,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <a href="#about">About</a>
-                <a href="login.html">Login</a>
+                <a href="login.php">Login</a>
                 <a href="signup.html">Sign up</a>
                 <a href="contact.html" id="contact-us">Contact Us</a>   
             </nav>
@@ -55,6 +55,39 @@
             </div>
         </div>
     </main>
+
+    <?php
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "shop management system";
+
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            $fname = $_POST['fname'];
+            $lname = $_POST['lname'];
+            $phno = $_POST['phno'];
+            $shopname = $_POST['shopname'];
+            $shopadd = $_POST['shopadd'];
+            $uname = $_POST['uname'];
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+            $cmpass = $_POST['cm_pass'];
+
+            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass','$cmpass')";
+
+            mysqli_query($conn, $sql);
+        }
+        
+        mysqli_close($conn);
+    ?>
+
 <script src="login.js"></script>
 </body>
 </html>
