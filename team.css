@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* HEADER SECTION */
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 30px;
+}
+header .menu-bar a{
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.663);
+    margin: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s;
+}
+header .menu-bar a:not(#contact-us)::after{
+    display: block;
+    margin:auto;
+    margin-top: 10px;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    height: 2px;
+    width: 0%;
+    transition: all 0.3s;
+}
+header .menu-bar a:not(#contact-us):hover{
+    color: white;
+}
+header .menu-bar a:not(#contact-us):hover::after{
+    width: 100%;
+}
+header .menu-bar #contact-us{
+    border: 2px solid rgba(255, 255, 255, 0.663);
+    border-radius: 40px;
+    padding: 13px;
+    font-size: 20px;
+} 
+header .menu-bar #contact-us:hover{
+    border: 2px solid white;
+    color: black;
+    background-color: white;
+}
+header .menu-bar a:nth-child(2){
+    color: white;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.container h1{
+    color: rgb(71, 71, 71);
+    text-align: center;
+    margin-top: 70px;
+    grid-column-start: 1;
+    grid-column-end:5;
+}
+.container hr{
+    background-color: rgba(85, 85, 85, 0.722);
+    width: 20%;
+    height: 4px;
+    margin: 10px auto;
+    margin-bottom: 70px;
+    grid-column-start: 1;
+    grid-column-end:5;
+}
+.container div:not(.icons){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: auto;
+    box-shadow: 0px 2px 6px rgb(131, 131, 131);
+    transition: 0.5s ease-in-out;
+}
+
+.container div img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+}
+.container div:nth-child(3) img{
+    border: 5px solid rgb(25, 224, 255);
+}
+.container div:nth-child(4) img{
+    border: 5px solid rgba(24, 238, 74, 0.945);
+}
+.container div:nth-child(5) img{
+    border: 5px solid rgba(129, 32, 232, 0.796);
+}
+.container div:nth-child(6) img{
+    border: 5px solid rgb(238, 138, 24);
+}
+.container .member h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 22px;
+    letter-spacing: 0.02cm;
+    margin-bottom: 15px;
+}
+.container .member p{
+    color: grey;
+    letter-spacing: 0.05cm;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.container .member .icons{
+    margin-top: 20px;
+    font-size: 25px;
+}
+.container .icons span{
+    margin: auto;
+    margin: 10px;
+}
+.container div:nth-child(3):hover{
+    transform: scale(1.05);
+    color: white;
+    background-color: rgb(25, 224, 255);
+}
+.container div:nth-child(3):hover h2{
+    color: white;
+}
+.container div:nth-child(3):hover p{
+    color: white;
+}
+.container div:nth-child(3):hover img{
+    border: 5px solid rgb(76, 155, 168)
+}
+.container div:nth-child(4):hover{
+    transform: scale(1.05);
+    color: white;
+    background-color: rgba(24, 238, 74, 0.945);
+}
+.container div:nth-child(4):hover h2{
+    color: white;
+}
+.container div:nth-child(4):hover p{
+    color: white;
+}
+.container div:nth-child(4):hover img{
+    border: 5px solid rgba(65, 170, 90, 0.945);
+}
+.container div:nth-child(5):hover{
+    transform: scale(1.05);
+    color: white;
+    background-color: rgba(129, 32, 232, 0.796);
+}
+.container div:nth-child(5):hover h2{
+    color: white;
+}
+.container div:nth-child(5):hover p{
+    color: white;
+}
+.container div:nth-child(5):hover img{
+    border: 5px solid rgba(80, 47, 115, 0.796);
+}
+.container div:nth-child(6):hover{
+    transform: scale(1.05);
+    color: white;
+    background-color: rgb(238, 138, 24);
+}
+.container div:nth-child(6):hover h2{
+    color: white;
+}
+.container div:nth-child(6):hover p{
+    color: white;
+}
+.container div:nth-child(6):hover img{
+    border: 5px solid rgba(244, 186, 119, 0.796);
+}
