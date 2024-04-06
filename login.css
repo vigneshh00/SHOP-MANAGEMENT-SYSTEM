@@ -8,7 +8,6 @@
 html{
     scroll-behavior: smooth;
 }
-
 /* HEADER SECTION */
 header{
     background-color: black;
@@ -58,7 +57,9 @@ header .menu-bar #contact-us:hover{
 header .menu-bar a:nth-child(3){
     color: white;
 }
-
+main{
+    padding: 65px;
+}
 /* LOGIN BOX */
 .box{
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -73,7 +74,6 @@ header .menu-bar a:nth-child(3){
     justify-content: center;
     padding: 20px 10px 20px 10px;
     margin: auto;
-    margin-top: 90px;
 	max-width:450px;
 	font-size: x-large;
 }
@@ -129,10 +129,15 @@ header .menu-bar a:nth-child(3){
 .box .container input:focus~ .line,input:valid~ .line{
     width: 100%;
 }
+.box .container .uname .icon,.email .icon{
+    position: absolute;
+    max-width:fit-content;
+    left:358px;
+}
 .box .container .password .eye{
     position: absolute;
     max-width:fit-content;
-    left:350px;
+    left:355px;
 }
 .box .container .password .eye #eye1{
     display: none;

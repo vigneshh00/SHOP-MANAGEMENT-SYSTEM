@@ -30,19 +30,21 @@
                         <input type="text" name="username"required>
                         <label for="username">Username</label>
                         <span class="line"></span>
+                        <span class="icon"><i class="fa-solid fa-user" ></i></span>
                     </div>
                     <div class="email">
                         <input type="text" name="email"required>
                         <label for="email">Email</label>
                         <span class="line"></span>
+                        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
                     </div>
                     <div class="password">
                         <input type="password" name="password" id="pass"required>
                         <label for="password">Password</label>
                         <span class="line"></span>
                         <span class="eye" onclick="myshow()">
-                            <i class="fa fa-eye" id="eye1"></i>
-                            <i class="fa fa-eye-slash" id="eye2"></i>
+                            <i class="fa-solid fa-eye" id="eye1"></i>
+                            <i class="fa-solid fa-eye-slash" id="eye2"></i>
                         </span>
                     </div>
                     <div class="submit">

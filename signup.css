@@ -8,11 +8,14 @@
 html{
     scroll-behavior: smooth;
 }
-
+/* body{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/signup_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 /* HEADER SECTION */
 header{
     background-color: black;
-    color: white;
     display: flex;
     justify-content:flex-end;
     align-items: center;
@@ -60,6 +63,9 @@ header .menu-bar a:nth-child(4){
 }
 
 /* SIGN UP BOX */
+main{
+    padding: 60px;
+}
 .box{
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -73,7 +79,6 @@ header .menu-bar a:nth-child(4){
     justify-content: center;
     padding: 20px 10px 20px 10px;
     margin: auto;
-    margin-top: 90px;
 	max-width:450px;
 	font-size: x-large;
 }
