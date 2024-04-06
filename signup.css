@@ -133,6 +133,7 @@ header .menu-bar a:nth-child(4){
     width: 100%;
 }
 .box .container textarea{
+    resize: vertical;
     margin-top: 20px;
     margin-bottom: 50px;
 }
