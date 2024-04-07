@@ -13,7 +13,7 @@
         <div class="menu-bar">
             <nav>
                 <a href="index.html">Home</a>
-                <a href="team.htnml">Team</a>
+                <a href="team.html">Team</a>
                 <a href="login.php">Login</a>
                 <a href="signup.html">Sign up</a>
                 <a href="contact.html" id="contact-us">Contact Us</a>   
@@ -80,9 +80,8 @@
             $uname = $_POST['uname'];
             $email = $_POST['email'];
             $pass = $_POST['password'];
-            $cmpass = $_POST['cm_pass'];
 
-            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass','$cmpass')";
+            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
 
             mysqli_query($conn, $sql);
         }
