@@ -84,6 +84,66 @@
             $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
 
             mysqli_query($conn, $sql);
+
+            $sql = "DROP TABLE product CASCADE CONSTRAINTS";
+            mysqli_query($conn,$sql);
+            $sql = "DROP TABLE customer CASCADE CONSTRAINTS";
+            mysqli_query($conn,$sql);
+            $sql = "DROP TABLE supplier CASCADE CONSTRAINTS";
+            mysqli_query($conn,$sql);
+            $sql = "DROP TABLE order CASCADE CONSTRAINTS";
+            mysqli_query($conn,$sql);
+            $sql = "DROP TABLE order_items CASCADE CONSTRAINTS";
+            mysqli_query($conn,$sql);
+            $sql="CREATE TABLE supplier (
+                supplier_id int,
+                contact_info number,
+                supplier_name varchar(15),
+                constraint sup_id_pk primary key (supplier_id)) ";
+             mysqli_query($conn,$sql);
+            
+            $sql="CREATE TABLE customer(
+                customer_id int,
+                customer_name varchar(15),
+                contact_info number,
+                constraint cus_id_pk primary key (customer_id))";
+             mysqli_query($conn,$sql);
+            
+            $sql = "CREATE TABLE product (
+                product_id int,
+                product_name varchar(15),
+                product_description varchar(100),
+                price real,
+                qty_available number,
+                supplier_id int,
+                constraint pid_pk primary key (product_id),
+                constraint sup_id_fk foreign key(supplier_id) references supplier(supplier_id))";
+            mysqli_query($conn,$sql);
+            
+            $sql = "CREATE TABLE order(
+                order_id int,
+                customer_id int,
+                order_date date,
+                total_price real,
+                constraint ord_id_pk primary key (order_id),
+                constraint cus_id_fk foreign key(customer_id) references customer (customer_id)
+            )";
+            mysqli_query($conn,$sql);
+
+            $sql = "CREATE TABLE order_items(
+                order_item_id int,
+                order_id int,
+                product_id int,
+                quantity number,
+                subtotal real,
+                constraint ord_item_id_pk primary key (order_item_id),
+                constraint ord_id_fk foreign key (order_id) references order (order_id),
+                constraint pid_fk foreign key (product_id) references poduct (product_id)
+            )";
+            mysqli_query($conn,$sql);
+
+
+
         }
         
         mysqli_close($conn);
