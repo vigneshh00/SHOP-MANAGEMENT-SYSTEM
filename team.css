@@ -59,130 +59,143 @@ header .menu-bar a:nth-child(2){
 }
 
 .container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
+    text-align: center;
 }
 .container h1{
     color: rgb(71, 71, 71);
-    text-align: center;
     margin-top: 70px;
-    grid-column-start: 1;
-    grid-column-end:5;
 }
 .container hr{
     background-color: rgba(85, 85, 85, 0.722);
     width: 20%;
     height: 4px;
     margin: 10px auto;
-    margin-bottom: 70px;
-    grid-column-start: 1;
-    grid-column-end:5;
+    margin-bottom: 60px;
 }
-.container div:not(.icons){
+.container .content{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.container .content .member{
+    margin: 20px;
     padding: 40px;
-    margin: auto;
+    max-width: 350px;
+    max-height: 500px;
     box-shadow: 0px 2px 6px rgb(131, 131, 131);
     transition: 0.5s ease-in-out;
 }
-
-.container div img{
+.container .content .member img{
     width: 200px;
     height: 200px;
     margin-bottom: 30px;
     border-radius: 50%;
 }
-.container div:nth-child(3) img{
-    border: 5px solid rgb(25, 224, 255);
-}
-.container div:nth-child(4) img{
-    border: 5px solid rgba(24, 238, 74, 0.945);
-}
-.container div:nth-child(5) img{
-    border: 5px solid rgba(129, 32, 232, 0.796);
-}
-.container div:nth-child(6) img{
-    border: 5px solid rgb(238, 138, 24);
-}
-.container .member h2{
+.container .content .member h2{
     text-transform: capitalize;
     color: black;
     font-size: 22px;
     letter-spacing: 0.02cm;
     margin-bottom: 15px;
 }
-.container .member p{
+.container .content .member p{
     color: grey;
     letter-spacing: 0.05cm;
     text-transform: capitalize;
     font-size: 18px;
 }
-.container .member .icons{
+.container .content .member .icons{
     margin-top: 20px;
+    margin-bottom: 0px;
     font-size: 25px;
 }
-.container .icons span{
+.container .content .member .icons span{
     margin: auto;
     margin: 10px;
 }
-.container div:nth-child(3):hover{
+.container .content .member h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 21px;
+    letter-spacing: 0.02cm;
+    margin-bottom: 15px;
+}
+.container .content div:nth-child(1) img{
+    border: 5px solid rgb(25, 224, 255);
+}
+.container .content div:nth-child(2) img{
+    border: 5px solid rgba(24, 238, 74, 0.945);
+}
+.container .content div:nth-child(3) img{
+    border: 5px solid rgba(129, 32, 232, 0.796);
+}
+.container .content div:nth-child(4) img{
+    border: 5px solid rgb(238, 138, 24);
+}
+
+.container .content div:nth-child(1):hover{
     transform: scale(1.05);
     color: white;
     background-color: rgb(25, 224, 255);
 }
-.container div:nth-child(3):hover h2{
+.container .content div:nth-child(1):hover h2{
     color: white;
 }
-.container div:nth-child(3):hover p{
+.container .content div:nth-child(1):hover p{
     color: white;
 }
-.container div:nth-child(3):hover img{
+.container .content div:nth-child(1):hover img{
     border: 5px solid rgb(76, 155, 168)
 }
-.container div:nth-child(4):hover{
+.container .content div:nth-child(2):hover{
     transform: scale(1.05);
     color: white;
     background-color: rgba(24, 238, 74, 0.945);
 }
-.container div:nth-child(4):hover h2{
+.container .content div:nth-child(2):hover h2{
     color: white;
 }
-.container div:nth-child(4):hover p{
+.container .content div:nth-child(2):hover p{
     color: white;
 }
-.container div:nth-child(4):hover img{
+.container .content div:nth-child(2):hover img{
     border: 5px solid rgba(65, 170, 90, 0.945);
 }
-.container div:nth-child(5):hover{
+.container .content div:nth-child(3):hover{
     transform: scale(1.05);
     color: white;
     background-color: rgba(129, 32, 232, 0.796);
 }
-.container div:nth-child(5):hover h2{
+.container .content div:nth-child(3):hover h2{
     color: white;
 }
-.container div:nth-child(5):hover p{
+.container .content div:nth-child(3):hover p{
     color: white;
 }
-.container div:nth-child(5):hover img{
+.container .content div:nth-child(3):hover img{
     border: 5px solid rgba(80, 47, 115, 0.796);
 }
-.container div:nth-child(6):hover{
+.container .content div:nth-child(4):hover{
     transform: scale(1.05);
     color: white;
     background-color: rgb(238, 138, 24);
 }
-.container div:nth-child(6):hover h2{
+.container .content div:nth-child(4):hover h2{
     color: white;
 }
-.container div:nth-child(6):hover p{
+.container .content div:nth-child(4):hover p{
     color: white;
 }
-.container div:nth-child(6):hover img{
+.container .content div:nth-child(4):hover img{
     border: 5px solid rgba(244, 186, 119, 0.796);
+} 
+@media only screen and (max-width: 768px){
+    .container .content{
+        flex-direction: column;
+    }
 }
