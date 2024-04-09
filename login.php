@@ -47,13 +47,22 @@
                             <i class="fa-solid fa-eye-slash" id="eye2"></i>
                         </span>
                     </div>
+                    <div class="forgot">
+                        <p>Forgot Password?</p>
+                    </div>
                     <div class="submit">
                         <button type="submit">Login</button>
                     </div>
                 </form>
-                <div class="page">
-                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-                </div>
+                
+            </div>
+            <div class="container-1">
+                <h1>Hello there!</h1>
+                <p>
+                    We're glad to see you again. Please sign in to unlock our site's features.<br><br>
+                    Don't have an account?
+                </p>
+                <button><a href="signup.html">Sign up</a></button>
             </div>
         </div>
     </main>
@@ -87,14 +96,19 @@
 
             $sql = "DROP TABLE product CASCADE CONSTRAINTS";
             mysqli_query($conn,$sql);
+
             $sql = "DROP TABLE customer CASCADE CONSTRAINTS";
             mysqli_query($conn,$sql);
+
             $sql = "DROP TABLE supplier CASCADE CONSTRAINTS";
             mysqli_query($conn,$sql);
+
             $sql = "DROP TABLE order CASCADE CONSTRAINTS";
             mysqli_query($conn,$sql);
+
             $sql = "DROP TABLE order_items CASCADE CONSTRAINTS";
             mysqli_query($conn,$sql);
+
             $sql="CREATE TABLE supplier (
                 supplier_id int,
                 contact_info number,
@@ -126,8 +140,7 @@
                 order_date date,
                 total_price real,
                 constraint ord_id_pk primary key (order_id),
-                constraint cus_id_fk foreign key(customer_id) references customer (customer_id)
-            )";
+                constraint cus_id_fk foreign key(customer_id) references customer (customer_id))";
             mysqli_query($conn,$sql);
 
             $sql = "CREATE TABLE order_items(
@@ -138,11 +151,8 @@
                 subtotal real,
                 constraint ord_item_id_pk primary key (order_item_id),
                 constraint ord_id_fk foreign key (order_id) references order (order_id),
-                constraint pid_fk foreign key (product_id) references poduct (product_id)
-            )";
+                constraint pid_fk foreign key (product_id) references poduct (product_id))";
             mysqli_query($conn,$sql);
-
-
 
         }
         

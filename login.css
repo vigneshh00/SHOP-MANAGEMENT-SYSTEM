@@ -8,9 +8,14 @@
 html{
     scroll-behavior: smooth;
 }
+body{
+    background: linear-gradient(to left, #99ccff 0%, #ffffff 100%);
+    /* background-image: url(images/logn_@.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
 /* HEADER SECTION */
 header{
-    background-color: black;
     color: white;
     display: flex;
     justify-content:flex-end;
@@ -20,7 +25,7 @@ header{
 header .menu-bar a{
     position: relative;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.663);
+    color: rgba(48, 87, 186, 0.663);
     margin: 15px;
     font-size: 20px;
     text-transform: uppercase;
@@ -44,7 +49,7 @@ header .menu-bar a:not(#contact-us):hover::after{
     width: 100%;
 }
 header .menu-bar #contact-us{
-    border: 2px solid rgba(255, 255, 255, 0.663);
+    border: 2px solid rgba(77, 89, 182, 0.663);
     border-radius: 40px;
     padding: 13px;
     font-size: 20px;
@@ -66,15 +71,16 @@ main{
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    height:500px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255,255,255,0.2);
-    backdrop-filter: blur(15px);
+    background-color: rgb(255, 255, 255);
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px 20px 10px;
+    padding-left: 10px;
     margin: auto;
-	max-width:450px;
+	width:980px;
 	font-size: x-large;
 }
 .box h1{
@@ -82,15 +88,19 @@ main{
     text-align: center;
 }
 .box .container{
-	width:90%;
-	max-width:500px;
+	width:480px;
 }
-.box .container div,h1{
+.box .container .uname,.email,h1{
 	margin-bottom:50px;
 	position:relative;
 }
+.box .container .password{
+    margin-bottom:30px;
+	position:relative;
+}
 .box .container input[type=text],input[type=email],input[type=password]{
-    width:100%;
+    width:83%;
+    margin-left: 30px;
 	font-size:17px;
 	background: transparent;
 	outline: none;
@@ -103,7 +113,7 @@ main{
 	position:absolute;
 	pointer-events: none;
 	top:0;
-	left:0;
+	left:30px;
 	color:black;
 	transition: all 0.3s;
 	font-size:20px;
@@ -120,6 +130,7 @@ main{
 .box .container .line{
     position: absolute;
     bottom: 0;
+    left: 30px;
     width: 0%;
     display: block;
     border: transparent;
@@ -127,20 +138,26 @@ main{
     transition: 0.1s;
 }
 .box .container input:focus~ .line,input:valid~ .line{
-    width: 100%;
+    width: 83%;
 }
 .box .container .uname .icon,.email .icon{
     position: absolute;
     max-width:fit-content;
-    left:358px;
+    left:388px;
 }
 .box .container .password .eye{
     position: absolute;
     max-width:fit-content;
-    left:355px;
+    left:385px;
 }
 .box .container .password .eye #eye1{
     display: none;
+}
+.box .container .forgot{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(74, 74, 74);
+    margin-bottom: 30px;
 }
 .box .container .submit button{
     text-transform: uppercase;
@@ -150,7 +167,8 @@ main{
 	outline:none;
 	border:2px solid white;
 	border-radius: 30px;
-	width:35%;
+	width:40%;
+    font-weight: 200;
 	cursor:pointer;
     transition: all 0.4s;
 }
@@ -174,4 +192,53 @@ main{
 }
 span{
 	font-size: 20px;
+}
+.box .container-1{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    right: -1px;
+    padding-bottom:2px;
+    border: none;
+    border-radius: 40% 10px 10px 20%;
+    background-color: #4d72bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box .container-1 h1{
+    color: white;
+
+}
+.box .container-1 p{
+    color: white;
+    text-align: center;
+    margin:0px 40px 30px 40px;
+    letter-spacing: 0.06cm;
+    font-size: 22px;
+}
+.box .container-1 button{
+    text-transform: uppercase;
+    width: 30%;
+    margin-top: 0px;
+	padding:9px;
+	font-size:20px;
+	outline:none;
+    background: transparent;
+	border:2px solid white;
+	border-radius: 30px;
+    font-weight: 200;
+	cursor:pointer;
+    transition: all 0.4s;
+}
+.box .container-1 button:hover{
+    background-color: white;
+}
+.box .container-1 button a{
+    color: white;
+    text-decoration: none;
+}
+.box .container-1 button:hover a{
+    color: black;
 }
