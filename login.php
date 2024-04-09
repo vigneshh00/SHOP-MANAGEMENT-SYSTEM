@@ -59,7 +59,7 @@
             <div class="container-1">
                 <h1>Hello there!</h1>
                 <p>
-                    We're glad to see you again. Please sign in to unlock our site's features.<br><br>
+                    We're glad to see you again. Please login to unlock our site's features.<br><br>
                     Don't have an account?
                 </p>
                 <button><a href="signup.html">Sign up</a></button>

@@ -60,6 +60,7 @@ header .menu-bar a:nth-child(2){
 
 .container{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -99,7 +100,7 @@ header .menu-bar a:nth-child(2){
 .container .content .member h2{
     text-transform: capitalize;
     color: black;
-    font-size: 22px;
+    font-size: 21px;
     letter-spacing: 0.02cm;
     margin-bottom: 15px;
 }
@@ -117,13 +118,6 @@ header .menu-bar a:nth-child(2){
 .container .content .member .icons span{
     margin: auto;
     margin: 10px;
-}
-.container .content .member h2{
-    text-transform: capitalize;
-    color: black;
-    font-size: 21px;
-    letter-spacing: 0.02cm;
-    margin-bottom: 15px;
 }
 .container .content div:nth-child(1) img{
     border: 5px solid rgb(25, 224, 255);
@@ -197,5 +191,74 @@ header .menu-bar a:nth-child(2){
 @media only screen and (max-width: 768px){
     .container .content{
         flex-direction: column;
+    }
+}
+@media only screen and(min-width: 768px) and (max-width: 992px){
+        .container .content .member{
+            padding: 30px;
+        }
+        .container .content .member img{
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
+        }
+        .container .content .member h2{
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        .container .content .member p{
+            font-size: 15px;
+        }
+        .container .content .member .icons{
+            margin-top: 20px;
+            margin-bottom: 0px;
+            font-size: 17px;
+        }
+        .container .content .member .icons span{
+            margin: 8px;
+        }
+} 
+ @media only screen and (min-width: 992px) and (max-width: 1200px){
+    .container .content .member{
+        padding:25px;
+    }
+    .container .content .member img{
+        width: 190px;
+        height: 190px;
+        margin-bottom: 20px;
+    }
+    .container .content .member h2{
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    .container .content .member p{
+        font-size: 15px;
+    }
+    .container .content .member .icons{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1475px){
+    .container .content .member{
+        padding:25px;
+    }
+    .container .content .member img{
+        width: 195px;
+        height: 195px;
+        margin-bottom: 20px;
+    }
+    .container .content .member h2{
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .container .content .member p{
+        font-size: 15px;
+    }
+    .container .content .member .icons{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 20px;
     }
 }
