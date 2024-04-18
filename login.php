@@ -24,7 +24,7 @@
     <main>
         <div class="box">
             <div class="container">
-                <form action="main.php" method="post" autocomplete="off">
+                <form action="dashboard.php" method="post" autocomplete="off">
                     <h1>LOGIN</h1>
                     <div class="uname">
                         <input type="text" name="username"required>
@@ -125,16 +125,16 @@
             
             $sql = "CREATE TABLE product (
                 product_id int,
-                product_name varchar(15),
+                product_name varchar(40),
                 product_description varchar(100),
                 price real,
-                qty_available number,
+                qty_available number default 0,
                 supplier_id int,
                 constraint pid_pk primary key (product_id),
                 constraint sup_id_fk foreign key(supplier_id) references supplier(supplier_id))";
             mysqli_query($conn,$sql);
             
-            $sql = "CREATE TABLE order(
+            $sql = "CREATE TABLE customer_order(
                 order_id int,
                 customer_id int,
                 order_date date,
@@ -150,7 +150,7 @@
                 quantity number,
                 subtotal real,
                 constraint ord_item_id_pk primary key (order_item_id),
-                constraint ord_id_fk foreign key (order_id) references order (order_id),
+                constraint ord_id_fk foreign key (order_id) references customer_order (order_id),
                 constraint pid_fk foreign key (product_id) references poduct (product_id))";
             mysqli_query($conn,$sql);
 
