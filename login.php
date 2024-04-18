@@ -134,11 +134,7 @@
                 constraint sup_id_fk foreign key(supplier_id) references supplier(supplier_id))";
             mysqli_query($conn,$sql);
             
-<<<<<<< HEAD
-            $sql = "CREATE OR REPLACE TABLE customer_order(
-=======
             $sql = "CREATE TABLE customer_order(
->>>>>>> 9e7ac2b8e8b0e0cce818fe3160ee4c1f99b00be6
                 order_id int,
                 customer_id int,
                 order_date date,
