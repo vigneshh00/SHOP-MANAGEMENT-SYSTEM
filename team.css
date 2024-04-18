@@ -108,7 +108,7 @@ header .menu-bar a:nth-child(2){
     color: grey;
     letter-spacing: 0.05cm;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 17px;
 }
 .container .content .member .icons{
     margin-top: 20px;
@@ -254,7 +254,7 @@ header .menu-bar a:nth-child(2){
         margin-bottom: 15px;
     }
     .container .content .member p{
-        font-size: 15px;
+        font-size: 14px;
     }
     .container .content .member .icons{
         margin-top: 20px;
