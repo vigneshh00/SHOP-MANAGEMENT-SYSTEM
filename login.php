@@ -24,7 +24,7 @@
     <main>
         <div class="box">
             <div class="container">
-                <form action="main.php" method="post" autocomplete="off">
+                <form action="dashboard.php" method="post" autocomplete="off">
                     <h1>LOGIN</h1>
                     <div class="uname">
                         <input type="text" name="username"required>
@@ -125,16 +125,20 @@
             
             $sql = "CREATE OR REPLACE TABLE product (
                 product_id int,
-                product_name varchar(15),
+                product_name varchar(40),
                 product_description varchar(100),
                 price real,
-                qty_available number,
+                qty_available number default 0,
                 supplier_id int,
                 constraint pid_pk primary key (product_id),
                 constraint sup_id_fk foreign key(supplier_id) references supplier(supplier_id))";
             mysqli_query($conn,$sql);
             
+<<<<<<< HEAD
             $sql = "CREATE OR REPLACE TABLE customer_order(
+=======
+            $sql = "CREATE TABLE customer_order(
+>>>>>>> 9e7ac2b8e8b0e0cce818fe3160ee4c1f99b00be6
                 order_id int,
                 customer_id int,
                 order_date date,
