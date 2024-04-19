@@ -158,6 +158,7 @@
             mysqli_query($conn,$sql_order_items);
 
             $sql = "ALTER TABLE product ADD CONSTRAINT sup_id_fk FOREIGN KEY(supplier_id) REFERENCES supplier(supplier_id)";
+
             mysqli_query($conn,$sql);
 
             $sql = "ALTER TABLE customer_order ADD CONSTRAINT cus_id_fk FOREIGN KEY(customer_id) REFERENCES customer(customer_id)";
