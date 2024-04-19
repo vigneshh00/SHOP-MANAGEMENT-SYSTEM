@@ -82,7 +82,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s;
     width: 350px;
@@ -97,11 +97,18 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-
 .navbuttons {
     border: none;
 }
 
+a:link, a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 /* Footer styles */
 footer {
     background-color: black;

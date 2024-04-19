@@ -90,7 +90,7 @@
             $email = $_POST['email'];
             $pass = $_POST['password'];
 
-            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
+           $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
 
             mysqli_query($conn, $sql);
 
@@ -130,7 +130,7 @@
             $sql_customer="CREATE TABLE customer(
                 customer_id INT PRIMARY KEY AUTO_INCREMENT,
                 customer_name varchar(15),
-                contact_info INT )";
+                contact_info varchar(40) )";
              mysqli_query($conn,$sql_customer);
             
             $sql_product = "CREATE TABLE product (
