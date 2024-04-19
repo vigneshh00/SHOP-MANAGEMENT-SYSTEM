@@ -110,48 +110,44 @@
         //     mysqli_query($conn,$sql);
 
             $sql="CREATE OR REPLACE TABLE supplier (
-                supplier_id int,
-                contact_info number,
-                supplier_name varchar(15),
-                constraint sup_id_pk primary key (supplier_id)) ";
+                supplier_id int primary key,
+                contact_info int,
+                supplier_name varchar(15)
+               )";
              mysqli_query($conn,$sql);
             
             $sql="CREATE OR REPLACE TABLE customer(
-                customer_id int,
+                customer_id int primary key,
                 customer_name varchar(15),
-                contact_info number,
-                constraint cus_id_pk primary key (customer_id))";
+                contact_info int
+                )";
              mysqli_query($conn,$sql);
             
             $sql = "CREATE OR REPLACE TABLE product (
-                product_id int,
+                product_id int primary key,
                 product_name varchar(40),
                 product_description varchar(100),
-                price real,
-                qty_available number default 0,
-                supplier_id int,
-                constraint pid_pk primary key (product_id),
-                constraint sup_id_fk foreign key(supplier_id) references supplier(supplier_id))";
+                price int,
+                qty_available int default 0,
+                supplier_id int
+             )";
             mysqli_query($conn,$sql);
             
-            $sql = "CREATE TABLE customer_order(
-                order_id int,
+            $sql = "CREATE OR REPLACE TABLE customer_order(
+                order_id int primary key,
                 customer_id int,
                 order_date date,
-                total_price real,
-                constraint ord_id_pk primary key (order_id),
-                constraint cus_id_fk foreign key(customer_id) references customer (customer_id))";
+                total_price int)
+              ";
             mysqli_query($conn,$sql);
 
             $sql = "CREATE OR REPLACE TABLE order_items(
-                order_item_id int,
+                order_item_id int primary key,
                 order_id int,
                 product_id int,
-                quantity number,
-                subtotal real,
-                constraint ord_item_id_pk primary key (order_item_id),
-                constraint ord_id_fk foreign key (order_id) references customer_order (order_id),
-                constraint pid_fk foreign key (product_id) references poduct (product_id))";
+                quantity int,
+                subtotal int
+                )";
             mysqli_query($conn,$sql);
 
         }
