@@ -42,7 +42,8 @@ mysqli_close($conn);
 
     <section class="content" id="content">
         <div class="buttonSection" id="buttonSection">
-            <button class="navbuttons"><div class="buttons" id="productInfo"><p>Product</p></div></button>
+
+            <button class="navbuttons"><div class="buttons" id="productInfo" onclick="window.location.href='add_new_product.php'"><p>Product</p></div></button>
             <button class="navbuttons"><div class="buttons" id="supplierInfo"  onclick="window.location.href='supplier.html'"><p>Supplier</p></div></button>
             <button class="navbuttons"><div class="buttons" id="customerInfo"  onclick="window.location.href='customer.html'"><p>Customer</p></div></button>
         </div>

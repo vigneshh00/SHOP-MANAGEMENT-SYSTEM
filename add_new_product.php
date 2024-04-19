@@ -36,7 +36,7 @@
                     </div>
                     <div class="shopname">
                         <input type="text" name="shopname" id="shopname" required>
-                        <label for="shopname">Quantity Available</label>
+                        <label for="shopname">Quantity</label>
                         <span class="line"></span>
                     </div>
                     <div class="name">
@@ -47,11 +47,45 @@
                     <div class="submit">
                         <button type="submit">Add</button>
                     </div>
+                    
                 </form>
+                <div class="submit">
+                    <form action="list.php">
+                        <button type="submit">Product list</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "shop management system";
 
+    $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+    if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $pid = intval($_POST['pid']);
+        $pname = $_POST['lname'];
+        $price = floatval($_POST['phno']);
+        $pdesc = $_POST['shopadd'];
+        $quantity=intval($_POST['shopname']);
+        $sup_id=intval($_POST['uname']);
+    
+    $ins_values="INSERT INTO product VALUES ('$pid','$pname','$pdesc','$price','$quantity','$sup_id')";
+   
+    if( mysqli_query($conn,$ins_values)){
+        echo "<script> alert('Product added successfully!');</script>";
+    }
+    }
+
+    mysqli_close($conn);
+?>
     
     <script src="signup.js"></script>
 </body>

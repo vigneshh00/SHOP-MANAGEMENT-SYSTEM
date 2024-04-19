@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    
+}
+
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    font-size:24px;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+
+.submit button{
+    text-transform: uppercase;
+    margin-left: 130px;
+	padding:9px;
+	font-size:20px;
+	outline:none;
+	border:2px solid white;
+	border-radius: 30px;
+	width:35%;
+	cursor:pointer;
+    transition: all 0.4s;
+}
+.submit button:hover{
+    background-color: black;
+    color: white;
+  }
+  .submit button a{
+    color: black;
+    text-decoration: none;
+}
+.submit button:hover a{
+    color: white;
+}
+.container{
+    background-color: #1B1B1B;
+    color: white;
+    height: 80px;
+    padding:0;
+    margin:0;
+    align-items: center;
+    display: flex;
+}
+
+.container text{
+    padding-top: -5px;
+    margin-left: 20px;
+    font-family: "Merriweather",serif;
+    font-size: xx-large;
+}
+.add-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    width:80%;
+    margin:0 auto;
+}
+.bt{
+    margin-right: 185px;
+}
