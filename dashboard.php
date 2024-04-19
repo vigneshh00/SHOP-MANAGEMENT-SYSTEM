@@ -42,12 +42,12 @@ mysqli_close($conn);
 
     <section class="content" id="content">
         <div class="buttonSection" id="buttonSection">
-            <button class="navbuttons"><div class="buttons" id="addProducts" onclick = "windows.location.href = /"list.php"><p>Add a new product</p></div></button>
+            <!-- <button class="navbuttons"><div class="buttons" id="addProducts" onclick = "windows.location.href = /"list.php"><p>Add a new product</p></div></button>
             <button class="navbuttons"><div class="buttons" id="listProducts"><p>List the products</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="billing"><p>Billing</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="productInfo"><p>Customer Information</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="supplierInfo"><p>Supplier Information</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="logout"><p>Logout</p></div></button>
+            <button class="navbuttons"><div class="buttons" id="billing"><p>Billing</p></div></button> -->
+            <button class="navbuttons"><div class="buttons" id="productInfo"><p>Product</p></div></button>
+            <button class="navbuttons"><div class="buttons" id="supplierInfo"><p>Supplier</p></div></button>
+            <button class="navbuttons"><div class="buttons" id="customerInfo"><a href="customer.html"><p>Customer</p></a></div></button>
         </div>
     </section>
 
