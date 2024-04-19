@@ -90,7 +90,7 @@
             $email = $_POST['email'];
             $pass = $_POST['password'];
 
-            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
+           $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
 
             mysqli_query($conn, $sql);
 
