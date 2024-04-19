@@ -20,7 +20,7 @@
  if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
-$name="Select firstname,lastname,shop_name from signup where username='$user'";
+$name="Select first_name,last_name,shop_name from signup where username='$user'";
 $res=mysqli_query($conn,$name); 
 $row = mysqli_fetch_assoc($res);
 mysqli_close($conn);
@@ -30,8 +30,8 @@ mysqli_close($conn);
         <div class="headSection" id="headSection">
             <div id="storeDetails" class="storeDetails">
                 <h1 class="storename" id="storename"><?php echo $row['shop_name'];?></h1>
-                <p class="username" id="username">Hello <?php echo $row["firstname"];
-                echo " " .$row['lastname'];?></p>
+                <p class="username" id="username">Hello <?php echo $row["first_name"];
+                echo " " .$row['last_name'];?></p>
             </div>
                 <div>
                     <input type="text" class="searchBar" id="searchBar" placeholder="Search a product..">
