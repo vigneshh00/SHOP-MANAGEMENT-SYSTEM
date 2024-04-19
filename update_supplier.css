@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.box{
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height:450px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    margin: auto;
+    margin-top:180px;
+	width:550px;
+	font-size: x-large;
+}
+.box h1{
+    color: #3348a4;
+    text-align: center;
+    margin-top: 30px;
+}
+.box .container{
+	width:480px;
+}
+.box .container .sid,.sname,.conInfo,h1{
+	margin-bottom:50px;
+	position:relative;
+}
+.box .container .conInfo{
+    margin-bottom:30px;
+	position:relative;
+}
+.box .container input[type=text]{
+    width:83%;
+    margin-left: 30px;
+	font-size:17px;
+	background: transparent;
+	outline: none;
+	border: transparent;
+	color: rgb(77, 77, 77);
+	border-bottom: 2px solid rgb(77, 77, 77);
+}
+.box .container label{
+	height:100%;
+	position:absolute;
+	pointer-events: none;
+	top:0;
+	left:30px;
+	color:black;
+	transition: all 0.3s;
+	font-size:20px;
+}
+.box .container input:focus~label{
+	top:-20px;
+	color:#5775fc;
+	font-size:18px;
+}
+.box .container input:valid~label{
+	top:-20px;
+	font-size:18px;
+}
+.box .container .line{
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 0%;
+    display: block;
+    border: transparent;
+    border-bottom: 2px solid #5775fc;
+    transition: 0.1s;
+}
+.box .container input:focus~ .line,input:valid~ .line{
+    width: 83%;
+}
+.box .container .submit button{
+    text-transform: uppercase;
+	padding:9px;
+	font-size:20px;
+    margin-left: 250px;
+	outline:none;
+	border:2px solid white;
+	border-radius: 30px;
+	width:30%;
+    font-weight: 200;
+	cursor:pointer;
+    transition: all 0.4s;
+}
+.box .container .back button{
+    text-transform: uppercase;
+	padding:9px;
+	font-size:20px;
+    margin-left: 200px;
+	outline:none;
+	border:2px solid white;
+	border-radius: 30px;
+	width:30%;
+    font-weight: 200;
+	cursor:pointer;
+    transition: all 0.4s;
+    position: relative;
+    bottom:43px;
+    left: -130px;
+}
+
+.box .container .submit button:hover,.back button:hover{
+  background-color: black;
+  color: white;
+}
