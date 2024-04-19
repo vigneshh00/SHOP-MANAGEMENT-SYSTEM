@@ -90,64 +90,84 @@
             $email = $_POST['email'];
             $pass = $_POST['password'];
 
-           $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
+            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
 
             mysqli_query($conn, $sql);
 
-        //   $sql = "DROP TABLE product CASCADE CONSTRAINTS";
-        //     mysqli_query($conn,$sql);
+            $sql = "ALTER TABLE product DROP CONSTRAINT sup_id_fk";
+            mysqli_query($conn,$sql);
 
-        //     $sql = "DROP TABLE customer CASCADE CONSTRAINTS";
-        //     mysqli_query($conn,$sql);
+            $sql = "ALTER TABLE customer_order DROP CONSTRAINT cus_id_fk";
+            mysqli_query($conn,$sql);
 
-        //     $sql = "DROP TABLE supplier CASCADE CONSTRAINTS";
-        //     mysqli_query($conn,$sql);
+            $sql = "ALTER TABLE order_items DROP CONSTRAINT ord_id_fk";
+            mysqli_query($conn,$sql);
 
-        //     $sql = "DROP TABLE customer_order CASCADE CONSTRAINTS";
-        //     mysqli_query($conn,$sql);
+            $sql = "ALTER TABLE order_items DROP CONSTRAINT pid_id_fk";
+            mysqli_query($conn,$sql);
 
-        //     $sql = "DROP TABLE order_items CASCADE CONSTRAINTS";
-        //     mysqli_query($conn,$sql);
+            $sql = "DROP TABLE product";
+            mysqli_query($conn,$sql);
 
-            $sql="CREATE OR REPLACE TABLE supplier (
-                supplier_id int primary key,
-                contact_info int,
-                supplier_name varchar(15)
-               )";
-             mysqli_query($conn,$sql);
+            $sql = "DROP TABLE customer";
+            mysqli_query($conn,$sql);
+
+            $sql = "DROP TABLE supplier";
+            mysqli_query($conn,$sql);
+
+            $sql = "DROP TABLE customer_order";
+            mysqli_query($conn,$sql);
+
+            $sql = "DROP TABLE order_items";
+            mysqli_query($conn,$sql);
+
+            $sql_supplier="CREATE TABLE supplier (
+                supplier_id INT PRIMARY KEY,
+                contact_info varchar(60),
+                supplier_name varchar(40) )";
+             mysqli_query($conn,$sql_supplier);
             
-            $sql="CREATE OR REPLACE TABLE customer(
-                customer_id int primary key,
+            $sql_customer="CREATE TABLE customer(
+                customer_id INT PRIMARY KEY AUTO_INCREMENT,
                 customer_name varchar(15),
-                contact_info int
-                )";
-             mysqli_query($conn,$sql);
+                contact_info INT )";
+             mysqli_query($conn,$sql_customer);
             
-            $sql = "CREATE OR REPLACE TABLE product (
-                product_id int primary key,
+            $sql_product = "CREATE TABLE product (
+                product_id INT PRIMARY KEY,
                 product_name varchar(40),
                 product_description varchar(100),
-                price int,
-                qty_available int default 0,
-                supplier_id int
-             )";
-            mysqli_query($conn,$sql);
-            
-            $sql = "CREATE OR REPLACE TABLE customer_order(
-                order_id int primary key,
-                customer_id int,
-                order_date date,
-                total_price int)
-              ";
+                price DECIMAL(10,2),
+                qty_available INT DEFAULT 0,
+                supplier_id INT)";
+            mysqli_query($conn,$sql_product);
+        
+            $sql_customer_order = "CREATE TABLE customer_order(
+                order_id INT PRIMARY KEY,
+                customer_id INT,
+                order_date DATE,
+                total_price DECIMAL(10,2))";
+            mysqli_query($conn,$sql_customer_order);
+
+            $sql_order_items = "CREATE TABLE order_items(
+                order_item_id INT PRIMARY KEY,
+                order_id INT,
+                product_id INT,
+                quantity INT,
+                subtotal DECIMAL(10,2) )";
+            mysqli_query($conn,$sql_order_items);
+
+            $sql = "ALTER TABLE product ADD CONSTRAINT sup_id_fk FOREIGN KEY(supplier_id) REFERENCES supplier(supplier_id)";
+
             mysqli_query($conn,$sql);
 
-            $sql = "CREATE OR REPLACE TABLE order_items(
-                order_item_id int primary key,
-                order_id int,
-                product_id int,
-                quantity int,
-                subtotal int
-                )";
+            $sql = "ALTER TABLE customer_order ADD CONSTRAINT cus_id_fk FOREIGN KEY(customer_id) REFERENCES customer(customer_id)";
+            mysqli_query($conn,$sql);
+
+            $sql = "ALTER TABLE order_items ADD CONSTRAINT ord_id_fk FOREIGN KEY(order_id) REFERENCES customer_order (order_id)";
+            mysqli_query($conn,$sql);
+
+            $sql = "ALTER TABLE order_items ADD CONSTRAINT pid_id_fk FOREIGN KEY(product_id) REFERENCES product(product_id)";
             mysqli_query($conn,$sql);
 
         }
