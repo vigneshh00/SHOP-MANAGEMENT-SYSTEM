@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* HEADER SECTION */
+header {
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+}
+
+header .menu-bar a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.663);
+    margin: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+header .menu-bar a:not(#contact-us)::after {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    height: 2px;
+    width: 0%;
+    transition: all 0.3s;
+}
+
+header .menu-bar a:not(#contact-us):hover {
+    color: white;
+}
+
+header .menu-bar a:not(#contact-us):hover::after {
+    width: 100%;
+}
+
+header .menu-bar #contact-us {
+    border: 2px solid rgba(255, 255, 255, 0.663);
+    border-radius: 40px;
+    padding: 13px;
+    font-size: 20px;
+}
+
+header .menu-bar #contact-us:hover {
+    border: 2px solid white;
+    color: black;
+    background-color: white;
+}
+
+header .menu-bar a:nth-child(4) {
+    color: white;
+}
+
+/* SIGN UP BOX */
+main {
+    padding: 60px;
+}
+
+.box {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    margin: auto;
+    max-width: 450px;
+    font-size: x-large;
+}
+
+.box h1 {
+    color: #3348a4;
+    text-align: center;
+}
+
+.box .container {
+    width: 90%;
+    max-width: 600px;
+}
+
+.box .container div:not(.shopadd),
+h1 {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.box .container input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    font-size: 17px;
+    background: transparent;
+    outline: none;
+    border: transparent;
+    color: rgb(77, 77, 77);
+    border-bottom: 2px solid rgb(77, 77, 77);
+}
+
+.box .container label:not(.shadd) {
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    color: black;
+    transition: all 0.3s;
+    font-size: 20px;
+}
+
+.box .container .shopadd label {
+    font-size: 20px;
+}
+
+.box .container input:focus~label {
+    top: -20px;
+    color: #5775fc;
+    font-size: 18px;
+}
+
+.box .container input:valid~label {
+    top: -20px;
+    font-size: 18px;
+}
+
+.box .container .line {
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    display: block;
+    border: transparent;
+    border-bottom: 2px solid #5775fc;
+    transition: 0.1s;
+}
+
+.box .container input:focus~.line,
+input:valid~.line {
+    width: 100%;
+}
+
+.box .container textarea {
+    resize: vertical;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.box .container .password .eye {
+    position: absolute;
+    max-width: fit-content;
+    left: 350px;
+}
+
+.box .container .password .eye #eye1,
+#eye3 {
+    display: none;
+}
+
+.box .container button {
+    text-transform: uppercase;
+    margin-left: 10px;
+    margin-right: 10px; /* Added margin-right to separate the buttons */
+    padding: 9px;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 30px;
+    width: 35%;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.box .container button:hover {
+    background-color: black;
+    color: white;
+}
+
+.box .container button a {
+    color: black;
+    text-decoration: none;
+}
+
+.box .container button:hover a {
+    color: white;
+}
+
+.box .container .page p {
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+}
+
+.box .container .page a {
+    color: black;
+}
+
+span {
+    font-size: 20px;
+}
+
+.box .container button {
+    text-transform: uppercase;
+    margin-left: 10px;
+    padding: 9px;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 30px;
+    width: 35%;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.box .container button {
+    text-transform: uppercase;
+    margin-right: 10px; /* Added margin-right to separate the buttons */
+    padding: 5px;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 30px;
+    width: 50%;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btns { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    margin-left: 130px;
+  
+}
