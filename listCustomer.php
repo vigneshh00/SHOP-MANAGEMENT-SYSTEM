@@ -7,6 +7,36 @@ echo "
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>List Customer</title>
+    <link rel='stylesheet' href='listCustomer.css'>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        padding: 10px;
+      }
+
+      th {
+        font-size: 30px;
+        background-color: black;
+        color: whitesmoke;
+      }
+      
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+      }
+
+      td {
+        font-size: 20px;
+      }
+      
+      tr:hover {
+        background-color: #333;
+        color: whitesmoke;
+      }
+    </style>
+
 </head>";
 
 $servername = "localhost";
@@ -24,8 +54,14 @@ if (!$conn) {
 $sql = "SELECT * FROM customer";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    echo "<table border='1'>
+if(mysqli_num_rows($result)==0){
+    echo "<p class='message' id='message'>No Customers to display!<p>";
+    echo "<div class=\"submit\"><button class=\"bt\" onclick=\"window.location.href='addCustomer.php'\">Add your first customer</button> </div>";
+    echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='customer.html'\">Back</button> </div>";
+} 
+
+elseif (mysqli_num_rows($result) > 0) {
+    echo "<table>
             <tr>
                 <th>Customer ID</th>
                 <th>Customer Name</th>
@@ -40,8 +76,7 @@ if (mysqli_num_rows($result) > 0) {
               </tr>";
     }
     echo "</table>";
-} else {
-    echo "0 results";
+    echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='customer.html'\">Back</button> </div>";
 }
 
 mysqli_close($conn);

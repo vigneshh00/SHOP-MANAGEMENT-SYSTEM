@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Customer</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="addCustomer.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -30,8 +30,9 @@
                         <label for="phone_number">Contact Info</label>
                         <span class="line"></span>
                     </div>
-                    <div class="submit">
-                        <button type="submit" name="submit" value="submit">UPDATE</button>
+                    <div class="btns" id="btns">
+                        <button type="submit" name="submit" value="submit">Update</button>
+                        <button onclick="window.location.href='customer.html'">Back</button>
                     </div>
                 </form>
                 
