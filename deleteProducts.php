@@ -69,12 +69,19 @@
                 $sql = "DELETE FROM product WHERE product_name = '$productName'";
             }
         
-            mysqli_query($conn, $sql);
-        }
+            $result=mysqli_query($conn, $sql);
+            if($result ){
+                echo "<script> alert('Deleted product details successfully!');</script>";
+            }
+            else {
+                echo "Error deleting record: " . mysqli_error($conn);
+            }
+            }}
+        
         
         mysqli_close($conn);
         
-    }
+    
 ?>
 
 
