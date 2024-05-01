@@ -138,6 +138,7 @@ main{
     width: 100%;
 }
 .box .container textarea{
+    font-size: 18px;
     resize: vertical;
     margin-top: 20px;
     margin-bottom: 50px;

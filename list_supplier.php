@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Suppliers</title>
-    <link rel="stylesheet" href="list_supplier.css">
+    <link rel="stylesheet" href="list.css">
 </head>
 <body>
     <?php
