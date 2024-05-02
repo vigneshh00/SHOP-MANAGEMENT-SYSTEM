@@ -122,22 +122,26 @@
 
             $sql_supplier="CREATE TABLE supplier (
                 supplier_id INT PRIMARY KEY,
-                contact_info varchar(60),
-                supplier_name varchar(40) )";
+                supplier_phonenumber varchar(60),
+                supplier_name varchar(40),
+                supplier_address varchar(100),
+                quantity_supplied INT )";
              mysqli_query($conn,$sql_supplier);
             
             $sql_customer="CREATE TABLE customer(
                 customer_id INT PRIMARY KEY AUTO_INCREMENT,
                 customer_name varchar(15),
-                contact_info varchar(40) )";
+                customer_phonenumber varchar(40),
+                customer_address varchar(100),
+                no_of_visits INT)";
              mysqli_query($conn,$sql_customer);
             
             $sql_product = "CREATE TABLE product (
                 product_id INT PRIMARY KEY,
                 product_name varchar(40),
-                product_description varchar(100),
+                category varchar(40),
                 price DECIMAL(10,2),
-                qty_available INT DEFAULT 0,
+                quantity_available INT DEFAULT 0,
                 supplier_id INT)";
             mysqli_query($conn,$sql_product);
         
