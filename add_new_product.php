@@ -15,18 +15,18 @@
             <div class="container">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" autocomplete="off">
                     <h1>ADD A PRODUCT</h1>
-                    <div class="pid">
+                    <!--<div class="pid">
                         <input type="text" name="pid" id="productId" required>
                         <label for="productId">Product ID</label>
                         <span class="line"></span>
-                    </div>
+                    </div>-->
                     <div class="lname">
                         <input type="text" name="lname" id="lastname" required>
                         <label for="lastname">Product Name</label>
                         <span class="line"></span>
                     </div>
                     <div class="shopadd">
-                        <label for="shop_address" class="shadd">Product Description</label>
+                        <label for="shop_address" class="shadd">Product Category</label>
                         <textarea name="shopadd" id="shop_address" cols="55" rows="10" required></textarea>
                     </div>
                     <div class="phno">

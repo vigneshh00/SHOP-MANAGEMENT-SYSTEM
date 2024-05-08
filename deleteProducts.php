@@ -70,8 +70,12 @@
             }
         
             $result=mysqli_query($conn, $sql);
-            if($result ){
-                echo "<script> alert('Deleted product details successfully!');</script>";
+            if($result){
+                if(mysqli_affected_rows($conn)>0){
+                echo "<script> alert('Deleted product details successfully!');</script>";}
+                else{
+                    echo "<script> alert('Product not found!');</script>";
+                }
             }
             else {
                 echo "Error deleting record: " . mysqli_error($conn);
