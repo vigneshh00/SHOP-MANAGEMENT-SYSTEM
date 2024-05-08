@@ -70,14 +70,14 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        $pid = intval($_POST['pid']);
+     
         $pname = $_POST['lname'];
         $price = floatval($_POST['phno']);
         $pdesc = $_POST['shopadd'];
         $quantity=intval($_POST['shopname']);
         $sup_id=intval($_POST['uname']);
     
-    $ins_values="INSERT INTO product VALUES ('$pid','$pname','$pdesc','$price','$quantity','$sup_id')";
+    $ins_values="INSERT INTO product(product_name,category,price,quantity_available,supplier_id) VALUES ('$pname','$pdesc','$price','$quantity','$sup_id')";
    
     if( mysqli_query($conn,$ins_values)){
         echo "<script> alert('Product added successfully!');</script>";

@@ -26,7 +26,7 @@
         die("Connection failed: " . mysqli_connect_error());
       }
     
-    $product_list="select * from product order by product_description";
+    $product_list="select * from product order by category";
     $res=mysqli_query($conn,$product_list); 
     if(mysqli_num_rows($res)==0){
       echo "You havent added any products yet!<br>";
@@ -44,9 +44,9 @@
     <tr>
         <td><?php echo $row['product_id']?></td>
         <td><?php echo $row['product_name']?></td>
-        <td><?php echo $row['product_description']?></td>
+        <td><?php echo $row['category']?></td>
         <td><?php echo $row['price']?></td>
-        <td><?php echo $row['qty_available']?></td>
+        <td><?php echo $row['quantity_available']?></td>
         <td><?php echo $row['supplier_id']?></td>
       </tr>
       <?php

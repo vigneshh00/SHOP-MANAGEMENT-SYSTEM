@@ -89,7 +89,9 @@
             $uname = $_POST['uname'];
             $email = $_POST['email'];
             $pass = $_POST['password'];
-
+            
+            $sql= "TRUNCATE TABLE signup";
+            mysqli_query($conn,$sql);
             $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
             mysqli_query($conn, $sql);
 
@@ -121,12 +123,16 @@
             mysqli_query($conn,$sql);
 
             $sql_supplier="CREATE TABLE supplier (
-                supplier_id INT PRIMARY KEY,
-                supplier_phonenumber varchar(60),
+                supplier_id INT PRIMARY KEY AUTO_INCREMENT,
+                
                 supplier_name varchar(40),
+                supplier_phonenumber varchar(60),
                 supplier_address varchar(100),
-                quantity_supplied INT )";
+                quantity_supplied INT ) ";
              mysqli_query($conn,$sql_supplier);
+             $sql_supplier="Alter table supplier AUTO_INCREMENT=1";
+             mysqli_query($conn,$sql_supplier);
+
             
             $sql_customer="CREATE TABLE customer(
                 customer_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -135,30 +141,39 @@
                 customer_address varchar(100),
                 no_of_visits INT)";
              mysqli_query($conn,$sql_customer);
+             $sql_supplier="Alter table customer AUTO_INCREMENT=100";
+             mysqli_query($conn,$sql_supplier);
             
             $sql_product = "CREATE TABLE product (
-                product_id INT PRIMARY KEY,
+                product_id INT AUTO_INCREMENT PRIMARY KEY,
                 product_name varchar(40),
                 category varchar(40),
                 price DECIMAL(10,2),
                 quantity_available INT DEFAULT 0,
                 supplier_id INT)";
             mysqli_query($conn,$sql_product);
+            $sql_supplier="Alter table product AUTO_INCREMENT=1000";
+            mysqli_query($conn,$sql_supplier);
         
             $sql_customer_order = "CREATE TABLE customer_order(
-                order_id INT PRIMARY KEY,
+                order_id INT AUTO_INCREMENT PRIMARY KEY,
                 customer_id INT,
                 order_date DATE,
                 total_price DECIMAL(10,2))";
             mysqli_query($conn,$sql_customer_order);
+            $sql_supplier="Alter table customer_order AUTO_INCREMENT=1";
+            mysqli_query($conn,$sql_supplier);
+
 
             $sql_order_items = "CREATE TABLE order_items(
-                order_item_id INT PRIMARY KEY,
+                order_item_id INT AUTO_INCREMENT PRIMARY KEY,
                 order_id INT,
                 product_id INT,
                 quantity INT,
                 subtotal DECIMAL(10,2) )";
             mysqli_query($conn,$sql_order_items);
+            $sql_supplier="Alter table order_items AUTO_INCREMENT=1";
+            mysqli_query($conn,$sql_supplier);
 
             $sql = "ALTER TABLE product ADD CONSTRAINT sup_id_fk FOREIGN KEY(supplier_id) REFERENCES supplier(supplier_id)";
             mysqli_query($conn,$sql);
