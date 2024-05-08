@@ -27,7 +27,7 @@
                     </div>
                     <div class="customer_add">
                         <label for="customer_address" class="shadd">Address</label>
-                        <textarea name="cust_add" id="customer_address" cols="40" rows="10" required></textarea>
+                        <textarea name="cust_add" id="customer_address" cols="53" rows="10" required></textarea>
                     </div>
                     <div class="btns" id="btns">
                         <button type="submit" name="submit" value="submit">Add</button>
