@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Customer</title>
+    <title>Update Customer</title>
     <link rel="stylesheet" href="addCustomer.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
@@ -15,11 +15,6 @@
             <div class="container">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off">
                     <h1>UPDATE DETAILS</h1>
-                    <div class="fname">
-                        <input type="text" name="customerID" id="customerID">
-                        <label for="customerID">Customer ID</label>
-                        <span class="line"></span>
-                    </div>
                     <div class="lname">
                         <input type="text" name="customerName" id="customerName" required>
                         <label for="customerName">Customer Name</label>
@@ -27,8 +22,12 @@
                     </div>
                     <div class="phno">
                         <input type="text" name="phno" id="phone_number" required>
-                        <label for="phone_number">Contact Info</label>
+                        <label for="phone_number">Phone Number</label>
                         <span class="line"></span>
+                    </div>
+                    <div class="customer_add">
+                        <label for="customer_address" class="shadd">Address</label>
+                        <textarea name="cust_add" id="customer_address" cols="40" rows="10" required></textarea>
                     </div>
                     <div class="btns" id="btns">
                         <button type="submit" name="submit" value="submit">Update</button>
@@ -54,16 +53,11 @@ if (isset($_POST['submit'])) {
     }
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $customerID = intval($_POST['customerID']);
         $customerName = $_POST['customerName'];
         $phno = $_POST['phno'];
+        $customerAddress = $_POST['cust_add'];
     
-        if (!empty($customerID) && !empty($customerName)) {
-            $sql = "UPDATE customer SET customer_name='$customerName', contact_info='$phno' WHERE customer_id='$customerID' or customer_name='$customerName'";
-        } elseif (!empty($customerName)) {
-            $sql = "UPDATE customer SET contact_info='$phno' WHERE customer_name='$customerName'";
-        }
-    
+        $sql = "UPDATE customer SET customer_phonenumber='$phno', customer_address='$customerAddress' WHERE customer_name='$customerName'";
         mysqli_query($conn, $sql);
     
     }

@@ -15,11 +15,6 @@
             <div class="container">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off">
                     <h1>ADD CUSTOMER</h1>
-                    <div class="fname">
-                        <input type="text" name="customerID" id="customerID" required>
-                        <label for="customerID">Customer ID</label>
-                        <span class="line"></span>
-                    </div>
                     <div class="lname">
                         <input type="text" name="customerName" id="customerName" required>
                         <label for="customerName">Customer Name</label>
@@ -27,8 +22,12 @@
                     </div>
                     <div class="phno">
                         <input type="text" name="phno" id="phone_number" required>
-                        <label for="phone_number">Contact Info</label>
+                        <label for="phone_number">Phone Number</label>
                         <span class="line"></span>
+                    </div>
+                    <div class="customer_add">
+                        <label for="customer_address" class="shadd">Address</label>
+                        <textarea name="cust_add" id="customer_address" cols="40" rows="10" required></textarea>
                     </div>
                     <div class="btns" id="btns">
                         <button type="submit" name="submit" value="submit">Add</button>
@@ -53,18 +52,14 @@ if (isset($_POST['submit'])) {
           die("Connection failed: " . mysqli_connect_error());
         }
 
-        // $customerID = " ";
-        // $customerName = "placeholder";
-        // $phno = " ";
-
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $customerID = intval($_POST['customerID']);
             $customerName = $_POST['customerName'];
             $phno = $_POST['phno'];
+            $customerAddress = $_POST['cust_add'];
         }
 
         
-        $sql = "insert into customer values('$customerID','$customerName','$phno')";
+        $sql = "insert into customer (customer_name, customer_phonenumber, customer_address) values('$customerName','$phno', '$customerAddress')";
 
         mysqli_query($conn, $sql);
 

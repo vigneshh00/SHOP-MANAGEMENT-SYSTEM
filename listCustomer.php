@@ -65,14 +65,18 @@ elseif (mysqli_num_rows($result) > 0) {
             <tr>
                 <th>Customer ID</th>
                 <th>Customer Name</th>
-                <th>Contact Info</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Number of Visits</th>
             </tr>";
 
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
                 <td>".$row["customer_id"]."</td>
                 <td>".$row["customer_name"]."</td>
-                <td>".$row["contact_info"]."</td>
+                <td>".$row["customer_phonenumber"]."</td>
+                <td>".$row["customer_address"]."</td>
+                <td>".$row["no_of_visits"]."</td>
               </tr>";
     }
     echo "</table>";
