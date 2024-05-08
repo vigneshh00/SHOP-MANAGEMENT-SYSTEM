@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php
- $user = $_POST['username'];
  $servername = "localhost";
  $username = "root";
  $password = "";
@@ -20,7 +19,7 @@
  if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
-$name="Select first_name,last_name,shop_name from signup where username='$user'";
+$name="Select first_name,last_name,shop_name from signup";
 $res=mysqli_query($conn,$name); 
 $row = mysqli_fetch_assoc($res);
 mysqli_close($conn);

@@ -159,7 +159,7 @@ input:valid~.line {
 .box .container textarea {
     resize: vertical;
     margin-top: 20px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .box .container .password .eye {
