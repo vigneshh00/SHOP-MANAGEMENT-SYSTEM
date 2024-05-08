@@ -10,22 +10,21 @@
     <main>
         <div class="box">
             <div class="container">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" autocomplete="off">
+                <form action=""  method="post" autocomplete="off">
                     <h1>ADD A SUPPLIER</h1>
-                    <div class="sid">
-                        <input type="text" name="sid" id="supplierId" required>
-                        <label for="supplierId">Supplier ID</label>
-                        <span class="line"></span>
-                    </div>
                     <div class="sname">
                         <input type="text" name="sname" id="supplierName" required>
                         <label for="supplierName">Supplier Name</label>
                         <span class="line"></span>
                     </div>
-                    <div class="conInfo">
-                        <input type="text" name="conInfo" id="contactInfo" required>
-                        <label for="contactInfo">Contact Information</label>
+                    <div class="phno">
+                        <input type="text" name="phonenumber" id="phno" required>
+                        <label for="phno">Phone number</label>
                         <span class="line"></span>
+                    </div>
+                    <div class="add">
+                        <label for="sup_add" class="shadd">Address</label>
+                        <textarea name="add" id="sup_add" cols="42" rows="7" required></textarea>
                     </div>
                     <div class="submit">
                         <button type="submit">Add</button>
@@ -50,13 +49,17 @@
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $sid = $_POST['sid'];
             $sname = $_POST['sname'];
-            $conInfo= $_POST['conInfo'];
+            $phonenumber = $_POST['phonenumber'];
+            $add= $_POST['add'];
 
-            $sql = "INSERT INTO supplier VALUES('$sid','$sname','$conInfo')";
-            mysqli_query($conn,$sql);
+            $sql = "INSERT INTO supplier(supplier_name,supplier_phonenumber,supplier_address) VALUES('$sname','$phonenumber','$add')";
+            if(mysqli_query($conn,$sql)){
+                echo"<script>alert('Supplier added successfully');</script>";
+            }
         }
+
+    
 
         mysqli_close($conn);
     
