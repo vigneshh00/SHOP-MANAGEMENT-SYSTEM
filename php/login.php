@@ -11,13 +11,11 @@
     <header>
         <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
         <div class="menu-bar">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="team.html">Team</a>
-                <a href="login.php">Login</a>
-                <a href="signup.html">Sign up</a>
-                <a href="contact.html" id="contact-us">Contact Us</a>   
-            </nav>
+            <a href="html/index.html">Home</a>
+            <a href="html/team.html">Team</a>
+            <a href="html/login.php">Login</a>
+            <a href="html/signup.html">Sign up</a>
+            <a href="html/contact.html" id="contact-us">Contact Us</a> 
         </div>
     </header>
 
@@ -124,11 +122,10 @@
 
             $sql_supplier="CREATE TABLE supplier (
                 supplier_id INT PRIMARY KEY AUTO_INCREMENT,
-                
                 supplier_name varchar(40),
                 supplier_phonenumber varchar(60),
                 supplier_address varchar(100),
-                quantity_supplied INT ) ";
+                quantity_supplied INT DEFAULT 0 ) ";
              mysqli_query($conn,$sql_supplier);
              $sql_supplier="Alter table supplier AUTO_INCREMENT=1";
              mysqli_query($conn,$sql_supplier);
@@ -139,7 +136,7 @@
                 customer_name varchar(15),
                 customer_phonenumber varchar(40),
                 customer_address varchar(100),
-                no_of_visits INT)";
+                no_of_visits INT DEFAULT 1)";
              mysqli_query($conn,$sql_customer);
              $sql_supplier="Alter table customer AUTO_INCREMENT=100";
              mysqli_query($conn,$sql_supplier);
@@ -149,7 +146,7 @@
                 product_name varchar(40),
                 category varchar(40),
                 price DECIMAL(10,2),
-                quantity_available INT DEFAULT 0,
+                quantity_available INT,
                 supplier_id INT)";
             mysqli_query($conn,$sql_product);
             $sql_supplier="Alter table product AUTO_INCREMENT=1000";
@@ -159,18 +156,17 @@
                 order_id INT AUTO_INCREMENT PRIMARY KEY,
                 customer_id INT,
                 order_date DATE,
-                total_price DECIMAL(10,2))";
+                total_price DECIMAL(10,2) DEFAULT 0.00) ";
             mysqli_query($conn,$sql_customer_order);
             $sql_supplier="Alter table customer_order AUTO_INCREMENT=1";
             mysqli_query($conn,$sql_supplier);
-
 
             $sql_order_items = "CREATE TABLE order_items(
                 order_item_id INT AUTO_INCREMENT PRIMARY KEY,
                 order_id INT,
                 product_id INT,
                 quantity INT,
-                subtotal DECIMAL(10,2) )";
+                subtotal DECIMAL(10,2) DEFAULT 0.00)";
             mysqli_query($conn,$sql_order_items);
             $sql_supplier="Alter table order_items AUTO_INCREMENT=1";
             mysqli_query($conn,$sql_supplier);
@@ -187,6 +183,25 @@
             $sql = "ALTER TABLE order_items ADD CONSTRAINT pid_id_fk FOREIGN KEY(product_id) REFERENCES product(product_id)";
             mysqli_query($conn,$sql);
 
+            $sql = "CREATE OR REPLACE TRIGGER modify_supplier
+                    AFTER INSERT ON product
+                    FOR EACH ROW
+                    BEGIN
+                        UPDATE supplier SET quantity_supplied = quantity_supplied + NEW.quantity_available WHERE NEW.supplier_id = supplier.supplier_id;
+                    END";
+            mysqli_query($conn,$sql);
+            $sql="CREATE OR REPLACE FUNCTION billing (order_id int) IS
+            RETURN DECIMAL(10,2)
+            price decimal(10,2);
+            quantity int;
+            result decimal(10,2);
+            BEGIN
+            SELECT p.price,o.quantity into price,quantity from product p, order_items o where o.product_id=p.product_id;
+            result:=price*quantity;
+            return result;
+            "
+            mysqli_query($conn,$sql);
+                    
         }
         
         mysqli_close($conn);
