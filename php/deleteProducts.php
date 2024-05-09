@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete products</title>
-    <link rel="stylesheet" href="deleteProducts.css">
+    <link rel="stylesheet" href="../css/deleteProducts.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -34,10 +34,10 @@
                     </div>
                     </form>
                     <div class="btns">
-                        <button onclick="window.location.href='list.php'">Product list</button>
+                        <button onclick="window.location.href='../php/list.php'">Product list</button>
                     </div>
                     <div class="btns">
-                        <button onclick="window.location.href='products.html'">Back</button>
+                        <button onclick="window.location.href='../html/products.html'">Back</button>
                     </div>
                     
                 

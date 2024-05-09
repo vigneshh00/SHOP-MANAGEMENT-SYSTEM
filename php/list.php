@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="../css/list.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@1,700&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
     <div class="container"><text>Products</text></div>
   </header>
     <?php
-    //  $user = $_POST['username'];
      $servername = "localhost";
      $username = "root";
      $password = "";
@@ -56,6 +55,6 @@
       ?>
 
 </table><br><br>
-<div class="submit add-more"><button class="bt" onclick="window.location.href='add_new_product.php'">Add more products</button> </div>
+<div class="submit add-more"><button class="bt" onclick="window.location.href='../php/add_new_product.php'">Add more products</button> </div>
 </body>
 </html>

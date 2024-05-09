@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Product Details</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -50,12 +50,12 @@
                     
                 </form>
                 <div class="submit">
-                    <form action="list.php">
+                    <form action="../php/list.php">
                         <button type="submit">Product list</button>
                     </form>
                 </div>
                 <div class="submit">
-                    <form action="products.html">
+                    <form action="../html/products.html">
                         <button type="submit">Back</button>
                     </form>
                 </div>
@@ -120,6 +120,6 @@
     mysqli_close($conn);}
 ?>
     
-    <script src="signup.js"></script>
+    <script src="../script/signup.js"></script>
 </body>
 </html>

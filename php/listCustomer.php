@@ -1,5 +1,4 @@
 <?php
-
 echo "
 <!DOCTYPE html>
 <html lang='en'>
@@ -7,7 +6,7 @@ echo "
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>List Customer</title>
-    <link rel='stylesheet' href='listCustomer.css'>
+    <link rel='stylesheet' href='../css/listCustomer.css'>
     <style>
     table {
         border-collapse: collapse;
@@ -49,15 +48,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-// Fetch all data from the customer table
 $sql = "SELECT * FROM customer";
 $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result)==0){
     echo "<p class='message' id='message'>No Customers to display!<p>";
-    echo "<div class=\"submit\"><button class=\"bt\" onclick=\"window.location.href='addCustomer.php'\">Add your first customer</button> </div>";
-    echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='customer.html'\">Back</button> </div>";
+    echo "<div class=\"submit\"><button class=\"bt\" onclick=\"window.location.href='../php/addCustomer.php'\">Add your first customer</button> </div>";
+    echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='../html/customer.html'\">Back</button> </div>";
 } 
 
 elseif (mysqli_num_rows($result) > 0) {
@@ -80,7 +77,7 @@ elseif (mysqli_num_rows($result) > 0) {
               </tr>";
     }
     echo "</table>";
-    echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='customer.html'\">Back</button> </div>";
+    echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='../html/customer.html'\">Back</button> </div>";
 }
 
 mysqli_close($conn);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -42,9 +42,9 @@ mysqli_close($conn);
     <section class="content" id="content">
         <div class="buttonSection" id="buttonSection">
 
-            <button class="navbuttons"><div class="buttons" id="productInfo" onclick="window.location.href='products.html'"><p>Product</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="supplierInfo"  onclick="window.location.href='supplier.html'"><p>Supplier</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="customerInfo"  onclick="window.location.href='customer.html'"><p>Customer</p></div></button>
+            <button class="navbuttons"><div class="buttons" id="productInfo" onclick="window.location.href='../html/products.html'"><p>Product</p></div></button>
+            <button class="navbuttons"><div class="buttons" id="supplierInfo"  onclick="window.location.href='../html/supplier.html'"><p>Supplier</p></div></button>
+            <button class="navbuttons"><div class="buttons" id="customerInfo"  onclick="window.location.href='../html/customer.html'"><p>Customer</p></div></button>
         </div>
     </section>
 
@@ -52,6 +52,6 @@ mysqli_close($conn);
         <p>&copy; 2024 @ Pandian Stores | All rights reserved </p>
     </footer>
 
-    <script src="script5.js" defer></script>
+    <script src="../script/script5.js" defer></script>
 </body>
 </html>

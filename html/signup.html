@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -15,11 +15,11 @@
         <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
         <div class="menu-bar">
             <nav>
-                <a href="html/index.html">Home</a>
-                <a href="html/team.html">Team</a>
-                <a href="html/login.php">Login</a>
-                <a href="html/signup.html">Sign up</a>
-                <a href="html/contact.html" id="contact-us">Contact Us</a>    
+                <a href="../html/index.html">Home</a>
+                <a href="../html/team.html">Team</a>
+                <a href="../php/login.php">Login</a>
+                <a href="../html/signup.html">Sign up</a>
+                <a href="../html/contact.html" id="contact-us">Contact Us</a>    
             </nav>
         </div>
     </header>
@@ -27,7 +27,7 @@
     <main>
         <div class="box">
             <div class="container">
-                <form action="login.php" method="post" autocomplete="off" onsubmit="return validateForm()">
+                <form action="../php/login.php" method="post" autocomplete="off" onsubmit="return validateForm()">
                     <h1>SIGN UP</h1>
                     <div class="fname">
                         <input type="text" name="fname" id="firstname" required>
@@ -88,13 +88,13 @@
                     </div>
                 </form>
                 <div class="page">
-                    <p>Already have an account? <a href="login.php">Login</a></p>
+                    <p>Already have an account? <a href="../php/login.php">Login</a></p>
                 </div>
             </div>
         </div>
     </main>
 
     
-    <script src="signup.js"></script>
+    <script src="../script/signup.js"></script>
 </body>
 </html>

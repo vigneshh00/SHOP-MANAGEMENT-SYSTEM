@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Product</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -15,11 +15,6 @@
             <div class="container">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" autocomplete="off">
                     <h1>ADD A PRODUCT</h1>
-                    <!--<div class="pid">
-                        <input type="text" name="pid" id="productId" required>
-                        <label for="productId">Product ID</label>
-                        <span class="line"></span>
-                    </div>-->
                     <div class="lname">
                         <input type="text" name="lname" id="lastname" required>
                         <label for="lastname">Product Name</label>
@@ -50,7 +45,7 @@
                     
                 </form>
                 <div class="submit">
-                    <form action="list.php">
+                    <form action="../php/list.php">
                         <button type="submit">Product list</button>
                     </form>
                 </div>
@@ -87,6 +82,6 @@
     mysqli_close($conn);
 ?>
     
-    <script src="signup.js"></script>
+    <script src="../script/signup.js"></script>
 </body>
 </html>

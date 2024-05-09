@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Customer</title>
-    <link rel="stylesheet" href="addCustomer.css">
+    <link rel="stylesheet" href="../css/addCustomer.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="btns" id="btns">
                         <button type="submit" name="submit" value="submit">Add</button>
-                        <button onclick="window.location.href='customer.html'">Back</button>
+                        <button onclick="window.location.href='../html/customer.html'">Back</button>
                     </div>
                 </form>
                 
@@ -57,14 +57,12 @@ if (isset($_POST['submit'])) {
             $phno = $_POST['phno'];
             $customerAddress = $_POST['cust_add'];
         }
-
         
         $sql = "insert into customer (customer_name, customer_phonenumber, customer_address) values('$customerName','$phno', '$customerAddress')";
 
         mysqli_query($conn, $sql);
 
         mysqli_close($conn);
-
 }        
     ?>
 </body>

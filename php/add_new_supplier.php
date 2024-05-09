@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Supplier</title>
-    <link rel="stylesheet" href="add_new_supplier.css">
+    <link rel="stylesheet" href="../css/add_new_supplier.css">
 </head>
 <body>
     <main>
@@ -31,7 +31,7 @@
                     </div>
                 </form>
                 <div class="back">
-                    <button onclick="window.location.href='supplier.html'">Back</button>
+                    <button onclick="window.location.href='../html/supplier.html'">Back</button>
                 </div>
             </div>
         </div>
@@ -58,9 +58,6 @@
                 echo"<script>alert('Supplier added successfully');</script>";
             }
         }
-
-    
-
         mysqli_close($conn);
     
     ?>

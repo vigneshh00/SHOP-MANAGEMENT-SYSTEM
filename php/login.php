@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
         <div class="menu-bar">
-            <a href="html/index.html">Home</a>
-            <a href="html/team.html">Team</a>
-            <a href="html/login.php">Login</a>
-            <a href="html/signup.html">Sign up</a>
-            <a href="html/contact.html" id="contact-us">Contact Us</a> 
+            <a href="../html/index.html">Home</a>
+            <a href="../html/team.html">Team</a>
+            <a href="../php/login.php">Login</a>
+            <a href="../html/signup.html">Sign up</a>
+            <a href="../html/contact.html" id="contact-us">Contact Us</a> 
         </div>
     </header>
 
     <main>
         <div class="box">
             <div class="container">
-                <form action="dashboard.php" method="post" autocomplete="off">
+                <form action="../php/dashboard.php" method="post" autocomplete="off">
                     <h1>LOGIN</h1>
                     <div class="uname">
                         <input type="text" name="username"required>
@@ -60,7 +60,7 @@
                     We're glad to see you again. Please login to unlock our site's features.<br><br>
                     Don't have an account?
                 </p>
-                <button><a href="signup.html">Sign up</a></button>
+                <button><a href="../html/signup.html">Sign up</a></button>
             </div>
         </div>
     </main>
@@ -90,6 +90,7 @@
             
             $sql= "TRUNCATE TABLE signup";
             mysqli_query($conn,$sql);
+
             $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
             mysqli_query($conn, $sql);
 
@@ -127,6 +128,7 @@
                 supplier_address varchar(100),
                 quantity_supplied INT DEFAULT 0 ) ";
              mysqli_query($conn,$sql_supplier);
+
              $sql_supplier="Alter table supplier AUTO_INCREMENT=1";
              mysqli_query($conn,$sql_supplier);
 
@@ -138,6 +140,7 @@
                 customer_address varchar(100),
                 no_of_visits INT DEFAULT 1)";
              mysqli_query($conn,$sql_customer);
+
              $sql_supplier="Alter table customer AUTO_INCREMENT=100";
              mysqli_query($conn,$sql_supplier);
             
@@ -149,6 +152,7 @@
                 quantity_available INT,
                 supplier_id INT)";
             mysqli_query($conn,$sql_product);
+
             $sql_supplier="Alter table product AUTO_INCREMENT=1000";
             mysqli_query($conn,$sql_supplier);
         
@@ -158,6 +162,7 @@
                 order_date DATE,
                 total_price DECIMAL(10,2) DEFAULT 0.00) ";
             mysqli_query($conn,$sql_customer_order);
+
             $sql_supplier="Alter table customer_order AUTO_INCREMENT=1";
             mysqli_query($conn,$sql_supplier);
 
@@ -168,6 +173,7 @@
                 quantity INT,
                 subtotal DECIMAL(10,2) DEFAULT 0.00)";
             mysqli_query($conn,$sql_order_items);
+
             $sql_supplier="Alter table order_items AUTO_INCREMENT=1";
             mysqli_query($conn,$sql_supplier);
 
@@ -190,6 +196,7 @@
                         UPDATE supplier SET quantity_supplied = quantity_supplied + NEW.quantity_available WHERE NEW.supplier_id = supplier.supplier_id;
                     END";
             mysqli_query($conn,$sql);
+            
             $sql="CREATE OR REPLACE FUNCTION billing (order_id int) IS
             RETURN DECIMAL(10,2)
             price decimal(10,2);
@@ -199,14 +206,13 @@
             SELECT p.price,o.quantity into price,quantity from product p, order_items o where o.product_id=p.product_id;
             result:=price*quantity;
             return result;
-            "
-            mysqli_query($conn,$sql);
-                    
+            ";
+            mysqli_query($conn,$sql);      
         }
         
         mysqli_close($conn);
     ?>
 
-<script src="login.js"></script>
+<script src="../script/login.js"></script>
 </body>
 </html>
