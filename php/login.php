@@ -138,7 +138,7 @@
                 customer_name varchar(15),
                 customer_phonenumber varchar(40),
                 customer_address varchar(100),
-                no_of_visits INT DEFAULT 1)";
+                no_of_visits INT DEFAULT 0)";
              mysqli_query($conn,$sql_customer);
 
              $sql_supplier="Alter table customer AUTO_INCREMENT=100";
@@ -159,7 +159,7 @@
             $sql_customer_order = "CREATE TABLE customer_order(
                 order_id INT AUTO_INCREMENT PRIMARY KEY,
                 customer_id INT,
-                order_date DATE,
+                order_date DATE DEFAULT NULL,
                 total_price DECIMAL(10,2) DEFAULT 0.00) ";
             mysqli_query($conn,$sql_customer_order);
 
@@ -198,29 +198,32 @@
             mysqli_query($conn,$sql);
 
             $sql = "CREATE OR REPLACE TRIGGER modify_quantity_available
-                    AFTER INSERT ON order_items
+                    AFTER UPDATE ON customer_order
                     FOR EACH ROW
                     BEGIN
-                        UPDATE product SET quantity_available = quantity_available - NEW.quantity WHERE NEW.product_id = product.product_id;
-                    END";
+                        IF NEW.order_date != OLD.order_date THEN
+                            UPDATE product SET quantity_available = quantity_available - NEW.quantity WHERE NEW.product_id = product.product_id;
+                        END IF;
+                    END
+                    ";
             mysqli_query($conn,$sql);
             
             $sql = "CREATE OR REPLACE FUNCTION billing(o_id INT)
-            RETURNS DECIMAL(10,2)
-            BEGIN
-                DECLARE price DECIMAL(10,2);
-                DECLARE quantity INT;
-                DECLARE result DECIMAL(10,2);
+                    RETURNS DECIMAL(10,2)
+                    BEGIN
+                        DECLARE price DECIMAL(10,2);
+                        DECLARE quantity INT;
+                        DECLARE result DECIMAL(10,2);
 
-                SET result := 0.0;
-                    SELECT p.price, o.quantity INTO price, quantity
-                    FROM product p, order_items o
-                    WHERE o.product_id = p.product_id
-                    AND o.order_item_id = o_id;
-                SET result := price * quantity;
-                RETURN result;
-            END            
-            ";
+                        SET result := 0.0;
+                            SELECT p.price, o.quantity INTO price, quantity
+                            FROM product p, order_items o
+                            WHERE o.product_id = p.product_id
+                            AND o.order_item_id = o_id;
+                        SET result := price * quantity;
+                        RETURN result;
+                    END            
+                    ";
             mysqli_query($conn,$sql);    
         }
         

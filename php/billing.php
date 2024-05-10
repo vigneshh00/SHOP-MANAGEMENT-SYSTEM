@@ -55,7 +55,7 @@
                 $sql = "SELECT * FROM customer_order WHERE customer_id = '$cid'";
                 $res = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($res) == 0) {
-                    $sql = "INSERT INTO customer_order(customer_id, order_date) VALUES ('$cid', CURDATE())";
+                    $sql = "INSERT INTO customer_order(customer_id) VALUES ('$cid')";
                     mysqli_query($conn, $sql);
                     $flag = true;
                 }
@@ -140,9 +140,12 @@
                 </table>
             </div>
             <div class="submit">
-                <button>Proceed</button>
+                <form action="../php/customer_bill.php" method="post">
+                    <button>Proceed</button>
+                </form>    
             </div>
         </div>
     </div>
+
 </body>
 </html>
