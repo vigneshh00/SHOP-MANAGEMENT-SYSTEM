@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <div class="head-container"><p>Insights</p></div>
+    <p>Insights</p>
 </header>
 <div class="container">
         <div class="icon-container" id="icon-container" onclick="myFunction(this)">
@@ -46,9 +46,8 @@
     $product_list="select * from product order by category";
     $res=mysqli_query($conn,$product_list); 
     if(mysqli_num_rows($res)==0){
-      echo "You havent added any products yet!<br>";
-      echo "<div class=\"submit\"><button class=\"bt\" onclick=\"window.location.href='add_new_product.php'\">Add your first product</button> </div>";
-      
+        echo "<p class='message' id='message' style='font-size:30px;text-align:center;margin-top:40px;'>You havent added any products yet!<p>";
+        echo "<div class=\"submit\"><button class=\"bt\" onclick=\"window.location.href='../php/add_new_product.php'\" style='text-align:center; display:block; margin:0 auto;margin-top:50px;'>Add your first product</button> </div>";
     }
     if(mysqli_num_rows($res)){
         ?>
@@ -102,7 +101,7 @@
         x.classList.toggle("change");
         }
     </script>
-    <script src="../script/dashboard.js"></script>
+    <script src="../script/insights.js"></script>
     
 
     

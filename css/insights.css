@@ -62,7 +62,11 @@ header {
     background-color: black;
     color: white;
     padding: 10px 100px;
-    text-align: center;
+    font-size: 40px;
+    position: relative;
+}
+header p{
+    margin-left:35px;
 }
 
 .head-container {
@@ -70,7 +74,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 60px 30px 70px 30px;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .container p{
@@ -95,20 +99,21 @@ header {
     box-sizing: border-box;
 }
 .icon-container {
-    display: inline-block;
+    position: absolute;
+    top: 50%;
+    top:15px;
+    left:10px;
+    z-index: 1000;
     cursor: pointer;
-    padding-bottom: 350px;
-    padding-left:10px;
     transition: transform 0.5s;
-    z-index:1000;
-   
+}
 
-  }
+  
   
   .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: #f4f4f4;
+    background-color:#f4f4f4;
     margin: 6px 0;
     transition: 0.4s;
   }

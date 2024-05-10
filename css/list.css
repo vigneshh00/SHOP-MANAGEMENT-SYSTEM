@@ -69,8 +69,8 @@ td {
 .container text{
     padding-top: -5px;
     margin-left: 20px;
-    font-family: "Merriweather",serif;
-    font-size: xx-large;
+    font-family: "Arial",serif;
+    
 }
 .add-more{
     display: flex;
@@ -82,4 +82,10 @@ td {
 }
 .bt{
     margin-right: 185px;
+}
+.message {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
 }
