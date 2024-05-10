@@ -1,0 +1,187 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    
+}
+
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    font-size:24px;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+
+.submit button{
+    text-transform: uppercase;
+    margin-left: 130px;
+	padding:9px;
+	font-size:20px;
+	outline:none;
+	border:2px solid white;
+	border-radius: 30px;
+	width:35%;
+	cursor:pointer;
+    transition: all 0.4s;
+}
+.submit button:hover{
+    background-color: black;
+    color: white;
+  }
+  .submit button a{
+    color: black;
+    text-decoration: none;
+}
+.submit button:hover a{
+    color: white;
+}
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 100px;
+    text-align: center;
+}
+
+.head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 30px 70px 30px;
+    font-size: 50px;
+}
+
+.container p{
+    padding-top: -5px;
+    margin-left: 300px;
+
+}
+.add-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    width:80%;
+    margin:0 auto;
+}
+.bt{
+    margin-right: 185px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.icon-container {
+    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 350px;
+    padding-left:10px;
+    transition: transform 0.5s;
+    z-index:1000;
+   
+
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #f4f4f4;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+.container{
+    background-color: #1B1B1B;
+    color: white;
+    height: 0px;
+    display: flex;
+    align-items: center;
+    
+}
+.container .side-bar{
+    position:fixed;
+    height:100%;
+    width: 0px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1B1B1B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.container .side-bar a{
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.663);
+    margin: 15px;
+    font-size: 20px;
+    padding: 25px;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    transition: all 0.3s;
+}
+.container .side-bar a:not(#contact-us)::after{
+    display: block;
+    margin:auto;
+    margin-top: 10px;
+    content: "";
+    background-color:#F78702;
+    height: 2px;
+    width: 0%;
+    transition: all 0.3s;
+}
+.container .side-bar a:not(#contact-us):hover{
+    color: #F78702;
+}
+.container .side-bar a:not(#contact-us):hover::after{
+    width: 100%;
+}
+.container .side-bar #contact-us{
+    border: 2px solid rgba(255, 255, 255, 0.663);
+    border-radius: 40px;
+    margin-top:15px;
+    padding: 13px;
+    font-size: 20px;
+} 
+.container .side-bar #contact-us:hover{
+    border: 2px solid #F78702;
+    color: #F78702;
+    background-color: black;
+}
+.container .side-bar a:nth-child(5){
+    color: white;
+}

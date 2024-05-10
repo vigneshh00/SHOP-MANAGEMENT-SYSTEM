@@ -20,9 +20,10 @@
                         <label for="lastname">Product Name</label>
                         <span class="line"></span>
                     </div>
-                    <div class="shopadd">
-                        <label for="shop_address" class="shadd">Product Category</label>
-                        <textarea name="shopadd" id="shop_address" cols="55" rows="10" required></textarea>
+                    <div class="lname">
+                        <input type="text" name="shopadd" id="shop-address" required>
+                        <label for="shop_address">Product Category</label>
+                        <span class="line"></span>
                     </div>
                     <div class="phno">
                         <input type="text" name="phno" id="phone_number" required>

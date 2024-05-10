@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/insights.css">
     <title>Insights</title>
 </head>
 <body>
 <header>
-    <div class="container"><text>Insights</text></div>
+    <div class="head-container"><p>Insights</p></div>
 </header>
+<div class="container">
+        <div class="icon-container" id="icon-container" onclick="myFunction(this)">
+          <div class="bar1" id="bar1"></div>
+          <div class="bar2" id="bar2"></div>
+          <div class="bar3" id="bar3"></div>
+        </div>
+                <div class="side-bar" id="side-bar">
+                    <nav>
+                        <a href="../php/dashboard.php">Dashboard</a>
+                        <a href="../html/products.html">Products</a>
+                        <a href="../html/supplier.html">Suppliers</a>
+                        <a href="../html/customer.html">Customers</a>
+                        <a href="../php/insights.php">Insights</a>
+                        <a href="../php/login.php" id="contact-us">Log out</a>
+                       
+                       
+                    </nav>
+                </div>
+           
+</div>
 <?php
      $servername = "localhost";
      $username = "root";
@@ -53,7 +73,7 @@
 
                   while($row=mysqli_fetch_assoc($res)){  
                   echo $row['product_name'];
-                  echo " ";}
+                  echo "<br>";}
                 
 
                 ?>
@@ -67,12 +87,9 @@
                 <?php
                   $sql="select product_name from product where price=(select max(price) from product)";
                   $res=mysqli_query($conn,$sql);
-
                   while($row=mysqli_fetch_assoc($res)){  
                   echo $row['product_name'];
-                  echo " ";}
-                
-
+                  echo "<br>";}
                 ?>
             </td>
         </tr>
@@ -80,6 +97,12 @@
         <table>
 
    <?php } ?>
+   <script>
+        function myFunction(x) {
+        x.classList.toggle("change");
+        }
+    </script>
+    <script src="../script/dashboard.js"></script>
     
 
     

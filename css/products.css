@@ -7,14 +7,15 @@
 .icon-container {
     display: inline-block;
     cursor: pointer;
-    padding-top: 50px;
+    padding-bottom: 400px;
     padding-left:10px;
     transition: transform 0.5s;
+    z-index:1000;
+   
 
   }
   
   .bar1, .bar2, .bar3 {
-    
     width: 35px;
     height: 5px;
     background-color: #f4f4f4;
@@ -91,7 +92,7 @@
     color: #F78702;
     background-color: black;
 }
-.container .side-bar a:nth-child(1){
+.container .side-bar a:nth-child(2){
     color: white;
 }
 @media screen and (max-height: 450px) {
@@ -111,7 +112,7 @@ body {
 header {
     background-color: black;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 100px;
     text-align: center;
 }
 

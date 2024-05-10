@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/products.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,6 +15,26 @@
             </div>
         </div>
     </header>
+    <div class="container">
+        <div class="icon-container" id="icon-container" onclick="myFunction(this)">
+          <div class="bar1" id="bar1"></div>
+          <div class="bar2" id="bar2"></div>
+          <div class="bar3" id="bar3"></div>
+        </div>
+                <div class="side-bar" id="side-bar">
+                    <nav>
+                        <a href="../php/dashboard.php">Dashboard</a>
+                        <a href="../html/products.html">Products</a>
+                        <a href="../html/supplier.html">Suppliers</a>
+                        <a href="../html/customer.html">Customers</a>
+                        <a href="../php/insights.php">Insights</a>
+                        <a href="../php/login.php" id="contact-us">Log out</a>
+                       
+                       
+                    </nav>
+                </div>
+           
+        </div>
 
     <section class="content" id="content">
         <div class="buttonSection" id="buttonSection">
@@ -24,6 +44,12 @@
             <button class="navbuttons"><div class="buttons" id="delete" onclick="window.location.href='../php/deleteProducts.php'"><p>Delete products</p></div></button>
         </div>
     </section>
+    <script>
+        function myFunction(x) {
+        x.classList.toggle("change");
+        }
+    </script>
+    <script src="../script/dashboard.js"></script>
 
     <footer>
         <p>&copy; 2024 @ Pandian Stores | All rights reserved </p>
