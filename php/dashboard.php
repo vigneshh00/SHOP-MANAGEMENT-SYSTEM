@@ -45,6 +45,7 @@ mysqli_close($conn);
             <button class="navbuttons"><div class="buttons" id="productInfo" onclick="window.location.href='../html/products.html'"><p>Product</p></div></button>
             <button class="navbuttons"><div class="buttons" id="supplierInfo"  onclick="window.location.href='../html/supplier.html'"><p>Supplier</p></div></button>
             <button class="navbuttons"><div class="buttons" id="customerInfo"  onclick="window.location.href='../html/customer.html'"><p>Customer</p></div></button>
+            <button class="navbuttons"><div class="buttons"  onclick="window.location.href='../php/insights.php'"><p>Insights</p></div></button>
         </div>
     </section>
 
