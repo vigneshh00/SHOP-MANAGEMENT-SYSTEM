@@ -171,7 +171,7 @@
                 order_id INT,
                 product_id INT,
                 quantity INT,
-                subtotal DECIMAL(10,2) DEFAULT 0.00)";
+                subtotal DECIMAL(10,2) DEFAULT 0)";
             mysqli_query($conn,$sql_order_items);
 
             $sql_supplier="Alter table order_items AUTO_INCREMENT=1";
@@ -196,18 +196,32 @@
                         UPDATE supplier SET quantity_supplied = quantity_supplied + NEW.quantity_available WHERE NEW.supplier_id = supplier.supplier_id;
                     END";
             mysqli_query($conn,$sql);
+
+            $sql = "CREATE OR REPLACE TRIGGER modify_quantity_available
+                    AFTER INSERT ON order_items
+                    FOR EACH ROW
+                    BEGIN
+                        UPDATE product SET quantity_available = quantity_available - NEW.quantity WHERE NEW.product_id = product.product_id;
+                    END";
+            mysqli_query($conn,$sql);
             
-            $sql="CREATE OR REPLACE FUNCTION billing (order_id int) IS
-            RETURN DECIMAL(10,2)
-            price decimal(10,2);
-            quantity int;
-            result decimal(10,2);
+            $sql = "CREATE OR REPLACE FUNCTION billing(o_id INT)
+            RETURNS DECIMAL(10,2)
             BEGIN
-            SELECT p.price,o.quantity into price,quantity from product p, order_items o where o.product_id=p.product_id;
-            result:=price*quantity;
-            return result;
+                DECLARE price DECIMAL(10,2);
+                DECLARE quantity INT;
+                DECLARE result DECIMAL(10,2);
+
+                SET result := 0.0;
+                    SELECT p.price, o.quantity INTO price, quantity
+                    FROM product p, order_items o
+                    WHERE o.product_id = p.product_id
+                    AND o.order_item_id = o_id;
+                SET result := price * quantity;
+                RETURN result;
+            END            
             ";
-            mysqli_query($conn,$sql);      
+            mysqli_query($conn,$sql);    
         }
         
         mysqli_close($conn);

@@ -5,21 +5,10 @@
     font-family: sans-serif;
 }
 .box{
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    height:450px;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    background-color: rgb(255, 255, 255);
+    height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    padding-left: 10px;
-    margin-left:100px;
-    margin-top:180px;
-	width:550px;
-	font-size: x-large;
+    justify-content: space-between;
 }
 .box h1{
     color: #3348a4;
@@ -27,7 +16,18 @@
     margin-top: 30px;
 }
 .box .container{
+	border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height:450px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    padding-left: 10px;
+    margin-left:100px;
+    margin-top:180px;
 	width:480px;
+	font-size: x-large;
 }
 .box .container .cid,.pid,.qty,h1{
 	margin-bottom:50px;
@@ -83,7 +83,7 @@
     text-transform: uppercase;
 	padding:9px;
 	font-size:20px;
-    margin-left: 250px;
+    margin-left: 150px;
 	outline:none;
 	border:2px solid white;
 	border-radius: 30px;
@@ -96,4 +96,73 @@
 .box .container .submit button:hover{
   background-color: black;
   color: white;
+}
+.box .billing{
+    height: 100vh;;
+    width: 600px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+.box .billing h1{
+    margin-top:100px;
+    font-size: 45px;
+}
+.box .billing .wrapper{
+    height: 400px;
+    width: 440px;
+    overflow-y:auto;
+    overflow-x: auto;
+    margin:auto;
+    font-size: 20px;
+}
+.box .billing .wrapper table,.wrapper2 table{
+    text-align: center;
+    border-collapse: collapse;
+}
+.box .billing .wrapper tr,th,td,.wrapper2 tr,td{
+    border:2px solid black;
+    padding: 10px;
+}
+.box .billing .wrapper tr{
+    width: 100%;
+}
+.box .billing .wrapper th{
+    position: sticky;
+    top:0px;
+    background-color: white;
+    border:2px solid black;
+}
+
+.box .billing .total{
+    font-size: 20px;
+    margin: auto;
+    width: 440px;
+}
+.box .billing .total table{
+    width: 100%;
+}
+.box .billing .total table tr td:nth-child(1){
+    text-align: center;
+    width: 50%;
+}
+.box .billing .total table tr td:nth-child(2){
+    text-align: right;
+    width: 50%;
+}
+.box .billing .submit button{
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-left: 200px;
+	padding:9px;
+	font-size:20px;
+	outline:none;
+	border:2px solid white;
+	border-radius: 30px;
+	width:30%;
+    font-weight: 200;
+	cursor:pointer;
+    transition: all 0.4s;
+}
+.box .billing .submit button:hover{
+    background-color: black;
+    color: white;
 }
