@@ -197,6 +197,7 @@
                     END";
             mysqli_query($conn,$sql);
 
+            
             $sql = "CREATE OR REPLACE TRIGGER modify_quantity_available
                     AFTER UPDATE ON customer_order
                     FOR EACH ROW
@@ -224,7 +225,7 @@
                         RETURN result;
                     END            
                     ";
-            mysqli_query($conn,$sql);    
+            mysqli_query($conn,$sql); 
         }
         
         mysqli_close($conn);
