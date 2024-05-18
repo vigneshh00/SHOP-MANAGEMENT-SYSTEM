@@ -13,15 +13,15 @@ function myshow1(){
     }
 }
 function myshow2(){
-    var cn_pass = document.getElementById("cn_pass");
+    var confirm_password = document.getElementById("confirm_password");
     var eye3 = document.getElementById("eye3");
     var eye4 = document.getElementById("eye4");
-    if (cn_pass.type === "password") {
-        cn_pass.type = "cn_passt";
+    if (confirm_password.type === "password") {
+        confirm_password.type = "text";
         eye3.style.display="block";
         eye4.style.display="none";
     }else{
-        cn_pass.type = "password";
+        confirm_password.type = "password";
         eye4.style.display="block";
         eye3.style.display="none";
     }

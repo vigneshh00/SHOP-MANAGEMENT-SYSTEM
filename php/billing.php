@@ -25,7 +25,7 @@
         <form action="" method="post">
             <h1>BILLING</h1>
             <div class="cid">
-                <input type="text" name="cid" id="customerid" required>
+                <input type="text" name="cid" id="customerid" value=" ">
                 <label for="customerid">Customer ID</label>
                 <span class="line"></span>
             </div>
