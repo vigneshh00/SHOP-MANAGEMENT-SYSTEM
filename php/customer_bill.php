@@ -51,11 +51,11 @@
     <div class="box">
         <div class="container">
             <div class="shopname">
-                <h1><?php echo $row1['Shop_name']?></h1>
-                <h3><?php echo $row1['Shop_address']?></h3>
+                <h1><?php echo $row1['shop_name']?></h1>
+                <h3><?php echo $row1['shop_address']?></h3>
                 <div class="number">
-                    <p><b>Phone number : </b>+91 <?php echo $row1['Phone_number'] ?></p>
-                    <p><b>GSTIN : </b><?php echo $row1['GST_Number'] ?></p>
+                    <p><b>Phone number : </b>+91 <?php echo $row1['phone_number'] ?></p>
+                    <p><b>GSTIN : </b><?php echo $row1['gst_number'] ?></p>
                     <p><b>Location : </b>Chennai</p>
                 </div>
             </div>
@@ -99,11 +99,11 @@
                         <?php
                             }
 
-                            $sql = "SELECT SUM(price) as price FROM temperory";
+                            $sql = "SELECT SUM(price_amt) as price FROM temperory";
                             $res = mysqli_query($conn,$sql);
                             $row5 = mysqli_fetch_assoc($res);
 
-                            $sql = "SELECT SUM(tax) as tax FROM temperory";
+                            $sql = "SELECT SUM(tax_amt) as tax FROM temperory";
                             $res = mysqli_query($conn,$sql);
                             $row6 = mysqli_fetch_assoc($res);
 

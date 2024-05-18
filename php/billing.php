@@ -151,7 +151,8 @@
                     <tbody>
                         <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                                $sql = "CREATE OR REPLACE VIEW temperory AS SELECT p.product_name as product,o.quantity as qty,o.subtotal as subtot,p.price as price, p.tax as tax FROM product p,order_items o
+                                $sql = "CREATE OR REPLACE VIEW temperory AS SELECT p.product_name as product,o.quantity as qty,o.subtotal as subtot,p.price as price,p.price*o.quantity as price_amt, p.tax as tax,p.tax * o.quantity as tax_amt 
+                                        FROM product p,order_items o
                                         WHERE o.product_id = p.product_id AND o.order_id = '$id'";
                                 mysqli_query($conn,$sql);
 

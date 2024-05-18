@@ -233,8 +233,7 @@
                             FROM product p, order_items o
                             WHERE o.product_id = p.product_id
                             AND o.order_item_id = o_id;
-                        SET result := price * quantity;
-                        SET result := result + tax;
+                        SET result := price * quantity + tax * quantity;
                         RETURN result;
                     END            
                     ";
