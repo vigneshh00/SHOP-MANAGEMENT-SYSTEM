@@ -16,7 +16,6 @@ html{
 .box{
     padding: 10px;
     height: 100vh;
-    width: 100vw;
 }
 .box .container{
     width: 100%;
@@ -66,9 +65,7 @@ html{
 .box .container .details{
     grid-column-start: 1;
     grid-column-end: 3;
-    height: 380px;
     width: 100%;
-    overflow-y:auto;
     overflow-x: auto;
     margin:auto;
     font-size: 20px;
@@ -80,15 +77,15 @@ html{
     border:2px solid black;
     border-top: none;
     border-right: none;
+    
 }
 .box .container .details tr,th,td{
     border-right: 2px solid black;
     padding: 10px;
 }
 .box .container .details th{
+    color:white;
     border: 2px solid black;
-    position: sticky;
-    top:0px;
     background-color: rgb(85, 113, 215);
 }
 .box .container tr:nth-child(even){
@@ -108,24 +105,24 @@ html{
     width:100%;
 }
 .box .container .total table{
+    margin-top:5px;
     color: white;
     background-color: rgb(92, 112, 210);
     border: 2px solid black;
-
     border-collapse: collapse;
     width: 100%;
 }
 .box .container .total table tr td:nth-child(1){
     text-align: center;
-    width: 40.22%;
+    width: 40.7%;
 }
 .box .container .total table tr td:nth-child(2){
     text-align: right;
-    width: 21.1%;
+    width: 21.3%;
 }
 .box .container .total table tr td:nth-child(3){
     text-align: right;
-    width: 18.9%;
+    width: 19.1%;
 }
 .box .container .total table tr td:nth-child(4){
     text-align: right;
@@ -138,6 +135,7 @@ html{
     flex-direction: row;
     margin-left: 30%;
     gap: 10px;
+    margin-bottom: 20px;
 }
 .box .container .submit button{
     text-transform: uppercase;

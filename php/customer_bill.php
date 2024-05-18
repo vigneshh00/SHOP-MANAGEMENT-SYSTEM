@@ -120,10 +120,10 @@
             <table>
                 <tbody>
                     <tr>
-                        <td>Total</td>
-                        <td><?php echo $row5['price'] ?></td>
-                        <td><?php echo $row6['tax'] ?></td>
-                        <td><?php echo $row7['total_price'] ?></td>
+                        <td><b>Total</b></td>
+                        <td><b><?php echo $row5['price'] ?></b></td>
+                        <td><b><?php echo $row6['tax'] ?></b></td>
+                        <td><b><?php echo $row7['total_price'] ?></b></td>
                     </tr>
                 </tbody>
             </table>

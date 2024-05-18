@@ -50,8 +50,7 @@
         <form action="" method="post">
             <h1>BILLING</h1>
             <div class="cid">
-                <input type="text" name="cid" id="customerid" value = "<?php session_start();
-                    if ($_SERVER["REQUEST_METHOD"] == "POST"){echo $_SESSION['customer_id'];} ?>"required>
+                <input type="text" name="cid" id="customerid"required>
                 <label for="customerid">Customer ID</label>
                 <span class="line"></span>
             </div>
@@ -72,6 +71,8 @@
         </div>
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                session_start();
                 $cid = $_POST['cid'];
                 $pid = $_POST['pid'];
                 $qty = $_POST['qty'];
