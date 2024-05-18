@@ -32,8 +32,8 @@
 .box .container{
 	width:480px;
 }
-.box .container .sid,.sname,h1{
-	margin-bottom:50px;
+.box .container .sid,.sname,.divide,h1{
+	margin-bottom:40px;
 	position:relative;
 }
 .box .container .conInfo{
@@ -115,4 +115,8 @@
 .box .container .submit button:hover,.back button:hover{
   background-color: black;
   color: white;
+}
+.box .container .divide{
+    font-size: 25px;
+    margin-left: 200px;
 }

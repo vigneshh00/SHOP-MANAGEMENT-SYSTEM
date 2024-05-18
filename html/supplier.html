@@ -3,29 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/supplier.css">
     <title>Supplier</title>
 </head>
 <body>
     <header>
-        <div class="headSection" id="headSection">
-            <div id="storeDetails" class="storeDetails">
-                <h1 class="storename" id="storename">Suppliers Insights Overview</h1>
+        <div class="container">
+            <div class="icon-container" id="icon-container" onclick="myFunction(this)">
+              <div class="bar1" id="bar1"></div>
+              <div class="bar2" id="bar2"></div>
+              <div class="bar3" id="bar3"></div>
             </div>
+            <div class="side-bar" id="side-bar">
+                <nav>
+                    <a href="../php/dashboard.php">Dashboard</a>
+                    <a href="../html/products.html">Products</a>
+                    <a href="../html/supplier.html">Suppliers</a>
+                    <a href="../html/customer.html">Customers</a>
+                    <a href="../php/insights.php">Insights</a>
+                    <a href="../php/billing.php">Billing</a>
+                    <a href="../php/login.php" id="contact-us">Log out</a> 
+                </nav>
+            </div>
+        </div>
+        <div class="headSection">
+             <h1 id="heading">Suppliers Insights Overview</h1>
         </div>
     </header>
 
-    <section class="content" id="content">
+    <section class="content">
         <div class="buttonSection" id="buttonSection">
-            <button class="navbuttons"><div class="buttons" id="add" onclick="window.location.href='../php/add_new_supplier.php'"><p>Add a supplier</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="list" onclick="window.location.href='../php/list_supplier.php'"><p>View Suppliers</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="update" onclick="window.location.href='../php/update_supplier.php'"><p>Update Supplier</p></div></button>
-            <button class="navbuttons"><div class="buttons" id="delete" onclick="window.location.href='../php/remove_supplier.php'"><p>Delete Supplier</p></div></button>
+            <button onclick="window.location.href='../php/add_new_supplier.php'">Add Supplier</button>
+            <button onclick="window.location.href='../php/update_supplier.php'">Update Details</button>
+            <button onclick="window.location.href='../php/remove_supplier.php'">Remove Supplier</button>
+            <button onclick="window.location.href='../php/list_supplier.php'">View Suppliers</button>
         </div>
     </section>
-
+<!-- 
     <footer>
         <p>&copy; 2024 @ Pandian Stores | All rights reserved </p>
-    </footer>
+    </footer> -->
+    <script src="../script/supplier.js" defer></script>
 </body>
 </html>

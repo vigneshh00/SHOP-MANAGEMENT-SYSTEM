@@ -54,6 +54,7 @@
             $add= $_POST['add'];
 
             $sql = "INSERT INTO supplier(supplier_name,supplier_phonenumber,supplier_address) VALUES('$sname','$phonenumber','$add')";
+            
             if(mysqli_query($conn,$sql)){
                 echo"<script>alert('Supplier added successfully');</script>";
             }

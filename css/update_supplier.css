@@ -10,7 +10,7 @@
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    height:450px;
+    height:635px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -18,8 +18,7 @@
     align-items: center;
     justify-content: center;
     padding-left: 10px;
-    margin: auto;
-    margin-top:180px;
+    margin: 5% auto;
 	width:550px;
 	font-size: x-large;
 }
@@ -31,13 +30,19 @@
 .box .container{
 	width:480px;
 }
-.box .container .sid,.sname,.conInfo,h1{
+.box .container .sid,.sname,h1{
 	margin-bottom:50px;
 	position:relative;
 }
-.box .container .conInfo{
+.box .container .phno,.add{
     margin-bottom:30px;
 	position:relative;
+}
+.box .container textarea{
+    font-size: 18px;
+    resize: vertical;
+    margin-top:20px;
+    margin-left: 30px;
 }
 .box .container input[type=text]{
     width:83%;
@@ -49,24 +54,20 @@
 	color: rgb(77, 77, 77);
 	border-bottom: 2px solid rgb(77, 77, 77);
 }
-.box .container label{
+.box .container label:not(.shadd){
 	height:100%;
 	position:absolute;
 	pointer-events: none;
-	top:0;
+	top:-20px;
 	left:30px;
 	color:black;
 	transition: all 0.3s;
-	font-size:20px;
-}
-.box .container input:focus~label{
-	top:-20px;
-	color:#5775fc;
 	font-size:18px;
 }
-.box .container input:valid~label{
-	top:-20px;
-	font-size:18px;
+.box .container .add label{
+    margin-bottom: 20px;
+    font-size: 20px;
+	padding-left:30px;
 }
 .box .container .line{
     position: absolute;
@@ -112,6 +113,6 @@
 }
 
 .box .container .submit button:hover,.back button:hover{
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }

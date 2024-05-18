@@ -5,8 +5,53 @@
     font-family: sans-serif;
 }
 
-table,tr,th,td{
-    border: 2px solid black;
+.box{
+    margin: 6% auto;
+    width: max-content;
+    box-shadow: 0 4px 8px rgba(153, 153, 153, 0.918);
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.box h1{
+    color: rgb(74, 74, 185);
+    font-size: 22px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.box .container{
+    border-radius: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 500px;
+    padding: 0;
+}
+
+.box .container table{
+    font-size: 18px;
+    text-align: center;
     border-collapse: collapse;
-    padding: 10px;
+    border: none;
+}
+
+.box .container tr,th,td{
+    border: none;
+    padding: 17px;
+}
+.box .container tbody{
+    font-size: 17px;
+}
+.box .container thead{
+    position: sticky;
+    top:0;
+    color: white;
+    background-color: rgba(54,48,74,255);
+}
+.box .container tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+.box .container tr:hover td{
+    color: rgb(68, 68, 228);
 }

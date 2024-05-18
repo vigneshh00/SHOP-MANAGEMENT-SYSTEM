@@ -13,13 +13,16 @@
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" autocomplete="off">
                     <h1>REMOVE A SUPPLIER</h1>
                     <div class="sid">
-                        <input type="text" name="sid" id="supplierId" required>
-                        <label for="supplierId">Supplier ID</label>
+                        <input type="text" name="sid" id="supplierId">
+                        <label for="supplierId">By Supplier ID</label>
                         <span class="line"></span>
                     </div>
+                    <div class="divide">
+                        <p>OR</p>
+                    </div>
                     <div class="sname">
-                        <input type="text" name="sname" id="supplierName" required>
-                        <label for="supplierName">Supplier Name</label>
+                        <input type="text" name="sname" id="supplierName">
+                        <label for="supplierName">By Supplier Name</label>
                         <span class="line"></span>
                     </div>
                     <div class="submit">
@@ -45,11 +48,27 @@
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $sid = $_POST['sid'];
-            $sname = $_POST['sname'];
+            $sid = isset($_POST['sid']) ? intval($_POST['sid']) : null;
+            $sname = isset($_POST['sname']) ? $_POST['sname'] : null;
+        
+            if ($sid != null) {
+                $sql = "DELETE FROM supplier WHERE supplier_id = $sid";
+            } elseif ($sname != null) {
+                $sql = "DELETE FROM supplier WHERE supplier_name = '$sname'";
+            }
+        
+            $result=mysqli_query($conn, $sql);
 
-            $sql = "DELETE FROM supplier WHERE supplier_id = '$sid'";
-            mysqli_query($conn,$sql);
+            if($result){
+                if(mysqli_affected_rows($conn)>0){
+                    echo "<script> alert('Deleted supplier details successfully!');</script>";
+                }else{
+                    echo "<script> alert('Supplier not found!');</script>";
+                }
+            }
+            else {
+                echo "Error deleting record: " . mysqli_error($conn);
+            }
         }
 
         mysqli_close($conn);

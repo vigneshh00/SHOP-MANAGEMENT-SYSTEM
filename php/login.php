@@ -87,11 +87,12 @@
             $uname = $_POST['uname'];
             $email = $_POST['email'];
             $pass = $_POST['password'];
+            $gstno = $_POST['gstno'];
             
             $sql= "TRUNCATE TABLE signup";
             mysqli_query($conn,$sql);
 
-            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$uname','$email','$pass')";
+            $sql = "insert into signup values('$fname','$lname','$phno','$shopname','$shopadd','$gstno','$uname','$email','$pass')";
             mysqli_query($conn, $sql);
 
             $sql = "ALTER TABLE product DROP CONSTRAINT sup_id_fk";
@@ -138,10 +139,10 @@
                 customer_name varchar(15),
                 customer_phonenumber varchar(40),
                 customer_address varchar(100),
-                no_of_visits INT DEFAULT 0)";
+                no_of_visits INT DEFAULT 1)";
              mysqli_query($conn,$sql_customer);
 
-             $sql_supplier="Alter table customer AUTO_INCREMENT=100";
+             $sql_supplier="Alter table customer AUTO_INCREMENT=101";
              mysqli_query($conn,$sql_supplier);
             
             $sql_product = "CREATE TABLE product (
@@ -149,11 +150,12 @@
                 product_name varchar(40),
                 category varchar(40),
                 price DECIMAL(10,2),
+                tax DECIMAl(10,2) DEFAULT 0.0,
                 quantity_available INT,
                 supplier_id INT)";
             mysqli_query($conn,$sql_product);
 
-            $sql_supplier="Alter table product AUTO_INCREMENT=1000";
+            $sql_supplier="Alter table product AUTO_INCREMENT=1001";
             mysqli_query($conn,$sql_supplier);
         
             $sql_customer_order = "CREATE TABLE customer_order(
@@ -174,7 +176,7 @@
                 subtotal DECIMAL(10,2) DEFAULT 0)";
             mysqli_query($conn,$sql_order_items);
 
-            $sql_supplier="Alter table order_items AUTO_INCREMENT=1";
+            $sql_supplier="Alter table order_items AUTO_INCREMENT=201";
             mysqli_query($conn,$sql_supplier);
 
             $sql = "ALTER TABLE product ADD CONSTRAINT sup_id_fk FOREIGN KEY(supplier_id) REFERENCES supplier(supplier_id)";
@@ -197,35 +199,44 @@
                     END";
             mysqli_query($conn,$sql);
 
-            
-            $sql = "CREATE OR REPLACE TRIGGER modify_quantity_available
-                    AFTER UPDATE ON customer_order
+            $sql = "CREATE OR REPLACE TRIGGER insert_quantity_available
+                    AFTER INSERT ON order_items
                     FOR EACH ROW
                     BEGIN
-                        IF NEW.order_date != OLD.order_date THEN
-                            UPDATE product SET quantity_available = quantity_available - NEW.quantity WHERE NEW.product_id = product.product_id;
-                        END IF;
-                    END
-                    ";
+                            UPDATE product SET quantity_available = quantity_available - NEW.quantity
+                            WHERE NEW.product_id = product.product_id;
+                    END";
             mysqli_query($conn,$sql);
-            
+
+            $sql = "CREATE OR REPLACE TRIGGER delete_quantity_available
+                    AFTER DELETE ON order_items
+                    FOR EACH ROW
+                    BEGIN
+                            UPDATE product SET quantity_available = quantity_available + OLD.quantity
+                            WHERE OLD.product_id = product.product_id;
+                    END";
+            mysqli_query($conn,$sql);
+
+
             $sql = "CREATE OR REPLACE FUNCTION billing(o_id INT)
                     RETURNS DECIMAL(10,2)
                     BEGIN
                         DECLARE price DECIMAL(10,2);
                         DECLARE quantity INT;
                         DECLARE result DECIMAL(10,2);
+                        DECLARE tax DECIMAL(10,2);
 
                         SET result := 0.0;
-                            SELECT p.price, o.quantity INTO price, quantity
+                            SELECT p.price, o.quantity, p.tax INTO price, quantity, tax
                             FROM product p, order_items o
                             WHERE o.product_id = p.product_id
                             AND o.order_item_id = o_id;
                         SET result := price * quantity;
+                        SET result := result + tax;
                         RETURN result;
                     END            
                     ";
-            mysqli_query($conn,$sql); 
+            mysqli_query($conn,$sql);
         }
         
         mysqli_close($conn);
