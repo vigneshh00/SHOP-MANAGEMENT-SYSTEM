@@ -8,30 +8,51 @@ echo "
     <title>List Customer</title>
     <link rel='stylesheet' href='../css/listCustomer.css'>
     <style>
-    table {
-        border-collapse: collapse;
+      h3 {
+        font-size: 60px;
+        font-weight: 900;
+        font-style: italic;
+        margin-bottom: 5px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        border-radius: 100px;
+      }
+      table {
         width: 100%;
         padding: 10px;
+        font-family: 'Trebuchet MS';  
+        margin-left: 10px;
+        margin-right: 10px; 
+        border-collapse: separate;
+        border-radius: 10px;     
       }
-
+    
       th {
-        font-size: 30px;
+        font-size: 25px;
         background-color: black;
         color: whitesmoke;
       }
       
       th, td {
         padding: 8px;
-        text-align: left;
+        text-align: center;
         border-bottom: 2px solid #ddd;
       }
-
+    
       td {
         font-size: 20px;
       }
+      tr{
+      background-color: #bcbcbc;
+      }
       
       tr:hover {
-        background-color: #333;
+        background-color: #444;
         color: whitesmoke;
       }
     </style>
@@ -58,14 +79,15 @@ if(mysqli_num_rows($result)==0){
 } 
 
 elseif (mysqli_num_rows($result) > 0) {
-    echo "<table>
-            <tr>
-                <th>Customer ID</th>
-                <th>Customer Name</th>
-                <th>Phone Number</th>
-                <th>Address</th>
-                <th>Number of Visits</th>
-            </tr>";
+    echo "<h3>Customer Details</h3><div>
+            <table>
+              <tr>
+                  <th>Customer ID</th>
+                  <th>Customer Name</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <th>Number of Visits</th>
+              </tr>";
 
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
@@ -76,7 +98,7 @@ elseif (mysqli_num_rows($result) > 0) {
                 <td>".$row["no_of_visits"]."</td>
               </tr>";
     }
-    echo "</table>";
+    echo "</table></div>";
     echo "<div class=\"submit\"><button class=\"bt\" id=\"back\" onclick=\"window.location.href='../html/customer.html'\">Back</button> </div>";
 }
 
