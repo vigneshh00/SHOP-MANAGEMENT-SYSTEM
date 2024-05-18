@@ -1,206 +1,344 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --blueColour: #add8e6;
+  --hoverBlue: #0277f7;
+  --blackColour: #1b1b1b;
+  --whiteColour: whitesmoke;
+  --gradientRight: #e1ffff;
+  --hoverDetails: rgba(20, 148, 198, 0.09);
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    background-color: white;
-    width:100%;
+body {
+  background-color: var(--whiteColour);
+  width: 100%;
 }
-.container{
-    background-color: #1B1B1B;
-    color: white;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    
+.container {
+  background-color: var(--blackColour);
+  color: var(--whiteColour);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  overflow: hidden;
 }
-.container .side-bar{
-    position:fixed;
-    height:100%;
-    width: 0px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #1B1B1B;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+
+.container .name {
+  font-size: 60px;
+  padding: 10px;
+  font-weight: 800;
+  font-family: "Merriweather", serif;
+  color: var(--gradientRight);
 }
-.container .side-bar a{
-    position: relative;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.663);
-    margin: 15px;
-    font-size: 20px;
-    padding: 25px;
-    text-transform: uppercase;
-    display: block;
-    text-align: center;
-    transition: all 0.3s;
+header .menu-bar a {
+  position: relative;
+  text-decoration: none;
+  color: var(--blueColour);
+  margin: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s;
 }
-.container .side-bar a:not(#contact-us)::after{
-    display: block;
-    margin:auto;
-    margin-top: 10px;
-    content: "";
-    background-color:#F78702;
-    height: 2px;
-    width: 0%;
-    transition: all 0.3s;
+header .menu-bar a:not(#contact-us)::after {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  content: "";
+  background-color: var(--hoverBlue);
+  height: 2px;
+  width: 0%;
+  transition: all 0.3s;
 }
-.container .side-bar a:not(#contact-us):hover{
-    color: #F78702;
+header .menu-bar a:not(#contact-us):hover {
+  color: var(--hoverBlue);
 }
-.container .side-bar a:not(#contact-us):hover::after{
-    width: 100%;
+header .menu-bar a:not(#contact-us):hover::after {
+  width: 100%;
 }
-.container .side-bar #contact-us{
-    border: 2px solid rgba(255, 255, 255, 0.663);
-    border-radius: 40px;
-    padding: 13px;
-    font-size: 20px;
-} 
-.container .side-bar #contact-us:hover{
-    border: 2px solid #F78702;
-    color: #F78702;
-    background-color: black;
+header .menu-bar #contact-us {
+  border: 2px solid var(--blueColour);
+  border-radius: 40px;
+  padding: 13px;
+  font-size: 20px;
 }
-.container .side-bar a:nth-child(1){
-    color: white;
+header .menu-bar #contact-us:hover {
+  border: 2px solid var(--hoverBlue);
+  color: var(--hoverBlue);
+  background-color: var(--blackColour);
 }
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
+header .menu-bar a:nth-child(1) {
+  color: var(--whiteColour);
+}
+
+.home-load {
+  display: block;
+  background: linear-gradient(
+    to right,
+    var(--blueColour),
+    var(--gradientRight)
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.shop-management {
+  padding-top: 60px;
+  margin-left: 40px;
+  font-family: "Merriweather", serif;
+  padding-left: 20px;
+  font-size: 40px;
+}
+.byline {
+  margin-left: 40px;
+  margin-top: 20px;
+  font-family: "Merriweather", serif;
+  padding-left: 20px;
+}
+.getstarted {
+  display: flex;
+  height: 430px;
+  background-color: var(--blackColour);
+  width: 330px;
+  border-radius: 6px;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  bottom: 50px;
+  right: 60px;
+
+  float: right;
+  padding: 0 20px;
+  flex-direction: column;
+}
+.getstarted h2 {
+  font-family: "Merriweather", serif;
+  position: relative;
+  top: -60px;
+  font-size: 40px;
+  font-weight: bold;
+
+  color: var(--whiteColour);
+
+  margin: 0;
+  padding: 0;
+}
+.getstarted h4 {
+  position: relative;
+  top: -35px;
+  font-family: sans-serif;
+  color: var(--whiteColour);
+  font-size: 18px;
+  font-weight: 100;
+
+  margin: 0;
+  padding: 0;
+}
+.getstarted a {
+  color: var(--whiteColour);
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 15px;
+  margin: 30px;
+  font-size: larger;
+  text-decoration: none;
+}
+.getstarted a:hover {
+  border: 2px solid var(--hoverBlue);
+  color: var(--hoverBlue);
+  transition: all 0.3s;
+  background-color: var(--blackColour);
+}
+.getstarted .signup {
+  position: relative;
+  top: -35px;
+}
+.getstarted .already {
+  position: relative;
+  top: -20px;
+}
+.getstarted .login {
+  position: relative;
+  top: 20px;
+}
+#about {
+  display: block;
+  background-color: linear-gradient(
+    to right,
+    var(--blueColour),
+    var(--gradientRight)
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 60px;
+  padding-left: 55px;
+}
+
+#about h2 {
+  font-size: 35px;
+  font-family: "Merriweather", serif;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 650;
+}
+
+#about p {
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+  word-spacing: 4px;
+  line-height: 25px;
+  text-align: justify;
+}
+
+#features {
+  display: block;
+  background-color: linear-gradient(
+    to right,
+    var(--blueColour),
+    var(--gradientRight)
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 60px;
+  padding-left: 40px;
+  padding-bottom: 50px;
+}
+
+#features h2 {
+  font-size: 35px;
+  font-family: "Merriweather", serif;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 650;
+  padding-left: 15px;
+}
+
+/* #features .feature-item {
+  margin-left: 10px;
+} */
+details {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 2px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+summary {
+  background-color: linear-gradient(
+    to right,
+    var(--blueColour),
+    var(--gradientRight)
+  );
+  color: var(--blackColour);
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+summary:hover {
+  background-color: var(--hoverDetails);
+}
+
+details p {
+  padding: 10px 20px;
+  margin: 0;
+  word-spacing: 2px;
+  line-height: 25px;
+  text-align: justify;
+}
+
+details[open] summary {
+  background-color: var(--hoverDetails);
+  font-size: 25px;
+  font-weight: 750;
+  border: 2.5px solid var(--hoverBlue);
+  border-radius: 15px;
+}
+
+details[open] summary:hover {
+  background-color: var(--hoverDetails);
+}
+details[open] summary:active {
+  background-color: var(--hoverDetails);
+}
+summary {
+  list-style-type: none;
+  cursor: pointer;
+  padding-left: 20px;
+  font-size: 20px;
+  border: 1.5px solid var(--hoverBlue);
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+}
+
+summary::after {
+  content: "+";
+  float: right;
+  margin-left: 50px;
+  transform: rotate(90deg);
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+details[open] summary::after {
+  animation: mymove 1s;
+}
+@keyframes mymove {
+  50% {
+    transform: rotate(720deg);
   }
+}
 
- 
-.container .name{
-    position: relative;
-    left:50px;
-    font-family: "Merriweather",serif;
-    font-weight: 700;
-    font-style: italic;
-    text-align: left;
-    
+#features p {
+  font-size: 15px;
+  font-family: "Merriweather", serif;
+  font-weight: 250;
+  background-color: var(--hoverDetails);
+  border: 2.5px solid var(--hoverBlue);
+  border-radius: 15px;
+  border-top: 0;
 }
-.side-line{
-    display: inline-block;
-    position: relative;
-   top:325px;
-   right: 100px;
-    width:4px;
-    height:50px;
-    margin-left: 0px;
-    border-radius: 2px;
-    z-index:110;
-    
-    margin-right: 7px;
-    background-color: #1B1B1B;
-    transition: margin-right 0.3 ease;
-}
-.side-line-container{
-    display: flex;
-    position: relative;
-    left:-35px;
-    padding:0px;
-    margin-left: 0px;
-    transition: 0.5s;
-}
-.home-load{
-    display: block;
-    background-image: url('../images/Untitled design.png'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    height: 100vh;
-    width:100%;
-    
-}
-.shop-management{
-    padding-top: 30px;
-    margin-left: 40px;
-    font-family: "Merriweather",serif;
-}
-.byline{
-    margin-left: 40px;
-    margin-top: 60px;
-    font-family: "Merriweather",serif;
-}
-.getstarted{
-    display: flex;
-    height:430px;
-    background-color:#1B1B1B ;
-    width:330px;
-    border-radius: 6px;
-    position:relative;
-    justify-content: center;
-    text-align: center;
-    bottom:50px;
-    right:150px;
-    float:right;
-    padding:0 20px;
-    flex-direction: column;
 
+/*------ FOOTER ------*/
 
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--blackColour);
+  height: 40px;
 }
-.getstarted h2{
-    font-family: "Merriweather",serif;
-    position: relative;
-    top:-60px;
-    font-size: 40px;
-    font-weight: bold;
 
-    color:white;
-    
-    
+footer p {
+  margin: 0;
+  font-size: 20px;
+  color: var(--whiteColour);
+  font-family: "Merriweather", serif;
+}
 
-    margin:0;
-    padding:0;
+footer a {
+  text-decoration: none;
+  color: var(--whiteColour);
+  font-family: "Merriweather", serif;
 }
-.getstarted h4{
-    position: relative;
-    top:-35px;
-    font-family:sans-serif;
-    color:white;
-    font-size: 18px;
-    font-weight: 100;
 
-    margin:0;
-    padding:0;
-
-}
-.getstarted a{
-    color: white;
-    border: 2px solid white;
-    border-radius: 40px;
-    padding: 15px;
-    margin:30px;
-    font-size: larger;
-    text-decoration: none;
-}
-.getstarted a:hover{
-    border: 2px solid #F78702;
-    color: #F78702;
-    transition: all 0.3s;
-    background-color: black;
-    
-}
-.getstarted .signup{
-    position: relative;
-    top:-35px;
-}
-.getstarted .already{
-    position: relative;
-    top:-20px;
-}
-.getstarted .login{
-    position: relative;
-    top:20px;
+footer a:hover {
+  text-decoration: underline;
+  color: var(--blueColour);
 }

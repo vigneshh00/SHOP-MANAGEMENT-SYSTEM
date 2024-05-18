@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="../css/contact.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/contact.css" />
+  </head>
+  <body>
     <header>
-        <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
-        <div class="menu-bar">
-            <nav>
-                <a href="../html/index.html">Home</a>
-                <a href="../html/team.html">Team</a>
-                <a href="../php/login.php">Login</a>
-                <a href="../html/signup.html">Sign up</a>
-                <a href="../html/contact.html" id="contact-us">Contact Us</a>    
-            </nav>
-        </div>
+      <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
+      <div class="menu-bar">
+        <nav>
+          <a href="../html/index.html">Home</a>
+          <a href="../html/team.html">Team</a>
+          <a href="../php/login.php">Login</a>
+          <a href="../html/signup.html">Sign up</a>
+          <a href="../html/contact.html" id="contact-us">Contact Us</a>
+        </nav>
+      </div>
     </header>
+    <main class="container" id="container">
+      <div class="contact-form" id="contact-form">
+        <div class="box">
+          <div class="container">
+            <form action="" method="post" autocomplete="off">
+              <h1>REACH OUT TO US!</h1>
+              <div class="fname">
+                <input type="text" name="fname" id="firstname" required />
+                <label for="firstname">First name</label>
+                <span class="line"></span>
+              </div>
+              <div class="lname">
+                <input type="text" name="lname" id="lastname" required />
+                <label for="lastname">Last name</label>
+                <span class="line"></span>
+              </div>
+              <div class="phno">
+                <input type="text" name="phno" id="phone_number" required />
+                <label for="phone_number">Phone Number</label>
+                <span class="line"></span>
+              </div>
+              <div class="email">
+                <input type="text" name="email" id="email" required />
+                <label for="email">Email</label>
+                <span class="line"></span>
+              </div>
+              <div class="shopadd">
+                <div class="subject" id="subject">
+                  <label for="shop_address" class="shadd">Subject</label>
+                </div>
+                <textarea
+                  name="shopadd"
+                  id="shop_address"
+                  placeholder="Write something.."
+                  cols="60"
+                  rows="10"
+                  required></textarea>
+              </div>
+
+              <div class="submit" id="submit">
+                <button type="submit">SUBMIT</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="../script/contact.js"></script>
-</body>
+  </body>
 </html>
