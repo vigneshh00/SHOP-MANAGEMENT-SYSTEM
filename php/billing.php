@@ -20,12 +20,38 @@
             die("Connection failed: " . mysqli_connect_error());
         }
     ?>
-    <div class="box">
-        <div class="container">
+    <header>
+        <div class="menu">
+            <div class="icon-container" id="icon-container" onclick="myFunction(this)">
+              <div class="bar1" id="bar1"></div>
+              <div class="bar2" id="bar2"></div>
+              <div class="bar3" id="bar3"></div>
+            </div>
+            <div class="side-bar" id="side-bar">
+                <nav>
+                    <a href="../php/dashboard.php">Dashboard</a>
+                    <a href="../html/products.html">Products</a>
+                    <a href="../html/supplier.html">Suppliers</a>
+                    <a href="../html/customer.html">Customers</a>
+                    <a href="../php/insights.php">Insights</a>
+                    <a href="../php/billing.php">Billing</a>
+                    <a href="../php/login.php" id="contact-us">Log out</a> 
+                </nav>
+            </div>
+        </div>
+        <div class="headSection">
+             <h1 id="heading">Billing</h1>
+        </div>
+    </header>
+    
+    <main>
+    <div class="box" id="box">
+        <div class="container" id="container">
         <form action="" method="post">
             <h1>BILLING</h1>
             <div class="cid">
-                <input type="text" name="cid" id="customerid" value=" ">
+                <input type="text" name="cid" id="customerid" value = "<?php session_start();
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"){echo $_SESSION['customer_id'];} ?>"required>
                 <label for="customerid">Customer ID</label>
                 <span class="line"></span>
             </div>
@@ -49,6 +75,8 @@
                 $cid = $_POST['cid'];
                 $pid = $_POST['pid'];
                 $qty = $_POST['qty'];
+
+                $_SESSION['customer_id'] = $cid;
             
                 $flag = false;
             
@@ -66,8 +94,13 @@
                 $row = mysqli_fetch_assoc($res);
                 $id = $row['order_id'];
                 $cname = $row['customer_name'];
+
+                $_SESSION['order_id'] = $id;
             
                 $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
+                mysqli_query($conn, $sql);
+
+                $sql = "UPDATE product SET tax = 0.05 * price WHERE product_id = '$pid'";
                 mysqli_query($conn, $sql);
             
                 $sql = "SELECT MAX(order_item_id) as order_item_id FROM order_items";
@@ -91,23 +124,37 @@
                 $res = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($res);
                 $total = $row['total_price'];
+
+                $sql = "UPDATE customer_order SET order_date = CURDATE() WHERE order_date IS NULL";
+                mysqli_query($conn, $sql);
             }
         ?>
         <div class="billing">
-            <h1><?php echo $cname; ?></h1>
-            <div class="wrapper">
+            <h1 id="cname">
+                <?php 
+                    if(isset($cname)){
+                        echo $cname;
+                    }else{
+                        echo "Customer Name";
+                    } 
+                ?>
+            </h1>
+            <div class="wrapper" id="wrapper">
                 <table>
                     <thead>
-                        <th>Serial No.</th>
+                        <th>SI No.</th>
                         <th>Product</th>
                         <th>Quantity</th>
-                        <th>Subtotal</th>
+                        <th>Subtotal(Rs.)</th>
                     </thead>
                     <tbody>
                         <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                                $sql = "SELECT p.product_name as product,o.quantity as qty,o.subtotal as subtot FROM product p,order_items o
+                                $sql = "CREATE OR REPLACE VIEW temperory AS SELECT p.product_name as product,o.quantity as qty,o.subtotal as subtot,p.price as price, p.tax as tax FROM product p,order_items o
                                         WHERE o.product_id = p.product_id AND o.order_id = '$id'";
+                                mysqli_query($conn,$sql);
+
+                                $sql = "SELECT * FROM temperory";
                                 $res= mysqli_query($conn,$sql);
                                 while($row= mysqli_fetch_assoc($res)){
                         ?>
@@ -124,28 +171,36 @@
                     </tbody>
                 </table>
             </div>
-            <div class="total">
+            <div class="total" id="total">
                 <table>
                     <tbody>
                         <tr>
-                            <td>Total</td>
-                            <td>
+                            <td><b>Total</b></td>
+                            <td><b>
                                 <?php 
-                                    echo $total; 
+                                    if(isset($total)){
+                                        echo $total;
+                                    }else{
+                                        echo "0.0";
+                                    } 
                                     mysqli_close($conn);
                                 ?>
-                            </td>
+                            </b></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="submit">
+            <div class="submit" id="btn" >
+                <form action="" method = "get">
+                    <button name = "rem">Remove</button>
+                </form>
                 <form action="../php/customer_bill.php" method="post">
                     <button>Proceed</button>
                 </form>    
             </div>
         </div>
     </div>
-
+    </main>
+    <script src="../script/billing.js" defer></script>
 </body>
 </html>
