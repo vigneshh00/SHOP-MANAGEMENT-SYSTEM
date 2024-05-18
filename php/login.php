@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
@@ -15,7 +17,7 @@
             <a href="../html/team.html">Team</a>
             <a href="../php/login.php">Login</a>
             <a href="../html/signup.html">Sign up</a>
-            <a href="../html/contact.html" id="contact-us">Contact Us</a> 
+            <a href="../html/contact.html" id="contact-us">Contact Us</a>
         </div>
     </header>
 
@@ -25,19 +27,19 @@
                 <form action="../php/dashboard.php" method="post" autocomplete="off">
                     <h1>LOGIN</h1>
                     <div class="uname">
-                        <input type="text" name="username"required>
+                        <input type="text" name="username" required>
                         <label for="username">Username</label>
                         <span class="line"></span>
-                        <span class="icon"><i class="fa-solid fa-user" ></i></span>
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
                     </div>
                     <div class="email">
-                        <input type="text" name="email"required>
+                        <input type="text" name="email" required>
                         <label for="email">Email</label>
                         <span class="line"></span>
                         <span class="icon"><i class="fa-solid fa-envelope"></i></span>
                     </div>
                     <div class="password">
-                        <input type="password" name="password" id="pass"required>
+                        <input type="password" name="password" id="pass" required>
                         <label for="password">Password</label>
                         <span class="line"></span>
                         <span class="eye" onclick="myshow()">
@@ -52,7 +54,7 @@
                         <button type="submit">Login</button>
                     </div>
                 </form>
-                
+
             </div>
             <div class="container-1">
                 <h1>Hello there!</h1>
@@ -242,6 +244,7 @@
         mysqli_close($conn);
     ?>
 
-<script src="../script/login.js"></script>
+    <script src="../script/login.js"></script>
 </body>
+
 </html>
