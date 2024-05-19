@@ -88,6 +88,16 @@ $row = mysqli_fetch_assoc($res);
                 <div class="member">
                     
                     <h2><?php 
+                        echo $row['gst_number'];
+                        
+                        ?>
+                        </h2>
+                        <p>GST Number</p>
+                        
+                </div>
+                <div class="member">
+                    
+                    <h2><?php 
                         echo $row['username'];
                         
                         ?>
@@ -113,14 +123,11 @@ $row = mysqli_fetch_assoc($res);
                     </span>
                     <p>Password</p>
                 </div>
-                <div class="submit">
-                        <button class="edit" onclick="window.location.href='../php/edit_profile.php'">Edit</button>
-                </div>
-                <div class="submit">
-                        <button class="edit" onclick="window.location.href='../php/dashboard.php'">Back</button>
-                </div>
-              
             </div>
+        </div>
+        <div class="submit">
+            <button class="edit" onclick="window.location.href='../php/edit_profile.php'">Edit</button>
+            <button class="edit" onclick="window.location.href='../php/dashboard.php'">Back</button>
         </div>
     </main>
     <script>

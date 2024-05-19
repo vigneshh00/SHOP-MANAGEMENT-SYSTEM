@@ -53,7 +53,11 @@
                         <label for="shop_address" class="shadd">Shop Address</label>
                         <textarea name="shopadd" id="shop_address" cols="40" rows="10" ></textarea>
                     </div>
-                    
+                    <div class="gstnumber">
+                        <input type="text" name="gstno" id="gstnumber">
+                        <label for="gstnumber">GST Number</label>
+                        <span class="line"></span>
+                    </div>
                     <div class="email">
                         <input type="text" name="email" id="email" >
                         <label for="email">Email</label>
@@ -106,6 +110,7 @@
     $phone_number = intval($_POST['phno']);
     $shop_name = $_POST['shopname'];
     $shop_address=$_POST['shopadd'];
+    $gstno=$_POST['gstno'];
     $username=$_POST['uname'];
     $email=$_POST['email'];
     $password=$_POST['cm_pass'];
@@ -129,6 +134,10 @@
     }
     if(!empty($shop_address)){
         $updates[] = " shop_address='$shop_address'";
+       
+    }
+    if(!empty($gstno)){
+        $updates[] = " gst_number='$gstno'";
        
     }
     if(!empty($email)){

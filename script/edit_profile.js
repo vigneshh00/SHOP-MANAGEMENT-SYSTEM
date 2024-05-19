@@ -30,10 +30,10 @@ function myshow2(){
 function validateForm(){
     const forms= document.forms[0];
 
-    let uname = forms.elements[5].value;
-    let email = forms.elements[6].value;
-    let pass = forms.elements[7].value;
-    let cn_pass = forms.elements[8].value;
+    let uname = forms.elements[0].value;
+    let email = forms.elements[7].value;
+    let pass = forms.elements[8].value;
+    let cn_pass = forms.elements[9].value;
 
 if(email.length>0){
     if(!/\S+@\S+\.\S+/.test(email)){

@@ -76,6 +76,7 @@ header .menu-bar a:nth-child(2){
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 }
 .container .content .member{
     width: 25vw;
@@ -245,10 +246,11 @@ header .menu-bar a:nth-child(2){
 }
 
 .submit{
-    display: inline-block;
-    margin-top:50px;
-    margin-left:30px;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:40px;
+    gap: 10px;
 }
 .submit button{
     text-transform: uppercase;
@@ -258,7 +260,7 @@ header .menu-bar a:nth-child(2){
 	border-radius: 30px;
 	width:100px;
 	cursor:pointer;
-    height:auto;
+    height:40px;
     transition: all 0.4s;
 }
  .submit button:hover{
