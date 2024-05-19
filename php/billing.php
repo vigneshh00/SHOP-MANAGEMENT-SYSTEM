@@ -101,9 +101,6 @@
                 $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
                 mysqli_query($conn, $sql);
 
-                $sql = "UPDATE product SET tax = 0.05 * price WHERE product_id = '$pid'";
-                mysqli_query($conn, $sql);
-            
                 $sql = "SELECT MAX(order_item_id) as order_item_id FROM order_items";
                 $res= mysqli_query($conn,$sql);
                 $row= mysqli_fetch_assoc($res);

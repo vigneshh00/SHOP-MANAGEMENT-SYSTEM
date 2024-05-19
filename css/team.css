@@ -10,7 +10,7 @@ html{
 }
 /* HEADER SECTION */
 header{
-    background-color: black;
+    background-color: rgb(27, 27, 27);
     color: white;
     display: flex;
     justify-content:flex-end;

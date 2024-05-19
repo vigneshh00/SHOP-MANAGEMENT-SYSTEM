@@ -56,6 +56,9 @@
                 </tbody>
             </table>
         </div>
+        <div class = "submit">
+            <button onclick = "window.location.href = '../html/supplier.html'">Back</button>
+        </div>
     </div>
 </body>
 </html>

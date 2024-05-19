@@ -222,9 +222,6 @@
             $sql = "CREATE OR REPLACE TRIGGER `set_tax` BEFORE INSERT ON `product` FOR EACH ROW  SET NEW.tax=0.05*NEW.price;";
             mysqli_query($conn, $sql);
 
-        
-
-
             $sql = "CREATE OR REPLACE FUNCTION billing(o_id INT)
                     RETURNS DECIMAL(10,2)
                     BEGIN

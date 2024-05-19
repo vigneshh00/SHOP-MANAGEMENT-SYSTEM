@@ -8,14 +8,9 @@
 html{
     scroll-behavior: smooth;
 }
-body{
-    background: linear-gradient(to left, #99ccff 0%, #ffffff 100%);
-    /* background-image: url(images/logn_@.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
 /* HEADER SECTION */
 header{
+    background-color: rgb(27, 27, 27);
     color: white;
     display: flex;
     justify-content:flex-end;
@@ -25,7 +20,7 @@ header{
 header .menu-bar a{
     position: relative;
     text-decoration: none;
-    color: rgba(48, 87, 186, 0.663);
+    color: rgba(255, 255, 255, 0.663);
     margin: 15px;
     font-size: 20px;
     text-transform: uppercase;
@@ -49,7 +44,7 @@ header .menu-bar a:not(#contact-us):hover::after{
     width: 100%;
 }
 header .menu-bar #contact-us{
-    border: 2px solid rgba(77, 89, 182, 0.663);
+    border: 2px solid rgba(255, 255, 255, 0.663);
     border-radius: 40px;
     padding: 13px;
     font-size: 20px;
@@ -70,6 +65,7 @@ main{
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     height:500px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);

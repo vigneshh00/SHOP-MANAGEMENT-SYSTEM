@@ -8,14 +8,10 @@
 html{
     scroll-behavior: smooth;
 }
-/* body{
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/signup_bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+
 /* HEADER SECTION */
 header{
-    background-color: black;
+    background-color: rgb(27, 27, 27);
     display: flex;
     justify-content:flex-end;
     align-items: center;
