@@ -97,22 +97,27 @@
         <div class="buttonSection" id="buttonSection">
             <div class="threeButtons" id="threebuttons">
                 <button class="navbuttons">
-                    <div class="buttons" id="productInfo" onclick="window.location.href='../html/products.html'">
-                        <p>Product</p>
+                    <div class="buttons" id="productInfo" onclick="window.location.href='../php/profile.php'">
+                        <p>Profile</p>
                     </div>
                 </button>
                 <button class="navbuttons">
-                    <div class="buttons" id="supplierInfo" onclick="window.location.href='../html/supplier.html'">
+                    <div class="buttons" id="supplierInfo" onclick="window.location.href='../html/products.html'">
+                        <p> Product</p>
+                    </div>
+                </button>
+                <button class="navbuttons">
+                    <div class="buttons" id="customerInfo" onclick="window.location.href='../html/supplier.html'">
                         <p>Supplier</p>
-                    </div>
-                </button>
-                <button class="navbuttons">
-                    <div class="buttons" id="customerInfo" onclick="window.location.href='../html/customer.html'">
-                        <p>Customer</p>
                     </div>
                 </button>
             </div>
             <div class="lastButtons" id="lastButtons">
+                <button class="navbuttons">
+                    <div class="buttons" onclick="window.location.href='../html/customer.html'">
+                        <p>Customer</p>
+                    </div>
+                </button>
                 <button class="navbuttons">
                     <div class="buttons" onclick="window.location.href='../php/insights.php'">
                         <p>Insights</p>
@@ -121,11 +126,6 @@
                 <button class="navbuttons">
                     <div class="buttons" onclick="window.location.href='../php/billing.php'">
                         <p>Billing</p>
-                    </div>
-                </button>
-                <button class="navbuttons">
-                    <div class="buttons" onclick="window.location.href='../php/profile.php'">
-                        <p>Profile</p>
                     </div>
                 </button>
             </div>
