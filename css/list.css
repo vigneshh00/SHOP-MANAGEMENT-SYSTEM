@@ -61,12 +61,11 @@ td {
     color: white;
     height: 80px;
     padding:0;
-    margin:0;
     align-items: center;
     display: flex;
 }
 
-.container text{
+.container h1{
     padding-top: -5px;
     margin-left: 20px;
     font-family: "Arial",serif;
@@ -88,4 +87,7 @@ td {
     font-weight: bold;
     text-align: center;
     padding-top: 20px;
+}
+.back{
+    margin-left:150px;
 }

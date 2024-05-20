@@ -227,6 +227,17 @@ header .menu-bar a:nth-child(2){
 .container .content div:nth-child(8):hover p{
     color: white;
 }
+.container .content div:nth-child(9):hover{
+    transform: scale(1.05);
+    color: white;
+    background-color: black;
+}
+.container .content div:nth-child(9):hover h2{
+    color: white;
+}
+.container .content div:nth-child(9):hover p{
+    color: white;
+}
 
 .headSection {
     display: flex;
