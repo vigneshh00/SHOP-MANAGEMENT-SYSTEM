@@ -101,9 +101,6 @@
                 $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
                 mysqli_query($conn, $sql);
 
-                $sql = "UPDATE product SET tax = 0.05 * price WHERE product_id = '$pid'";
-                mysqli_query($conn, $sql);
-            
                 $sql = "SELECT MAX(order_item_id) as order_item_id FROM order_items";
                 $res= mysqli_query($conn,$sql);
                 $row= mysqli_fetch_assoc($res);
@@ -151,7 +148,8 @@
                     <tbody>
                         <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                                $sql = "CREATE OR REPLACE VIEW temperory AS SELECT p.product_name as product,o.quantity as qty,o.subtotal as subtot,p.price as price, p.tax as tax FROM product p,order_items o
+                                $sql = "CREATE OR REPLACE VIEW temperory AS SELECT p.product_name as product,o.quantity as qty,o.subtotal as subtot,p.price as price,p.price*o.quantity as price_amt, p.tax as tax,p.tax * o.quantity as tax_amt 
+                                        FROM product p,order_items o
                                         WHERE o.product_id = p.product_id AND o.order_id = '$id'";
                                 mysqli_query($conn,$sql);
 

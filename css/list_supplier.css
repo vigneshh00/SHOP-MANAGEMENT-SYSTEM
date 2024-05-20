@@ -6,7 +6,7 @@
 }
 
 .box{
-    margin: 6% auto;
+    margin: 5% auto;
     width: max-content;
     box-shadow: 0 4px 8px rgba(153, 153, 153, 0.918);
     border-radius: 20px;
@@ -54,4 +54,26 @@
 
 .box .container tr:hover td{
     color: rgb(68, 68, 228);
+}
+.box .submit{
+    display: flex;
+    justify-content: center;
+}
+.box .submit button{
+    text-transform: uppercase;
+	padding:9px;
+	font-size:20px;
+    margin-top: 10px;
+	outline:none;
+	border:2px solid white;
+	border-radius: 30px;
+	width:30%;
+    font-weight: 200;
+	cursor:pointer;
+    transition: all 0.4s;
+}
+
+.box .submit button:hover{
+  background-color: black;
+  color: white;
 }

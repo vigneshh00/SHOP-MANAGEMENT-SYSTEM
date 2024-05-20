@@ -67,7 +67,7 @@
                 }
             }
             else {
-                echo "Error deleting record: " . mysqli_error($conn);
+                echo "<script> alert('Error deleting record'); </script>";
             }
         }
 

@@ -80,10 +80,10 @@
             else {
                 echo "Error deleting record: " . mysqli_error($conn);
             }
-            }}
+            } mysqli_close($conn);}
         
         
-        mysqli_close($conn);
+       
         
     
 ?>

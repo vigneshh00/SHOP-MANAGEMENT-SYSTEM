@@ -83,7 +83,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
-            $phno = $_POST['phno'];
+            $phno = intval($_POST['phno']);
             $shopname = $_POST['shopname'];
             $shopadd = $_POST['shopadd'];
             $uname = $_POST['uname'];
@@ -152,7 +152,7 @@
                 product_name varchar(40),
                 category varchar(40),
                 price DECIMAL(10,2),
-                tax DECIMAl(10,2) DEFAULT 0.0,
+                tax DECIMAl(10,2) DEFAULT 0.00,
                 quantity_available INT,
                 supplier_id INT)";
             mysqli_query($conn,$sql_product);
@@ -219,6 +219,8 @@
                     END";
             mysqli_query($conn,$sql);
 
+            $sql = "CREATE OR REPLACE TRIGGER `set_tax` BEFORE INSERT ON `product` FOR EACH ROW  SET NEW.tax=0.05*NEW.price;";
+            mysqli_query($conn, $sql);
 
             $sql = "CREATE OR REPLACE FUNCTION billing(o_id INT)
                     RETURNS DECIMAL(10,2)
@@ -233,8 +235,7 @@
                             FROM product p, order_items o
                             WHERE o.product_id = p.product_id
                             AND o.order_item_id = o_id;
-                        SET result := price * quantity;
-                        SET result := result + tax;
+                        SET result := price * quantity + tax * quantity;
                         RETURN result;
                     END            
                     ";
