@@ -94,6 +94,11 @@
                         <p>Billing</p>
                     </div>
                 </button>
+                <button class="navbuttons">
+                    <div class="buttons" onclick="window.location.href='../php/profile.php'">
+                        <p>Profile</p>
+                    </div>
+                </button>
             </div>
         </div>
     </section>

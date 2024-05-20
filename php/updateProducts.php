@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Product Details</title>
-    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/updateProducts.css">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -25,13 +25,19 @@
                         <label for="lastname">Product Name</label>
                         <span class="line"></span>
                     </div>
-                    <div class="shopadd">
-                        <label for="shop_address" class="shadd">Product Description</label>
-                        <textarea name="shopadd" id="shop_address" cols="55" rows="10"></textarea>
+                    <div class="lname">
+                        <input type="text" name="shopadd" id="shop-address" required>
+                        <label for="shop_address">Product Category</label>
+                        <span class="line"></span>
                     </div>
                     <div class="phno">
                         <input type="text" name="phno" id="phone_number">
                         <label for="phone_number">Price</label>
+                        <span class="line"></span>
+                    </div>
+                    <div class="phno">
+                        <input type="text" name="tax" id="phone_number">
+                        <label for="phone_number">Tax</label>
                         <span class="line"></span>
                     </div>
                     <div class="shopname">
@@ -79,6 +85,7 @@
         $pid = intval($_POST['pid']);
         $pname = $_POST['lname'];
         $price = floatval($_POST['phno']);
+        $tax=floatval($_POST['tax']);
         $pdesc = $_POST['shopadd'];
         $quantity=intval($_POST['shopname']);
         $sup_id=intval($_POST['uname']);
@@ -93,8 +100,12 @@
             $updates[] = " price='$price'";
            
         }
+        if(!empty($tax)){
+            $updates[] = " tax='$tax'";
+           
+        }
         if(!empty($pdesc)){
-            $updates[] = " product_description='$pdesc'";
+            $updates[] = " category='$pdesc'";
            
         }
         if(!empty($quantity)){

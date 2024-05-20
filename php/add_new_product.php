@@ -50,6 +50,11 @@
                         <button type="submit">Product list</button>
                     </form>
                 </div>
+                <div class="submit">
+                    <form action="../html/products.html">
+                        <button type="submit">Back</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>

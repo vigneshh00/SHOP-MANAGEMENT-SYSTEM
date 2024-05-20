@@ -165,26 +165,25 @@ header {
 
 .buttonSection {
     display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 100px;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons {
     background-color: black;
     color: white;
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 350px;
+    transition: all 0.3s;
     height: 150px;
     font-size: 30px;
+    padding : 50px;
+      margin:20px;
 }
 
 .buttons:hover {
