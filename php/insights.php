@@ -92,6 +92,20 @@
                 ?>
             </td>
         </tr>
+        <tr>
+            <td>
+                Most frequent customer
+            </td>
+            <td>
+                <?php
+                  $sql="select customer_name from customer where no_of_visits=(select max(no_of_visits) from customer)";
+                  $res=mysqli_query($conn,$sql);
+                  while($row=mysqli_fetch_assoc($res)){  
+                  echo $row['customer_name'];
+                  echo "<br>";}
+                ?>
+            </td>
+        </tr>
         
         <table>
 

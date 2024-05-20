@@ -4,7 +4,97 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+.icon-container {
+    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 200px;
+    padding-left:10px;
+    transition: transform 0.5s;
+    z-index:1000;
+   
 
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #f4f4f4;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+.container1{
+    background-color: #1B1B1B;
+    color: white;
+    height: 0px;
+    display: flex;
+    align-items: center;
+    
+}
+.container1 .side-bar{
+    position:fixed;
+    height:100%;
+    width: 0px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1B1B1B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+}
+.container1 .side-bar a{
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.663);
+    margin: 20px;
+    font-size: 20px;
+    padding: 15px;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    transition: all 0.3s;
+}
+.container1 .side-bar a:not(#contact-us)::after{
+    display: block;
+    margin:auto;
+    margin-top: 10px;
+    content: "";
+    background-color:#F78702;
+    height: 2px;
+    width: 0%;
+    transition: all 0.3s;
+}
+.container1 .side-bar a:not(#contact-us):hover{
+    color: #F78702;
+}
+.container1 .side-bar a:not(#contact-us):hover::after{
+    width: 100%;
+}
+.container1 .side-bar #contact-us{
+    border: 2px solid rgba(255, 255, 255, 0.663);
+    border-radius: 40px;
+    margin-top:15px;
+    padding: 13px;
+    font-size: 20px;
+} 
+.container1 .side-bar #contact-us:hover{
+    border: 2px solid #F78702;
+    color: #F78702;
+    background-color: black;
+}
+.container1 .side-bar a:nth-child(2){
+    color: white;
+}
 html{
     scroll-behavior: smooth;
 }
@@ -114,135 +204,26 @@ header .menu-bar a:nth-child(2){
     margin: auto;
     margin: 10px;
 }
-.container .content div:nth-child(1) img{
-    border: 5px solid rgb(25, 224, 255);
-}
-.container .content div:nth-child(2) img{
-    border: 5px solid rgba(24, 238, 74, 0.945);
-}
-.container .content div:nth-child(3) img{
-    border: 5px solid rgba(129, 32, 232, 0.796);
-}
-.container .content div:nth-child(4) img{
-    border: 5px solid rgb(238, 138, 24);
-}
 
-.container .content div:nth-child(1):hover{
+.container .content .member:hover{
     transform: scale(1.05);
     color: white;
     background-color: black;
+
 }
-.container .content div:nth-child(1):hover h2{
-    color: white;
+.container .content .member:hover h2{
+    color:white;
 }
-.container .content div:nth-child(1):hover p{
-    color: white;
-}
-.container .content div:nth-child(1):hover img{
-    border: 5px solid rgb(76, 155, 168)
-}
-.container .content div:nth-child(2):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(2):hover h2{
-    color: white;
-}
-.container .content div:nth-child(2):hover p{
-    color: white;
-}
-.container .content div:nth-child(2):hover img{
-    border: 5px solid rgba(65, 170, 90, 0.945);
-}
-.container .content div:nth-child(3):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(3):hover h2{
-    color: white;
-}
-.container .content div:nth-child(3):hover p{
-    color: white;
-}
-.container .content div:nth-child(3):hover img{
-    border: 5px solid rgba(80, 47, 115, 0.796);
-}
-.container .content div:nth-child(4):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(4):hover h2{
-    color: white;
-}
-.container .content div:nth-child(4):hover p{
-    color: white;
-}
-.container .content div:nth-child(4):hover img{
-    border: 5px solid rgba(244, 186, 119, 0.796);
-} 
-.container .content div:nth-child(5):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(5):hover h2{
-    color: white;
-}
-.container .content div:nth-child(5):hover p{
-    color: white;
-}
-.container .content div:nth-child(6):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(6):hover h2{
-    color: white;
-}
-.container .content div:nth-child(6):hover p{
-    color: white;
-}
-.container .content div:nth-child(7):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(7):hover h2{
-    color: white;
-}
-.container .content div:nth-child(7):hover p{
-    color: white;
-}
-.container .content div:nth-child(8):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(8):hover h2{
-    color: white;
-}
-.container .content div:nth-child(8):hover p{
-    color: white;
-}
-.container .content div:nth-child(9):hover{
-    transform: scale(1.05);
-    color: white;
-    background-color: black;
-}
-.container .content div:nth-child(9):hover h2{
-    color: white;
-}
-.container .content div:nth-child(9):hover p{
-    color: white;
+.container .content .member:hover p{
+    color:white;
 }
 
 .headSection {
     display: flex;
 
-    margin: 60px 30px 70px 30px;
+    margin: 30px 15px 35px 15px;
+    padding-bottom: 16px;
+    padding-left:17px;
 }
 
 .storeDetails {
@@ -260,8 +241,9 @@ header .menu-bar a:nth-child(2){
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top:40px;
-    gap: 10px;
+    margin-top:10px;
+    
+
 }
 .submit button{
     text-transform: uppercase;
