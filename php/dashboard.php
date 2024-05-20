@@ -33,24 +33,24 @@
             $pass = $_POST['password'];
         
 
-        $sql = "SELECT username, email, password FROM signup";
-        $res=mysqli_query($conn,$sql);
-        $row = mysqli_fetch_assoc($res);
-
-        if($uname != $row['username']){
-            echo "<script>alert('Username is invalid!');
-              location.replace(\"../php/login.php\");</script>";
-        }
-        
-        elseif($email != $row['email']){
-            echo "<script>alert('Email is invalid!');
-              location.replace(\"../php/login.php\");</script>";
-        }
-        
-        elseif($pass != $row['password']){
-            echo "<script>alert('Password is invalid!');
-              location.replace(\"../php/login.php\");</script>";
-        }
+            $sql = "SELECT username, email, password FROM signup";
+            $res=mysqli_query($conn,$sql);
+            $row = mysqli_fetch_assoc($res);
+            
+            if($uname != $row['username']){
+                echo "<script>alert('Username is invalid!');
+                  location.replace(\"../php/login.php\");</script>";
+            }
+            
+            elseif($email != $row['email']){
+                echo "<script>alert('Email is invalid!');
+                  location.replace(\"../php/login.php\");</script>";
+            }
+            
+            elseif($pass != $row['password']){
+                echo "<script>alert('Password is invalid!');
+                  location.replace(\"../php/login.php\");</script>";
+            }
     }
 
 ?>
@@ -77,21 +77,10 @@
 
     </div>
     <?php
-        // $servername = "localhost";
-        // $username = "root";
-        // $password = "";
-        // $dbname = "shop management system";
-        
-        // $conn = mysqli_connect($servername, $username, $password,$dbname);
-        
-        // if (!$conn) {
-        //     die("Connection failed: " . mysqli_connect_error());
-        //   }
         
         $name="Select first_name,last_name,shop_name from signup";
         $res=mysqli_query($conn,$name); 
         $row = mysqli_fetch_assoc($res);
-        mysqli_close($conn);
  
     ?>
     <header>
@@ -99,7 +88,7 @@
             <div id="storeDetails" class="storeDetails">
                 <h1 class="storename" id="storename"><?php echo $row['shop_name'];?></h1>
                 <p class="username" id="username">Hello <?php echo $row["first_name"];
-                echo " " .$row['last_name'];?></p>
+                echo " " .$row['last_name'];   mysqli_close($conn);?></p>
             </div>
         </div>
     </header>
