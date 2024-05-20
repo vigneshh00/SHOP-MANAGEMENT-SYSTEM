@@ -8,53 +8,76 @@ echo "
     <title>List Customer</title>
     <link rel='stylesheet' href='../css/listCustomer.css'>
     <style>
-      h3 {
-        font-size: 60px;
-        font-weight: 900;
-        font-style: italic;
-        margin-bottom: 5px;
-        margin-left: 30px;
-        margin-top: 20px;
-      }
-      div{
-        display: flex;
-        justify-content: center;
-        align-items: center;  
-        border-radius: 100px;
-      }
-      table {
-        width: 100%;
-        padding: 10px;
-        font-family: 'Trebuchet MS';  
-        margin-left: 10px;
-        margin-right: 10px; 
-        border-collapse: separate;
-        border-radius: 10px;     
-      }
+		h3 {
+    		font-size: 60px;
+    		font-weight: 900;
+    		font-style: italic;
+    		margin-bottom: 15px;
+    		margin-left: 30px;
+    		margin-top: 20px;
+		}
+		
+		div{
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;  
+        	border-radius: 100px;
+    	}
+      	
+		table {
+        	width: 100%;
+        	padding: 10px;
+        	font-family: 'Trebuchet MS';  
+        	margin-left: 20px;
+        	margin-right: 20px; 
+        	border-collapse: separate;
+        	border-radius: 10px;     
+		}	
     
-      th {
-        font-size: 25px;
-        background-color: black;
-        color: whitesmoke;
-      }
+		th {
+        	font-size: 25px;
+        	background-color: black;
+        	color: whitesmoke;
+    	}
       
-      th, td {
-        padding: 8px;
-        text-align: center;
-        border-bottom: 2px solid #ddd;
-      }
+		th, td {
+        	padding: 8px;
+        	text-align: center;
+        	border-bottom: 2px solid #ddd;
+    	}
     
-      td {
-        font-size: 20px;
-      }
-      tr{
-      background-color: #bcbcbc;
-      }
+    	td {
+        	font-size: 20px;
+      	}
       
-      tr:hover {
-        background-color: #444;
-        color: whitesmoke;
-      }
+		tr{
+      		background-color: #bcbcbc;
+      	}
+      
+      	tr:hover {
+        	background-color: #444;
+        	color: whitesmoke;
+      	}
+
+      	table tr:last-child td:first-child {
+    		border: 2px solid #ddd;
+    		border-bottom-left-radius: 20px;
+		}
+    
+		table tr:last-child td:last-child {
+    		border-: 2px solid #ddd;
+    		border-bottom-right-radius: 20px;
+		}
+      	
+		table tr:first-child th:first-child {
+    		border: 2px;
+    		border-top-left-radius: 20px;
+		}
+    
+		table tr:first-child th:last-child {
+    		border: 2px;
+    		border-top-right-radius: 20px;
+		}
     </style>
 
 </head>";
