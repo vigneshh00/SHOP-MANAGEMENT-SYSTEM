@@ -14,6 +14,46 @@
 </head>
 
 <body>
+    <?php
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "shop management system";
+
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            $uname = $_POST['username'];
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+        
+
+        $sql = "SELECT username, email, password FROM signup";
+        $res=mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($res);
+
+        if($uname != $row['username']){
+            echo "<script>alert('Username is invalid!');
+              location.replace(\"../php/login.php\");</script>";
+        }
+        
+        elseif($email != $row['email']){
+            echo "<script>alert('Email is invalid!');
+              location.replace(\"../php/login.php\");</script>";
+        }
+        
+        elseif($pass != $row['password']){
+            echo "<script>alert('Password is invalid!');
+              location.replace(\"../php/login.php\");</script>";
+        }
+    }
+
+?>
 
     <div class="container">
         <div class="icon-container" id="icon-container" onclick="myFunction(this)">
@@ -37,16 +77,16 @@
 
     </div>
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "shop management system";
+        // $servername = "localhost";
+        // $username = "root";
+        // $password = "";
+        // $dbname = "shop management system";
         
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        // $conn = mysqli_connect($servername, $username, $password,$dbname);
         
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-          }
+        // if (!$conn) {
+        //     die("Connection failed: " . mysqli_connect_error());
+        //   }
         
         $name="Select first_name,last_name,shop_name from signup";
         $res=mysqli_query($conn,$name); 

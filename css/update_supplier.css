@@ -69,6 +69,9 @@
     font-size: 20px;
 	padding-left:30px;
 }
+.box .container input:focus~label{
+    color: #3348a4;
+}
 .box .container .line{
     position: absolute;
     bottom: 0;
