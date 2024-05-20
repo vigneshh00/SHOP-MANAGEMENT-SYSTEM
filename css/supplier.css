@@ -52,7 +52,7 @@ header .container .side-bar{
     background-color: #1B1B1B;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 header .container .side-bar a{
     position: relative;
@@ -60,7 +60,7 @@ header .container .side-bar a{
     color: rgba(255, 255, 255, 0.663);
     margin: 15px;
     font-size: 20px;
-    padding: 25px;
+    padding: 20px;
     text-transform: uppercase;
     display: block;
     text-align: center;
@@ -94,7 +94,7 @@ header .container .side-bar #contact-us:hover{
     color: #F78702;
     background-color: black;
 }
-header .container .side-bar a:nth-child(3){
+header .container .side-bar a:nth-child(4){
     color: white;
 }
 
