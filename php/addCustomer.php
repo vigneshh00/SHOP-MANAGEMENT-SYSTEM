@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
     <main>
@@ -34,7 +36,7 @@
                         <button onclick="window.location.href='../html/customer.html'">Back</button>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </main>
@@ -60,10 +62,13 @@ if (isset($_POST['submit'])) {
         
         $sql = "insert into customer (customer_name, customer_phonenumber, customer_address) values('$customerName','$phno', '$customerAddress')";
 
-        mysqli_query($conn, $sql);
-
+        if(mysqli_query($conn,$sql)){
+            echo"<script>alert('Customer added successfully');</script>";
+        }
+        
         mysqli_close($conn);
 }        
     ?>
 </body>
+
 </html>
