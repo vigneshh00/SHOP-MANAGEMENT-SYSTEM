@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <title>Your products</title>
 </head>
+
 <body>
-<header>
-    <div class="container"><h1>Products</h1></div>
-    <div class="search-bar">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <p style="  font-size: 16px;
+    <header>
+        <div class="container">
+            <h1>Products</h1>
+        </div>
+        <div class="search-bar">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <p style="  font-size: 16px;
     font-weight: bold;
     text-align: left;">Display by category</p>
-        <input name="category" type="text" placeholder="Search..">
-        <button type="submit"><i class="fas fa-search" style="color:#ffffff"></i></button></form>
-    </div>
-    
-    
-</header>
-<?php
+                <input name="category" type="text" placeholder="Search..">
+                <button type="submit"><i class="fas fa-search" style="color:#ffffff"></i></button>
+            </form>
+        </div>
+
+
+    </header>
+    <?php
 session_start();
 $servername = "localhost";
 $username = "root";
@@ -68,16 +74,16 @@ else
         echo "<table><tr><th>Product id</th><th>Product name</th><th>Product description</th><th>Price</th><th>Tax</th><th>Quantity</th><th>Supplier id</th></tr>";
     while ($row = mysqli_fetch_assoc($res)) {
         ?>
-        <tr>
-            <td><?php echo $row['product_id'] ?></td>
-            <td><?php echo $row['product_name'] ?></td>
-            <td><?php echo $row['category'] ?></td>
-            <td><?php echo $row['price'] ?></td>
-            <td><?php echo $row['tax'] ?></td>
-            <td><?php echo $row['quantity_available'] ?></td>
-            <td><?php echo $row['supplier_id'] ?></td>
-        </tr>
-        <?php
+    <tr>
+        <td><?php echo $row['product_id'] ?></td>
+        <td><?php echo $row['product_name'] ?></td>
+        <td><?php echo $row['category'] ?></td>
+        <td><?php echo $row['price'] ?></td>
+        <td><?php echo $row['tax'] ?></td>
+        <td><?php echo $row['quantity_available'] ?></td>
+        <td><?php echo $row['supplier_id'] ?></td>
+    </tr>
+    <?php
     }
     echo "</table><br><br>";
     echo "<div class=\"submit add-more\"><button class=\"bt\" onclick=\"window.location.href='../php/add_new_product.php'\">Add more products</button> </div>";
@@ -88,4 +94,5 @@ else
 mysqli_close($conn);
 ?>
 </body>
+
 </html>

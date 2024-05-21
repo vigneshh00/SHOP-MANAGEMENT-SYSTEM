@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remove Supplier</title>
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <link rel="stylesheet" href="../css/remove_supplier.css">
 </head>
+
 <body>
     <main>
         <div class="box">
             <div class="container">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" autocomplete="off">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off">
                     <h1>REMOVE A SUPPLIER</h1>
                     <div class="sid">
                         <input type="text" name="sid" id="supplierId">
@@ -75,4 +78,5 @@
     
     ?>
 </body>
+
 </html>

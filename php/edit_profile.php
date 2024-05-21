@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
     <link rel="stylesheet" href="../css/edit_profile.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
 
     <header>
-    <div class="headSection" id="headSection">
-                <h1 class="heading">Edit Profile</h1>
-               
-    </div>
+        <div class="headSection" id="headSection">
+            <h1 class="heading">Edit Profile</h1>
+
+        </div>
     </header>
-    
+
 
     <main>
         <div class="box">
             <div class="container">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off" onsubmit="return validateForm()">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off"
+                    onsubmit="return validateForm()">
                     <h1>EDIT</h1>
                     <div class="name">
                         <input type="text" name="uname" id="username" required>
@@ -35,23 +39,23 @@
                         <span class="line"></span>
                     </div>
                     <div class="lname">
-                        <input type="text" name="lname" id="lastname" >
+                        <input type="text" name="lname" id="lastname">
                         <label for="lastname">Last name</label>
                         <span class="line"></span>
                     </div>
                     <div class="phno">
-                        <input type="text" name="phno" id="phone_number" >
+                        <input type="text" name="phno" id="phone_number">
                         <label for="phone_number">Phone Number</label>
                         <span class="line"></span>
                     </div>
                     <div class="shopname">
-                        <input type="text" name="shopname" id="shopname" >
+                        <input type="text" name="shopname" id="shopname">
                         <label for="shopname">Shop name</label>
                         <span class="line"></span>
                     </div>
                     <div class="shopadd">
                         <label for="shop_address" class="shadd">Shop Address</label>
-                        <textarea name="shopadd" id="shop_address" cols="40" rows="10" ></textarea>
+                        <textarea name="shopadd" id="shop_address" cols="40" rows="10"></textarea>
                     </div>
                     <div class="gstnumber">
                         <input type="text" name="gstno" id="gstnumber">
@@ -59,12 +63,12 @@
                         <span class="line"></span>
                     </div>
                     <div class="email">
-                        <input type="text" name="email" id="email" >
+                        <input type="text" name="email" id="email">
                         <label for="email">Email</label>
                         <span class="line"></span>
                     </div>
                     <div class="password">
-                        <input type="password" name="password" id="pass" >
+                        <input type="password" name="password" id="pass">
                         <label for="pass">Password</label>
                         <span class="line"></span>
                         <span class="eye" onclick="myshow1()">
@@ -73,10 +77,10 @@
                         </span>
                     </div>
                     <div class="password">
-                        <input type="password" name="cm_pass" id="confirm_password" >
+                        <input type="password" name="cm_pass" id="confirm_password">
                         <label for="confirm_password">Confirm Password</label>
                         <span class="line"></span>
-                        
+
                         <span class="eye" onclick="myshow2()">
                             <i class="fa fa-eye" id="eye3"></i>
                             <i class="fa fa-eye-slash" id="eye4"></i>
@@ -88,7 +92,7 @@
                     </div>
                 </form>
                 <div class="submit">
-                        <button onclick="window.location.href='../php/profile.php'">Profile page</button>
+                    <button onclick="window.location.href='../php/profile.php'">Profile page</button>
                 </div>
             </div>
         </div>
@@ -163,7 +167,8 @@
   
 
 ?>
-    
+
     <script src="../script/edit_profile.js"></script>
 </body>
+
 </html>

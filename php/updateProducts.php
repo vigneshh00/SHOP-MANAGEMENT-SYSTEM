@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Product Details</title>
     <link rel="stylesheet" href="../css/updateProducts.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
     <main>
         <div class="box">
             <div class="container">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" autocomplete="off">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off">
                     <h1>UPDATE A PRODUCT</h1>
                     <div class="pid">
                         <input type="text" name="pid" id="productId" required>
@@ -53,7 +56,7 @@
                     <div class="submit">
                         <button type="submit" name="submit">Update</button>
                     </div>
-                    
+
                 </form>
                 <div class="submit">
                     <form action="../php/list.php">
@@ -68,7 +71,7 @@
             </div>
         </div>
     </main>
-<?php
+    <?php
    if (isset($_POST['submit'])) { 
     $servername = "localhost";
     $username = "root";
@@ -130,7 +133,8 @@
 
     mysqli_close($conn);}
 ?>
-    
+
     <script src="../script/signup.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Suppliers</title>
     <link rel="stylesheet" href="../css/list_supplier.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
 </head>
+
 <body>
     <?php
      $servername = "localhost";
@@ -56,9 +59,10 @@
                 </tbody>
             </table>
         </div>
-        <div class = "submit">
-            <button onclick = "window.location.href = '../html/supplier.html'">Back</button>
+        <div class="submit">
+            <button onclick="window.location.href = '../html/supplier.html'">Back</button>
         </div>
     </div>
 </body>
+
 </html>

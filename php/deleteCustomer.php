@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Customer</title>
     <link rel="stylesheet" href="../css/addCustomer.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
     <main>
@@ -34,7 +37,7 @@
                         <button onclick="window.location.href='../html/customer.html'">Back</button>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </main>
@@ -72,4 +75,5 @@
 
 
 </body>
+
 </html>

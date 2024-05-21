@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Supplier</title>
     <link rel="stylesheet" href="../css/update_supplier.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
 </head>
+
 <body>
     <main>
         <div class="box">
             <div class="container">
-                <form action=""  method="post" autocomplete="off">
+                <form action="" method="post" autocomplete="off">
                     <h1>UPDATE SUPPLIER</h1>
                     <div class="sid">
                         <input type="text" name="sid" id="supplierId" required>
@@ -88,4 +91,5 @@
     
     ?>
 </body>
+
 </html>

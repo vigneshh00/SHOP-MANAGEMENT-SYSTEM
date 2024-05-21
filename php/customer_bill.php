@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/customer_bill.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <title>Invoice</title>
 </head>
+
 <body>
     <?php
         $servername = "localhost";
@@ -66,8 +69,8 @@
                 <p style="margin-bottom: 5px;"><b>Phone number : </b>+91 <?php echo $row2['customer_phonenumber']?></p>
             </div>
             <div class="orderId">
-                <p style = "color:rgb(80, 80, 202);"><b>Order No.</b></p>
-                <p style = "color:rgb(80, 80, 202);"><b>Order Date</b></p>
+                <p style="color:rgb(80, 80, 202);"><b>Order No.</b></p>
+                <p style="color:rgb(80, 80, 202);"><b>Order Date</b></p>
                 <p><?php echo $order_id?></p>
                 <p><?php echo $row3['order_date']?></p>
             </div>
@@ -94,8 +97,8 @@
                             <td><?php echo $row4['qty']?></td>
                             <td><?php echo $row4['price']?></td>
                             <td><?php echo $row4['tax']?></td>
-                            <td><?php echo $row4['subtot']?></td>                        
-                        </tr>   
+                            <td><?php echo $row4['subtot']?></td>
+                        </tr>
                         <?php
                             }
 
@@ -117,22 +120,23 @@
                 </table>
             </div>
             <div class="total">
-            <table>
-                <tbody>
-                    <tr>
-                        <td><b>Total</b></td>
-                        <td><b><?php echo $row5['price'] ?></b></td>
-                        <td><b><?php echo $row6['tax'] ?></b></td>
-                        <td><b><?php echo $row7['total_price'] ?></b></td>
-                    </tr>
-                </tbody>
-            </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><b>Total</b></td>
+                            <td><b><?php echo $row5['price'] ?></b></td>
+                            <td><b><?php echo $row6['tax'] ?></b></td>
+                            <td><b><?php echo $row7['total_price'] ?></b></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="submit">
-                <button onclick = "window.print()">PRINT</button>
-                <button onclick = "window.location.href = '../php/dashboard.php'">BACK</button>
+                <button onclick="window.print()">PRINT</button>
+                <button onclick="window.location.href = '../php/dashboard.php'">BACK</button>
             </div>
         </div>
     </div>
 </body>
+
 </html>

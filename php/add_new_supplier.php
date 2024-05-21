@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Supplier</title>
     <link rel="stylesheet" href="../css/add_new_supplier.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
 </head>
+
 <body>
     <main>
         <div class="box">
             <div class="container">
-                <form action=""  method="post" autocomplete="off">
+                <form action="" method="post" autocomplete="off">
                     <h1>ADD A SUPPLIER</h1>
                     <div class="sname">
                         <input type="text" name="sname" id="supplierName" required>
@@ -63,4 +66,5 @@
     
     ?>
 </body>
+
 </html>

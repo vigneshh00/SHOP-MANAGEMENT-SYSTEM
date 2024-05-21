@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete products</title>
     <link rel="stylesheet" href="../css/deleteProducts.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
     <main>
@@ -32,16 +35,16 @@
                     <div class="btns">
                         <button type="submit" name="submit" value="submit">Delete</button>
                     </div>
-                    </form>
-                    <div class="btns">
-                        <button onclick="window.location.href='../php/list.php'">Product list</button>
-                    </div>
-                    <div class="btns">
-                        <button onclick="window.location.href='../html/products.html'">Back</button>
-                    </div>
-                    
-                
-                
+                </form>
+                <div class="btns">
+                    <button onclick="window.location.href='../php/list.php'">Product list</button>
+                </div>
+                <div class="btns">
+                    <button onclick="window.location.href='../html/products.html'">Back</button>
+                </div>
+
+
+
             </div>
         </div>
     </main>
@@ -90,4 +93,5 @@
 
 
 </body>
+
 </html>

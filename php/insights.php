@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/insights.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <title>Insights</title>
 </head>
+
 <body>
-<header>
-    <p>Insights</p>
-</header>
-<div class="container">
+    <header>
+        <p>Insights</p>
+    </header>
+    <div class="container">
         <div class="icon-container" id="icon-container" onclick="myFunction(this)">
-          <div class="bar1" id="bar1"></div>
-          <div class="bar2" id="bar2"></div>
-          <div class="bar3" id="bar3"></div>
+            <div class="bar1" id="bar1"></div>
+            <div class="bar2" id="bar2"></div>
+            <div class="bar3" id="bar3"></div>
         </div>
-                <div class="side-bar" id="side-bar">
-                    <nav>
-                        <a href="../php/dashboard.php">Dashboard</a>
-                        <a href="../html/products.html">Products</a>
-                        <a href="../html/supplier.html">Suppliers</a>
-                        <a href="../html/customer.html">Customers</a>
-                        <a href="../php/insights.php">Insights</a>
-                        <a href="../php/login.php" id="contact-us">Log out</a>
-                       
-                       
-                    </nav>
-                </div>
-           
-</div>
-<?php
+        <div class="side-bar" id="side-bar">
+            <nav>
+                <a href="../php/dashboard.php">Dashboard</a>
+                <a href="../html/products.html">Products</a>
+                <a href="../html/supplier.html">Suppliers</a>
+                <a href="../html/customer.html">Customers</a>
+                <a href="../php/insights.php">Insights</a>
+                <a href="../php/login.php" id="contact-us">Log out</a>
+
+
+            </nav>
+        </div>
+
+    </div>
+    <?php
      $servername = "localhost";
      $username = "root";
      $password = "";
@@ -51,9 +54,10 @@
     }
     if(mysqli_num_rows($res)){
         ?>
-        <table>
+    <table>
         <tr>
-            <td>Supplier who supplies the highest number of products</td><td><?php
+            <td>Supplier who supplies the highest number of products</td>
+            <td><?php
             $sql="select Supplier_name from supplier_product_count where Number_of_products_supplied=(select max(Number_of_products_supplied) from supplier_product_count)";
             $res=mysqli_query($conn,$sql);
             $row=mysqli_fetch_assoc($res);
@@ -106,18 +110,19 @@
                 ?>
             </td>
         </tr>
-        
+
         <table>
 
-   <?php } ?>
-   <script>
-        function myFunction(x) {
-        x.classList.toggle("change");
-        }
-    </script>
-    <script src="../script/insights.js"></script>
-    
+            <?php } ?>
+            <script>
+            function myFunction(x) {
+                x.classList.toggle("change");
+            }
+            </script>
+            <script src="../script/insights.js"></script>
 
-    
+
+
 </body>
+
 </html>
