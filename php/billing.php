@@ -84,20 +84,39 @@
                     $_SESSION['qty'] = $qty;
 
                     $flag =  $_SESSION['flag'];
+                    $flag1 = true;
 
+                    $sql = "SELECT customer_name FROM customer WHERE customer_id = '$cid'";
+                    $res = mysqli_query($conn, $sql);
+                
+                    if(mysqli_num_rows($res) == 0){
+                        echo "<script>confirm('Customer not found!');</script>";
+                        $flag1 = false;
+                    }
+
+                $sql = "SELECT product_name FROM product WHERE product_id = '$pid'";
+                $res = mysqli_query($conn, $sql);
+                
+
+                if(mysqli_num_rows($res) == 0){
+                    echo "<script>confirm('Product not found!');</script>";
+                }else{
+                    
                 $sql = "SELECT quantity_available FROM product WHERE product_id = '$pid'";
                 $res = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($res);
                 $qty_avl = $row['quantity_available'];
-
+                }
+                
                    
-                if ($flag == 0) {
+                if ($flag == 0 && $flag1) {
                     $sql = "INSERT INTO customer_order(customer_id) VALUES ('$cid')";
                     mysqli_query($conn, $sql);
                     $flag = true;
                     $_SESSION['flag'] = $flag;
                 }
-            
+
+               
                 $sql = "SELECT MAX(o.order_id) as order_id, c.customer_name as customer_name FROM customer_order o, customer c 
                         WHERE o.customer_id = '$cid' AND o.customer_id = c.customer_id";
                 $res = mysqli_query($conn, $sql);
@@ -107,13 +126,18 @@
 
                 $_SESSION['order_id'] = $id;
 
-                if($qty > $qty_avl){
-                    echo "<script>alert('Product out of stock!  Quantity available = " . $qty_avl . "');</script>";
+                if(isset($qty_avl)){
+                    if($qty > $qty_avl){
+                        echo "<script>confirm('Product out of stock!  Quantity available = " . $qty_avl . "');</script>";
+                    }
+                    else{
+                        if($flag1){
+                            $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
+                            mysqli_query($conn, $sql);
+                        }
+                    } 
                 }
-                else{
-                    $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
-                    mysqli_query($conn, $sql);
-                } 
+                
 
                 $sql = "SELECT MAX(order_item_id) as order_item_id FROM order_items";
                 $res= mysqli_query($conn,$sql);
@@ -132,10 +156,13 @@
                         WHERE order_id ='$id'";
                 mysqli_query($conn, $sql);
 
-                $sql = "SELECT total_price FROM customer_order WHERE order_id = '$id'";
+                if(isset($id)){
+                    $sql = "SELECT total_price FROM customer_order WHERE order_id = '$id'";
                 $res = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($res);
                 $total = $row['total_price'];
+                }
+                
 
                 $sql = "UPDATE customer_order SET order_date = CURDATE() WHERE order_date IS NULL";
                 mysqli_query($conn, $sql);
