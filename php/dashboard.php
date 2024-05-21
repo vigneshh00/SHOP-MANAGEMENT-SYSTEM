@@ -28,10 +28,11 @@
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            
+
             $uname = $_POST['username'];
             $email = $_POST['email'];
             $pass = $_POST['password'];
-        
 
             $sql = "SELECT username, email, password FROM signup";
             $res=mysqli_query($conn,$sql);
@@ -50,6 +51,7 @@
             elseif($pass != $row['password']){
                 echo "<script>alert('Password is invalid!');
                   location.replace(\"../php/login.php\");</script>";
+                
             }
     }
 
@@ -78,7 +80,13 @@
 
     </div>
     <?php
-        
+         session_start();
+
+         
+         $flag = 0;
+            
+         $_SESSION['flag'] = $flag;
+     
         $name="Select first_name,last_name,shop_name from signup";
         $res=mysqli_query($conn,$name); 
         $row = mysqli_fetch_assoc($res);

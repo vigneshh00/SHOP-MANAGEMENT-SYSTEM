@@ -17,6 +17,55 @@ header{
     align-items: center;
     padding: 30px;
 }
+
+.title-bar {
+    background-color: var(--blackColour);
+    color: var(--whiteColour);
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 30px 20px 0px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    overflow: hidden;
+    width: 100%
+  }
+  
+  .title-bar .name,
+  .title-bar p {
+    font-size: 60px;
+    padding: 10px;
+    font-weight: 800;
+    font-family: "Merriweather", serif;
+    color: var(--gradientRight);
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    align-items: center;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+  
+  .title-bar .name {
+    height: 90px;
+    float: left;
+  }
+  .logoImage {
+    width: 90px;
+    margin-top: 15px;
+  }
+  
+  .title-bar p {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 50px;
+    color: var(--whiteColour);
+  }
+
+  header .menu-bar {
+    float: right;
+  }
 header .menu-bar a{
     position: relative;
     text-decoration: none;

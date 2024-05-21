@@ -12,14 +12,27 @@
 
 <body>
     <header>
-        <!-- INCLUDE LOGO AND COMPANY NAME HERE -->
-        <div class="menu-bar">
-            <a href="../html/index.html">Home</a>
-            <a href="../html/team.html">Team</a>
-            <a href="../php/login.php">Login</a>
-            <a href="../html/signup.html">Sign up</a>
-            <a href="../html/contact.html" id="contact-us">Contact Us</a>
+    <div class="title-bar">
+        <div class="name">
+          <div class="logoImage">
+            <img
+              src="../images/icon_logo.png"
+              alt="logo"
+              height="90"
+              width="90" />
+          </div>
+          <div><p class="companyName" id="companyName">Market Manager</p></div>
         </div>
+      <div class="menu-bar">
+        <nav>
+          <a href="../html/index.html">Home</a>
+          <a href="../html/team.html">Team</a>
+          <a href="../php/login.php">Login</a>
+          <a href="../html/signup.html">Sign up</a>
+          <a href="../html/contact.html" id="contact-us">Contact Us</a>
+        </nav>
+      </div>
+      </div>
     </header>
 
     <main>

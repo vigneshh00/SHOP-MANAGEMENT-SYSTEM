@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing</title>
     <link rel="stylesheet" href="../css/billing.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
 </head>
 <body>
     <?php
@@ -82,18 +83,22 @@
                     $_SESSION['product_id'] = $pid;
                     $_SESSION['qty'] = $qty;
 
-                    
-                $flag = false;
-            
-                $sql = "SELECT * FROM customer_order WHERE customer_id = '$cid'";
+                    $flag =  $_SESSION['flag'];
+
+                $sql = "SELECT quantity_available FROM product WHERE product_id = '$pid'";
                 $res = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($res) == 0) {
+                $row = mysqli_fetch_assoc($res);
+                $qty_avl = $row['quantity_available'];
+
+                   
+                if ($flag == 0) {
                     $sql = "INSERT INTO customer_order(customer_id) VALUES ('$cid')";
                     mysqli_query($conn, $sql);
                     $flag = true;
+                    $_SESSION['flag'] = $flag;
                 }
             
-                $sql = "SELECT o.order_id as order_id, c.customer_name as customer_name FROM customer_order o, customer c 
+                $sql = "SELECT MAX(o.order_id) as order_id, c.customer_name as customer_name FROM customer_order o, customer c 
                         WHERE o.customer_id = '$cid' AND o.customer_id = c.customer_id";
                 $res = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($res);
@@ -101,9 +106,14 @@
                 $cname = $row['customer_name'];
 
                 $_SESSION['order_id'] = $id;
-            
-                $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
-                mysqli_query($conn, $sql);
+
+                if($qty > $qty_avl){
+                    echo "<script>alert('Product out of stock!  Quantity available = " . $qty_avl . "');</script>";
+                }
+                else{
+                    $sql = "INSERT INTO order_items(order_id, product_id, quantity) VALUES ('$id', '$pid', '$qty')";
+                    mysqli_query($conn, $sql);
+                } 
 
                 $sql = "SELECT MAX(order_item_id) as order_item_id FROM order_items";
                 $res= mysqli_query($conn,$sql);
