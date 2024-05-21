@@ -155,11 +155,10 @@
     if(!empty($updates)){
         $sql .=implode(", ",$updates) . " WHERE username='$username'";
         $result=mysqli_query($conn,$sql);
-        if($result ){
-            echo "<script> alert('Updated your details successfully!');</script>";
-        }
-        else {
-            echo "Error updating record: " . mysqli_error($conn);
+        if(mysqli_affected_rows($conn)>0){
+            echo "<script> alert('Updated profile successfully!');</script>";}
+        else{
+            echo "<script> alert('Username not found!');</script>";
         }
         }}
     
