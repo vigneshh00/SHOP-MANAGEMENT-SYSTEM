@@ -61,10 +61,15 @@ if (isset($_POST['submit'])) {
             $customerAddress = $_POST['cust_add'];
         }
         
-        $sql = "insert into customer (customer_name, customer_phonenumber, customer_address) values('$customerName','$phno', '$customerAddress')";
+        $sql = "INSERT INTO customer (customer_name, customer_phonenumber, customer_address) VALUES('$customerName','$phno', '$customerAddress')";
 
         if(mysqli_query($conn,$sql)){
-            echo"<script>alert('Customer added successfully');</script>";
+            $sql = "SELECT MAX(customer_id) AS new_id FROM customer";
+            $res = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($res);
+            $newid = $row['new_id'];
+            
+            echo"<script>alert('Customer added successfully! Customer id: " . $newid . "');</script>";
         }
         
         mysqli_close($conn);

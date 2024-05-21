@@ -59,8 +59,13 @@
             $sql = "INSERT INTO supplier(supplier_name,supplier_phonenumber,supplier_address) VALUES('$sname','$phonenumber','$add')";
             
             if(mysqli_query($conn,$sql)){
-                echo"<script>alert('Supplier added successfully');</script>";
-            }
+            $sql = "SELECT MAX(supplier_id) AS new_id FROM supplier";
+            $res = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($res);
+            $newid = $row['new_id'];
+            
+            echo"<script>alert('Supplier added successfully! Supplier id: " . $newid . "');</script>";
+        }
         }
         mysqli_close($conn);
     
