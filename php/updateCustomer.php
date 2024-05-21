@@ -84,9 +84,13 @@
             $result=mysqli_query($conn,$sql);
             
             if($result){
-                echo "<script> alert('Updated Customer details successfully!');</script>";
+                if(mysqli_affected_rows($conn)>0){
+                    echo "<script> alert('Updated customer details successfully!');</script>";
+                }else{
+                    echo "<script> alert('Customer not found!');</script>";
+                }
             }else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "<script> alert('Error updating record'); </script>";
             }
             
         }
