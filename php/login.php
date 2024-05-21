@@ -97,7 +97,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
-            $phno = intval($_POST['phno']);
+            $phno = $_POST['phno'];
             $shopname = $_POST['shopname'];
             $shopadd = $_POST['shopadd'];
             $uname = $_POST['uname'];

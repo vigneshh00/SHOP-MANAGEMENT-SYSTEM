@@ -48,6 +48,10 @@
       }
     $sql="CREATE OR REPLACE VIEW supplier_product_count AS select supplier.supplier_id as Supplier_id, supplier.supplier_name as Supplier_name, COUNT(product.supplier_id) as Number_of_products_supplied from product,supplier where product.supplier_id=supplier.supplier_id group by supplier.supplier_id";
     $res=mysqli_query($conn,$sql); 
+    $sql="CREATE OR REPLACE VIEW product_count_ordered AS select product.product_id as product_id, product.product_name as product_name, SUM(order_items.quantity) as quantity from product join order_items on order_items.product_id=product.product_id group by order_items.product_id";
+    $res=mysqli_query($conn,$sql);
+    $sql="CREATE OR REPLACE VIEW spent_on_purchase AS select customer.customer_id as customer_id, customer.customer_name as customer_name, SUM(customer_order.total_price) as spent_amount from customer join customer_order on customer_order.customer_id=customer.customer_id group by customer_order.customer_id";
+    $res=mysqli_query($conn,$sql);
     $product_list="select * from product order by category";
     $res=mysqli_query($conn,$product_list); 
     if(mysqli_num_rows($res)==0){
@@ -56,6 +60,7 @@
     }
     if(mysqli_num_rows($res)){
         ?>
+    
     <table>
         <tr>
             <td>Supplier who supplies the highest number of products</td>
@@ -86,11 +91,42 @@
         </tr>
         <tr>
             <td>
+                Product with lowest stock
+            </td>
+            <td>
+                <?php
+                  $sql="select product_name from product where quantity_available=(select min(quantity_available) from product)";
+                  $res=mysqli_query($conn,$sql);
+
+                  while($row=mysqli_fetch_assoc($res)){  
+                  echo $row['product_name'];
+                  echo "<br>";}
+                
+
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 Highest priced product
             </td>
             <td>
                 <?php
                   $sql="select product_name from product where price=(select max(price) from product)";
+                  $res=mysqli_query($conn,$sql);
+                  while($row=mysqli_fetch_assoc($res)){  
+                  echo $row['product_name'];
+                  echo "<br>";}
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lowest priced product
+            </td>
+            <td>
+                <?php
+                  $sql="select product_name from product where price=(select min(price) from product)";
                   $res=mysqli_query($conn,$sql);
                   while($row=mysqli_fetch_assoc($res)){  
                   echo $row['product_name'];
@@ -112,8 +148,50 @@
                 ?>
             </td>
         </tr>
+        <tr>
+            <td>
+                Highest selling product
+            </td>
+            <td>
+                <?php
+                  $sql="SELECT MAX(product_name) as highest_selling from product_count_ordered";
+                  $res=mysqli_query($conn,$sql);
+                  while($row=mysqli_fetch_assoc($res)){  
+                  echo $row['highest_selling'];
+                  echo "<br>";}
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lowest selling product
+            </td>
+            <td>
+                <?php
+                  $sql="SELECT MIN(product_name) as lowest_selling from product_count_ordered";
+                  $res=mysqli_query($conn,$sql);
+                  while($row=mysqli_fetch_assoc($res)){  
+                  echo $row['lowest_selling'];
+                  echo "<br>";}
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Customer who has spent the highest amount on purchases
+            </td>
+            <td>
+                <?php
+                  $sql="SELECT customer_name from spent_on_purchase where spent_amount = (select MAX(spent_amount) from spent_on_purchase)";
+                  $res=mysqli_query($conn,$sql);
+                  while($row=mysqli_fetch_assoc($res)){  
+                  echo $row['customer_name'];
+                  echo "<br>";}
+                ?>
+            </td>
+        </tr>
 
-        <table>
+    </table>
 
             <?php } ?>
             <script>

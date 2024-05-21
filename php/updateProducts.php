@@ -39,7 +39,7 @@
                         <span class="line"></span>
                     </div>
                     <div class="phno">
-                        <input type="text" name="tax" id="phone_number">
+                        <input type="text" name="tax">
                         <label for="phone_number">Tax</label>
                         <span class="line"></span>
                     </div>
@@ -112,7 +112,7 @@
            
         }
         if(!empty($quantity)){
-            $updates[] = " qty_available='$quantity'";
+            $updates[] = " quantity_available='$quantity'";
            
         }
         if(!empty($sup_id)){
