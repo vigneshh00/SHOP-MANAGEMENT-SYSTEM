@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Product Details</title>
     <link rel="stylesheet" href="../css/updateProducts.css">
-    <link rel="icon" type="image/x-icon" href="../images/icon_logo.png" />
     <script src="https://kit.fontawesome.com/06f7708eb9.js" crossorigin="anonymous"></script>
 
 </head>
