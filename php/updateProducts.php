@@ -28,7 +28,7 @@
                         <span class="line"></span>
                     </div>
                     <div class="lname">
-                        <input type="text" name="shopadd" id="shop-address" required>
+                        <input type="text" name="shopadd" id="shop-address">
                         <label for="shop_address">Product Category</label>
                         <span class="line"></span>
                     </div>
@@ -121,14 +121,15 @@
         if(!empty($updates)){
         $sql .=implode(", ",$updates) . " WHERE product_id=$pid";
         $result=mysqli_query($conn,$sql);
+        if(mysqli_affected_rows($conn)>0){
+            echo "<script> alert('Updated product details successfully!');</script>";}
+        else{
+            echo "<script> alert('Product not found!');</script>";
+        }
+        }
    
-      if($result ){
-        echo "<script> alert('Updated product details successfully!');</script>";
+    
     }
-    else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-    }}
 
     mysqli_close($conn);}
 ?>
