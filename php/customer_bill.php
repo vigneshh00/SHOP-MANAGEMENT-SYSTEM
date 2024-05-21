@@ -33,7 +33,7 @@
             $cid = $_SESSION['customer_id'];
             $order_id = $_SESSION['order_id'];
 
-            $sql = "UPDATE customer SET no_of_visits = no_of_visits + 1 WHERE customer_id = '$cid' AND (no_of_visits = 1 OR no_of_visits > 1)";
+            $sql = "UPDATE customer SET no_of_visits = no_of_visits + 1 WHERE customer_id = '$cid'";
             mysqli_query($conn, $sql);
 
             $sql = "SELECT * FROM signup";

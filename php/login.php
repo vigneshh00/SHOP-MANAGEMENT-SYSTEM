@@ -155,7 +155,7 @@
                 customer_name varchar(15),
                 customer_phonenumber varchar(40),
                 customer_address varchar(100),
-                no_of_visits INT DEFAULT 1)";
+                no_of_visits INT DEFAULT 0)";
              mysqli_query($conn,$sql_customer);
 
              $sql_supplier="Alter table customer AUTO_INCREMENT=101";
@@ -233,7 +233,7 @@
                     END";
             mysqli_query($conn,$sql);
 
-            $sql = "CREATE OR REPLACE TRIGGER `set_tax` BEFORE INSERT ON `product` FOR EACH ROW  SET NEW.tax=0.05*NEW.price;";
+            $sql = "CREATE OR REPLACE TRIGGER `set_tax` BEFORE INSERT ON `product` FOR EACH ROW SET NEW.tax=0.05*NEW.price;";
             mysqli_query($conn, $sql);
 
             $sql = "CREATE OR REPLACE FUNCTION billing(o_id INT)

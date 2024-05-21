@@ -57,7 +57,7 @@
 
 ?>
 
-    <div class="container">
+<div class="container">
         <div class="icon-container" id="icon-container" onclick="myFunction(this)">
             <div class="bar1" id="bar1"></div>
             <div class="bar2" id="bar2"></div>
@@ -65,8 +65,8 @@
         </div>
         <div class="side-bar" id="side-bar">
             <nav>
-                <a href="../php/dashboard.php">Dashboard</a>
                 <a href="../php/profile.php">Profile</a>
+                <a href="../php/dashboard.php">Dashboard</a>
                 <a href="../html/products.html">Products</a>
                 <a href="../html/supplier.html">Suppliers</a>
                 <a href="../html/customer.html">Customers</a>

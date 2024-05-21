@@ -92,7 +92,7 @@
   color: #f78702;
   background-color: black;
 }
-.container .side-bar a:nth-child(1) {
+.container .side-bar a:nth-child(2) {
   color: white;
 }
 @media screen and (max-height: 450px) {
