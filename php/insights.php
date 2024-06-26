@@ -29,8 +29,6 @@
                 <a href="../php/insights.php">Insights</a>
                 <a href="../php/billing.php">Billing</a>
                 <a href="../php/login.php" id="contact-us">Log out</a>
-
-
             </nav>
         </div>
 
@@ -200,9 +198,6 @@
             }
             </script>
             <script src="../script/insights.js"></script>
-
-
-
 </body>
 
 </html>

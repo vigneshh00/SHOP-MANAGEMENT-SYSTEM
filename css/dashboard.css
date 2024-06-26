@@ -50,7 +50,7 @@
   background-color: #1b1b1b;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .container .side-bar a {
   position: relative;
@@ -58,7 +58,7 @@
   color: rgba(255, 255, 255, 0.663);
   margin: 15px;
   font-size: 20px;
-  padding: 25px;
+  padding: 20px;
   text-transform: uppercase;
   display: block;
   text-align: center;

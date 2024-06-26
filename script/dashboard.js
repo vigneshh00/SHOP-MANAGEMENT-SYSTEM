@@ -13,12 +13,12 @@ function collapseSidebar(){
 }
  
 iconContainer.addEventListener('click',()=>{
-        if(sideBar.style.width=='250px'){
+        if(sideBar.style.width=='300px'){
                 collapseSidebar();}
             else{
           
-                iconContainer.style.transform = 'translateX(270px)';
-           sideBar.style.width = '250px';
+                iconContainer.style.transform = 'translateX(300px)';
+           sideBar.style.width = '300px';
             }
         })
        
